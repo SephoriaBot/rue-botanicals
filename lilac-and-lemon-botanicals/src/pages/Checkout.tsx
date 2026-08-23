@@ -63,6 +63,12 @@ export default function Checkout() {
               </svg>
             </div>
             <h2>Order reserved.</h2>
+         <div className="art-frame filled story-art">
+            <img
+              src="/icons/shopping-bag.png"
+              alt="Illustrated shopping bag"
+            />
+          </div>
             <p>
               We've saved your order — the shop hasn't launched yet, so no payment was taken.
               We'll email you the moment Rue Botanicals is ready to ship it to you.
