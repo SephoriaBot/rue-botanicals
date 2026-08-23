@@ -150,6 +150,12 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
   line-height: 1;
 }
 
+.cart-label {
+  display: block;
+  text-align: center;
+  margin-top: 4px;
+}
+
 /* ---------- hero ---------- */
 header.hero { padding: 96px 0 80px; text-align: center; }
 header.hero h1 {
