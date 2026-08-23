@@ -81,36 +81,40 @@ export default function ProductGrid() {
               {p.status === 'soon' && (
                 <span className="badge-soon">soon</span>
               )}
-              <div className="product-image">
-                <div className="product-image-circle">
-                  <img
-                    className="product-image-bg"
-                    src={backgroundImages[p.id]}
-                    alt=""
-                    aria-hidden="true"
-                  />
-                </div>
-                <img
-                  className="product-image-bottle"
-                  src={bottleImages[p.id]}
-                  alt={`${p.name} bottle`}
-                />
-              </div>
 
-              <span className="ingredient">{p.ingredient_label}</span>
-              <span
-                className="ingredient-stem"
-                style={{ background: p.swatch_color || 'var(--butter-deep)' }}
+              <img
+                className="product-card-bg"
+                src={backgroundImages[p.id]}
+                alt=""
+                aria-hidden="true"
               />
 
-              <h3>{p.name}</h3>
+              <div className="product-card-content">
+                <div className="product-bottle-wrap">
+                  <img
+                    className="product-bottle"
+                    src={bottleImages[p.id]}
+                    alt={`${p.name} bottle`}
+                  />
+                </div>
 
-              <p>{p.description}</p>
+                <div className="product-info">
+                  <span className="ingredient">{p.ingredient_label}</span>
+                  <span
+                    className="ingredient-stem"
+                    style={{ background: p.swatch_color || 'var(--butter-deep)' }}
+                  />
 
-              <div className="product-meta">
-                <span>{p.size_oz} oz</span>
-                <span className="dot" aria-hidden="true">·</span>
-                <span className="price">${p.price.toFixed(2)}</span>
+                  <h3>{p.name}</h3>
+
+                  <p>{p.description}</p>
+
+                  <div className="product-meta">
+                    <span>{p.size_oz} oz</span>
+                    <span className="dot" aria-hidden="true">·</span>
+                    <span className="price">${p.price.toFixed(2)}</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
