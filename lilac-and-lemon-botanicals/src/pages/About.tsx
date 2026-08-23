@@ -20,7 +20,7 @@ export default function About() {
   <img
     src="/illustrations/15_window.png"
     alt="Illustrated window"
-    style={{ width: "70px", height: "70px", objectFit: "contain" }}
+    style={{ width: "100px", height: "100px", objectFit: "contain" }}
   />
 </div>
       </div>
