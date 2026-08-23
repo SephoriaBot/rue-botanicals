@@ -1026,10 +1026,7 @@ section.products {
 
   gap: 8px;
 
-  margin-top: 14px;
-  padding-top: 14px;
-
-  border-top: 1px solid var(--line-soft);
+  margin-top: 12px;
 }
 
 .qty-stepper {
@@ -1500,7 +1497,6 @@ section.checkout-section {
     gap: 7px;
 
     margin-top: 10px;
-    padding-top: 10px;
   }
 
   .qty-stepper {

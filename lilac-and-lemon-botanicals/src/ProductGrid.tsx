@@ -64,6 +64,9 @@ export default function ProductGrid() {
     setQuantities((prev) => ({ ...prev, [id]: Math.max(1, qty) }));
   }
 
+  const allComingSoon = products.length > 0 && products.every((p) => p.status === 'soon');
+  const eyebrowLabel = products.length === 0 || allComingSoon ? 'Coming Soon' : 'Now Available';
+
   function handleAddToCart(p: Product) {
     addItem(
       {
@@ -84,7 +87,7 @@ export default function ProductGrid() {
     <section className="products">
       <div className="wrap">
         <div className="products-head">
-          <span className="label">Coming Soon</span>
+          <span className="label">{eyebrowLabel}</span>
 
           <h2>Inspired by our personal garden.</h2>
 
