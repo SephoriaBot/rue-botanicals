@@ -1,13 +1,13 @@
 :root {
   /* Pink + pearlescent white + gold, no blue */
-  --cream: #FBEAF2;
-  --cream-deep: #F5D7E7;
+  --cream: #FDF3F8;
+  --cream-deep: #F9E7F0;
   --surface: #FFFFFF;
-  --surface-soft: #FFF7FA;
+  --surface-soft: #FFFAFC;
 
-  --brown: #7A2850;
-  --brown-soft: #A8567F;
-  --brown-muted: #BC86A0;
+  --brown: #8A4468;
+  --brown-soft: #B07C97;
+  --brown-muted: #C7A3B5;
 
   --sage: #C89B3C;
   --sage-soft: #F3E6BB;
@@ -18,17 +18,17 @@
   --gold: #D4AF37;
   --gold-soft: #F2E4B0;
 
-  --line: rgba(122, 40, 80, 0.12);
-  --line-soft: rgba(122, 40, 80, 0.07);
+  --line: rgba(122, 40, 80, 0.1);
+  --line-soft: rgba(122, 40, 80, 0.06);
 
   --radius: 22px;
   --radius-sm: 14px;
 
   --shadow-soft:
-    0 8px 30px rgba(122, 40, 80, 0.06);
+    0 8px 30px rgba(122, 40, 80, 0.05);
 
   --shadow-hover:
-    0 18px 45px rgba(122, 40, 80, 0.12);
+    0 18px 45px rgba(122, 40, 80, 0.1);
 }
 
 
