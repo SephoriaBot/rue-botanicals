@@ -27,12 +27,7 @@ export default function Cart() {
       <div className="wrap">
         <div className="cart-head">
           <span className="label">Your Cart</span>
-        <div className="art-frame filled story-art">
-            <img
-              src="/icons/cart.png"
-              alt="Illustrated shopping cart"
-            />
-          </div>
+  
           <h2>Ready when you are.</h2>
         </div>
 
