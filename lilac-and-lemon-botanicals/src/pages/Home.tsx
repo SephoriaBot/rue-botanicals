@@ -10,7 +10,7 @@ export default function Home() {
         </div>
 
         <p className="tagline">
-       Formulas built on your needs and nothing else. Tested only on those that can consent (animals are safe here). Crafted in our home studio, bottled, and shipped straight to your door.
+       Formulas built on your needs and nothing else. Tested only on those that can consent (animals are safe here).
         </p>
 
 
