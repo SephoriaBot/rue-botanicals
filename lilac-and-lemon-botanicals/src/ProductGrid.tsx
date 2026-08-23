@@ -83,37 +83,33 @@ export default function ProductGrid() {
               )}
 
               <img
-                className="product-card-bg"
+                className="product-card-accent"
                 src={backgroundImages[p.id]}
                 alt=""
                 aria-hidden="true"
               />
 
-              <div className="product-card-content">
-                <div className="product-bottle-wrap">
-                  <img
-                    className="product-bottle"
-                    src={bottleImages[p.id]}
-                    alt={`${p.name} bottle`}
-                  />
-                </div>
+              <div className="product-bottle-wrap">
+                <img
+                  className="product-bottle"
+                  src={bottleImages[p.id]}
+                  alt={`${p.name} bottle`}
+                />
+              </div>
 
-                <div className="product-info">
-                  <span className="ingredient">{p.ingredient_label}</span>
-                  <span
-                    className="ingredient-stem"
-                    style={{ background: p.swatch_color || 'var(--butter-deep)' }}
-                  />
+              <div className="product-info">
+                <span className="ingredient">{p.ingredient_label}</span>
+                <span
+                  className="ingredient-stem"
+                  style={{ background: p.swatch_color || 'var(--butter-deep)' }}
+                />
 
-                  <h3>{p.name}</h3>
+                <h3>{p.name}</h3>
 
-                  <p>{p.description}</p>
-
-                  <div className="product-meta">
-                    <span>{p.size_oz} oz</span>
-                    <span className="dot" aria-hidden="true">·</span>
-                    <span className="price">${p.price.toFixed(2)}</span>
-                  </div>
+                <div className="product-meta">
+                  <span>{p.size_oz} oz</span>
+                  <span className="dot" aria-hidden="true">·</span>
+                  <span className="price">${p.price.toFixed(2)}</span>
                 </div>
               </div>
             </div>
