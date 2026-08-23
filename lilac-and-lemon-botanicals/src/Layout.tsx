@@ -29,21 +29,23 @@ export default function Layout() {
             ))}
           </div>
           <div className="nav-right">
-            <NavLink
-              to="/cart"
-              className={({ isActive }) => `cart-link${isActive ? ' active' : ''}`}
-              aria-label="View cart"
-            >
-              <div className="art-frame filled story-art">
-  <img
-    src="/icons/cart.png"
-    alt="Illustrated shopping cart"
-    style={{ width: "50px", height: "50px", objectFit: "contain" }}
-  />
-</div>
-              {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
-            </NavLink>
-            <span className="status-pill">In the making</span>
+           <NavLink
+  to="/cart"
+  className={({ isActive }) => `cart-link${isActive ? ' active' : ''}`}
+  aria-label="View cart"
+>
+  <div className="art-frame filled story-art">
+    <img
+      src="/icons/cart.png"
+      alt="Illustrated shopping cart"
+      style={{ width: "40px", height: "40px", objectFit: "contain" }}
+    />
+  </div>
+
+  <span className="cart-label">Cart</span>
+
+  {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+</NavLink>
           </div>
         </div>
       </nav>
