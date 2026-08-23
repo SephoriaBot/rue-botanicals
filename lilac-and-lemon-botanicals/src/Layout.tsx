@@ -3,9 +3,9 @@ import { useCart } from './CartContext';
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
+  { to: '/about', label: 'About the Brand' },
   { to: '/products', label: 'Products' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/contact', label: 'Join Waitlist' },
 ];
 
 export default function Layout() {
