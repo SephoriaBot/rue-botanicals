@@ -215,6 +215,7 @@ section.products { padding: 96px 0; }
   height: 100%;
   text-align: center;
   overflow: hidden;
+  padding: 16px 16px 18px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -224,23 +225,25 @@ section.products { padding: 96px 0; }
 
 .product-card:hover {
   border-color: var(--lavender-deep);
-  box-shadow: 0 20px 36px -18px rgba(68, 59, 52, 0.28);
-  transform: translateY(-6px);
+  box-shadow: 0 14px 24px -14px rgba(68, 59, 52, 0.22);
+  transform: translateY(-4px);
 }
 
 .product-card p {
-  font-size: 0.86rem;
+  font-size: 0.78rem;
   color: var(--plum-soft);
-  margin: 4px 0 20px;
+  margin: 4px 0 12px;
 }
 
 .product-card .ingredient {
   display: inline-block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  font-size: 0.66rem;
 }
 
 .product-card h3 {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
+  font-size: 1.05rem;
 }
 
 .ingredient-stem {
@@ -269,57 +272,51 @@ section.products { padding: 96px 0; }
 .product-meta .dot { color: var(--lavender); }
 .product-meta .price { color: var(--plum); font-weight: 700; }
 
-/* Product art: opaque botanical photo as a clean top panel, bottle overlapping the seam */
-.product-card-bg {
+/* Product art: small botanical accent in the corner, bottle stands alone and small */
+.product-card-accent {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 58%;
+  top: 10px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
   object-fit: cover;
-  object-position: center 30%;
+  border-radius: 50%;
+  opacity: 0.9;
   z-index: 0;
 }
 
-.product-card-content {
+.product-bottle-wrap {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.product-bottle-wrap {
-  height: 58%;
-  display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 20px 20px 0;
+  height: 92px;
+  margin-bottom: 10px;
 }
 
 .product-bottle {
-  max-height: 150px;
+  max-height: 92px;
   width: auto;
-  max-width: 62%;
+  max-width: 60px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 14px rgba(92, 79, 66, 0.3));
+  filter: drop-shadow(0 6px 8px rgba(92, 79, 66, 0.18));
   transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-bottle {
-  transform: translateY(-5px) scale(1.03);
+  transform: translateY(-3px) scale(1.03);
 }
 
 .product-info {
-  background: var(--surface);
-  padding: 22px 24px 24px;
-  flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .badge-soon {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  left: 12px;
   background: var(--cream);
   color: var(--butter-deep);
   border: 1px solid var(--line);
@@ -330,7 +327,7 @@ section.products { padding: 96px 0; }
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 999px;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ---------- follow ---------- */
@@ -373,21 +370,11 @@ footer { padding: 32px 0; text-align: center; font-family: 'Jost', sans-serif; f
 
   .wrap { padding: 0 20px; }
   .product-grid { gap: 12px; }
-  .product-bottle-wrap { min-height: 140px; padding: 22px 14px 0; }
-  .product-bottle { max-height: 140px; }
-  .product-info { padding: 14px 16px 18px; }
-  .badge-soon { top: 10px; right: 10px; font-size: 0.55rem; padding: 3px 8px; }
-  .product-card h3 { font-size: 1.05rem; }
-  .product-card p { font-size: 0.78rem; margin-bottom: 14px; }
-}
-
-@media (max-width: 700px) {
-  .product-bottle-wrap {
-    min-height: 160px;
-    padding: 26px 16px 0;
-  }
-
-  .product-bottle {
-    max-height: 160px;
-  }
+  .product-card { padding: 14px 14px 16px; }
+  .product-bottle-wrap { height: 76px; margin-bottom: 8px; }
+  .product-bottle { max-height: 76px; max-width: 50px; }
+  .product-card-accent { width: 34px; height: 34px; }
+  .badge-soon { top: 10px; left: 10px; font-size: 0.55rem; padding: 3px 8px; }
+  .product-card h3 { font-size: 0.95rem; }
+  .product-card p { font-size: 0.72rem; margin-bottom: 10px; }
 }
