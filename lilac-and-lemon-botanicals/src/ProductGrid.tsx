@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useCart } from './CartContext';
 
 type Product = {
   id: number;
@@ -14,6 +15,9 @@ type Product = {
 
 export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [quantities, setQuantities] = useState<Record<number, number>>({});
+  const [justAdded, setJustAdded] = useState<number | null>(null);
+  const { addItem } = useCart();
 
   // Botanical flat-lay art, used as a soft, faded backdrop on each card
   const backgroundImages: Record<number, string> = {
@@ -52,6 +56,30 @@ export default function ProductGrid() {
       .catch(() => setProducts([]));
   }, []);
 
+  function getQty(id: number) {
+    return quantities[id] ?? 1;
+  }
+
+  function setQty(id: number, qty: number) {
+    setQuantities((prev) => ({ ...prev, [id]: Math.max(1, qty) }));
+  }
+
+  function handleAddToCart(p: Product) {
+    addItem(
+      {
+        id: p.id,
+        name: p.name,
+        price: p.price,
+        size_oz: p.size_oz,
+        image: bottleImages[p.id],
+      },
+      getQty(p.id)
+    );
+    setQty(p.id, 1);
+    setJustAdded(p.id);
+    setTimeout(() => setJustAdded((cur) => (cur === p.id ? null : cur)), 1400);
+  }
+
   return (
     <section className="products">
       <div className="wrap">
@@ -78,8 +106,10 @@ export default function ProductGrid() {
         <div className="product-grid">
           {products.map((p) => (
             <div className="product-card" key={p.id}>
-              {p.status === 'soon' && (
+              {p.status === 'soon' ? (
                 <span className="badge-soon">soon</span>
+              ) : (
+                <span className="badge-available">available</span>
               )}
 
               <img
@@ -111,6 +141,35 @@ export default function ProductGrid() {
                   <span className="dot" aria-hidden="true">·</span>
                   <span className="price">${p.price.toFixed(2)}</span>
                 </div>
+
+                {p.status !== 'soon' && (
+                  <div className="add-to-cart-row">
+                    <div className="qty-stepper">
+                      <button
+                        type="button"
+                        onClick={() => setQty(p.id, getQty(p.id) - 1)}
+                        aria-label="Decrease quantity"
+                      >
+                        −
+                      </button>
+                      <span>{getQty(p.id)}</span>
+                      <button
+                        type="button"
+                        onClick={() => setQty(p.id, getQty(p.id) + 1)}
+                        aria-label="Increase quantity"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <button
+                      type="button"
+                      className={`add-to-cart-btn${justAdded === p.id ? ' added' : ''}`}
+                      onClick={() => handleAddToCart(p)}
+                    >
+                      {justAdded === p.id ? 'Added ♡' : 'Add to Cart'}
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           ))}
