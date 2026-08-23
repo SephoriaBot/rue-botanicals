@@ -34,11 +34,13 @@ export default function Layout() {
               className={({ isActive }) => `cart-link${isActive ? ' active' : ''}`}
               aria-label="View cart"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="9" cy="21" r="1" />
-                <circle cx="20" cy="21" r="1" />
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-              </svg>
+              <div className="art-frame filled story-art">
+  <img
+    src="/icons/cart.png"
+    alt="Illustrated shopping cart"
+    style={{ width: "70px", height: "70px", objectFit: "contain" }}
+  />
+</div>
               {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
             </NavLink>
             <span className="status-pill">In the making</span>
