@@ -1,33 +1,34 @@
 :root {
-  --cream: #F7F2E8;
-  --cream-deep: #EFE7D8;
-  --surface: #FFFDF8;
-  --surface-soft: #FBF7EE;
+  /* Angewomon-inspired: pearl white, deep violet, gold trim, periwinkle accent */
+  --cream: #F8F4FC;
+  --cream-deep: #EBE0F6;
+  --surface: #FFFFFF;
+  --surface-soft: #FBF8FF;
 
-  --brown: #4B382C;
-  --brown-soft: #786657;
-  --brown-muted: #9A8878;
+  --brown: #33204E;
+  --brown-soft: #6B4E8C;
+  --brown-muted: #8E7BA8;
 
-  --sage: #737B63;
-  --sage-soft: #D9DDCC;
+  --sage: #7C4FA6;
+  --sage-soft: #E3D3F2;
 
-  --rose: #D9B7B4;
-  --rose-soft: #F0DFDB;
+  --rose: #A9BCEC;
+  --rose-soft: #E2E8FB;
 
-  --gold: #B58A45;
-  --gold-soft: #E7D5AE;
+  --gold: #D4AF37;
+  --gold-soft: #F2E4B0;
 
-  --line: rgba(75, 56, 44, 0.11);
-  --line-soft: rgba(75, 56, 44, 0.07);
+  --line: rgba(51, 32, 78, 0.12);
+  --line-soft: rgba(51, 32, 78, 0.07);
 
   --radius: 22px;
   --radius-sm: 14px;
 
   --shadow-soft:
-    0 8px 30px rgba(75, 56, 44, 0.045);
+    0 8px 30px rgba(51, 32, 78, 0.06);
 
   --shadow-hover:
-    0 18px 45px rgba(75, 56, 44, 0.09);
+    0 18px 45px rgba(51, 32, 78, 0.12);
 }
 
 
@@ -450,7 +451,7 @@ header.hero h1 .accent {
 
 .hero-link:hover {
   background: var(--surface);
-  border-color: rgba(75, 56, 44, 0.2);
+  border-color: rgba(51, 32, 78, 0.2);
   transform: translateY(-1px);
 }
 
@@ -766,7 +767,7 @@ section.products {
 .product-card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(75, 56, 44, 0.13);
+  border-color: rgba(51, 32, 78, 0.13);
 
   box-shadow: var(--shadow-hover);
 }
@@ -827,7 +828,7 @@ section.products {
   background:
     radial-gradient(
       ellipse at center bottom,
-      rgba(217, 183, 180, 0.13),
+      rgba(169, 188, 236, 0.18),
       transparent 62%
     );
 }
@@ -842,7 +843,7 @@ section.products {
   object-fit: contain;
 
   filter:
-    drop-shadow(0 12px 12px rgba(75, 56, 44, 0.13));
+    drop-shadow(0 12px 12px rgba(51, 32, 78, 0.13));
 
   transition:
     transform 0.5s cubic-bezier(.2,.7,.2,1),
@@ -853,7 +854,7 @@ section.products {
   transform: translateY(-5px) scale(1.025);
 
   filter:
-    drop-shadow(0 16px 16px rgba(75, 56, 44, 0.16));
+    drop-shadow(0 16px 16px rgba(51, 32, 78, 0.16));
 }
 
 
@@ -1005,12 +1006,12 @@ section.products {
   background: rgba(247, 242, 232, 0.92);
   color: var(--gold);
 
-  border: 1px solid rgba(181, 138, 69, 0.18);
+  border: 1px solid rgba(212, 175, 55, 0.28);
 }
 
 .badge-available {
   background: var(--sage);
-  color: #FFFDF8;
+  color: #FDFBFF;
 
   border: 1px solid var(--sage);
 }
@@ -1080,7 +1081,7 @@ section.products {
   padding: 7px 14px;
 
   background: var(--sage);
-  color: #FFFDF8;
+  color: #FDFBFF;
 
   border: none;
   border-radius: 999px;
@@ -1173,7 +1174,7 @@ section.checkout-section {
 }
 
 .cart-empty a:hover {
-  border-color: rgba(75, 56, 44, 0.2);
+  border-color: rgba(51, 32, 78, 0.2);
   background: var(--surface);
 }
 
@@ -1660,7 +1661,7 @@ button[type="submit"] {
   border-radius: 999px;
 
   background: var(--sage);
-  color: #FFFDF8;
+  color: #FDFBFF;
 
   font-family: 'Jost', sans-serif;
   font-size: 0.64rem;
@@ -1683,7 +1684,7 @@ button[type="submit"]:hover {
   transform: translateY(-1px);
 
   box-shadow:
-    0 6px 18px rgba(75, 56, 44, 0.12);
+    0 6px 18px rgba(51, 32, 78, 0.12);
 }
 
 button[type="submit"]:active {
