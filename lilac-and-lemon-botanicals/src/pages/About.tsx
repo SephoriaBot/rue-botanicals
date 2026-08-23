@@ -17,7 +17,7 @@ export default function About() {
 
         </div>
         <div className="art-frame filled story-art">
-          <img src="/illustrations/15_window.png" alt="Illustrated flower pitcher" />
+          <img src="/icons/cameo.png" alt="Illustrated portrait of the founder" />
         </div>
       </div>
     </section>
