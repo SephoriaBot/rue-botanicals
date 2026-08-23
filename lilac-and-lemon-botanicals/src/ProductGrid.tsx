@@ -88,13 +88,6 @@ export default function ProductGrid() {
 
           <h2>Inspired by our personal garden.</h2>
 
-          <div className="art-frame filled story-art">
-            <img
-              src="/icons/salt-jar.png"
-              alt="Illustrated jar of flowers"
-            />
-          </div>
-
           <p>
             Every formula begins with botanicals chosen for a reason — rose,
             calendula, green tea, hibiscus, yarrow, and nasturtium, thoughtfully
