@@ -38,7 +38,7 @@ export default function Layout() {
     <img
       src="/icons/cart.png"
       alt="Illustrated shopping cart"
-      style={{ width: "40px", height: "40px", objectFit: "contain" }}
+      style={{ width: "25px", height: "25px", objectFit: "contain" }}
     />
   </div>
 
