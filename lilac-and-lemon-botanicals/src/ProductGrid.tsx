@@ -90,8 +90,8 @@ export default function ProductGrid() {
 
           <div className="art-frame filled story-art">
             <img
-              src="/icons/cream-jar.png"
-              alt="Illustrated jar of botanical cream"
+              src="/icons/salt-jar.png"
+              alt="Illustrated jar of flowers"
             />
           </div>
 
