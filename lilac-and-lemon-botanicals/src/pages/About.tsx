@@ -17,8 +17,12 @@ export default function About() {
 
         </div>
         <div className="art-frame filled story-art">
-          <img src="/icons/cameo.png" alt="Illustrated portrait of the founder" />
-        </div>
+  <img
+    src="/illustrations/15_window.png"
+    alt="Illustrated window"
+    style={{ width: "70px", height: "70px", objectFit: "contain" }}
+  />
+</div>
       </div>
     </section>
   );
