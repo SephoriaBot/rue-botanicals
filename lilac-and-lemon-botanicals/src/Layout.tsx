@@ -15,7 +15,6 @@ export default function Layout() {
     <>
       <nav>
         <div className="wrap nav-inner">
-          <span className="wordmark">Rue Botanicals</span>
           <div className="nav-links">
             {navLinks.map((link) => (
               <NavLink
