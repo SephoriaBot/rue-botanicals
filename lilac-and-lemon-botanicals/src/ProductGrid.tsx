@@ -15,7 +15,8 @@ type Product = {
 export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
 
-  const productImages: Record<number, string> = {
+  // Botanical flat-lay art, used as a soft, faded backdrop on each card
+  const backgroundImages: Record<number, string> = {
     101: '/illustrations/1_paquerette.png',
     102: '/illustrations/2_seve_serum.png',
     103: '/illustrations/3_clochette.png',
@@ -24,6 +25,18 @@ export default function ProductGrid() {
     106: '/illustrations/6_aube_moisturizer.png',
     107: '/illustrations/7_reveuse.png',
     108: '/illustrations/8_rosee.png',
+  };
+
+  // Actual bottle/jar renders, layered on top of the backdrop
+  const bottleImages: Record<number, string> = {
+    101: '/illustrations/01_Paquerette.png',
+    102: '/illustrations/03_Seve.png',
+    103: '/illustrations/05_Clochette.png',
+    104: '/illustrations/02_Matinale.png',
+    105: '/illustrations/04_Fleurie.png',
+    106: '/illustrations/06_Aube.png',
+    107: '/illustrations/07_Reveuse.png',
+    108: '/illustrations/08_Rosee.png',
   };
 
   useEffect(() => {
@@ -69,9 +82,18 @@ export default function ProductGrid() {
                 <span className="badge-soon">soon</span>
               )}
               <div className="product-image">
+                <div className="product-image-circle">
+                  <img
+                    className="product-image-bg"
+                    src={backgroundImages[p.id]}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
                 <img
-                  src={productImages[p.id]}
-                  alt={`${p.name} product illustration`}
+                  className="product-image-bottle"
+                  src={bottleImages[p.id]}
+                  alt={`${p.name} bottle`}
                 />
               </div>
 
