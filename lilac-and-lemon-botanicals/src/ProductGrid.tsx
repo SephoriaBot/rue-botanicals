@@ -129,6 +129,8 @@ export default function ProductGrid() {
 
                 <h3>{p.name}</h3>
 
+                <span>{p.description}</span>
+
                 <div className="product-meta">
                   <span>{p.size_oz} oz</span>
                   <span className="dot" aria-hidden="true">·</span>
