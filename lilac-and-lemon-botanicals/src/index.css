@@ -1311,7 +1311,11 @@ section.checkout-section {
 @media (max-width: 640px) {
 
   .wrap {
-    width: min(100% - 28px, 500px);
+
+    width: calc(100% - 28px);
+
+    max-width: none;
+
   }
 
   nav .wrap {
