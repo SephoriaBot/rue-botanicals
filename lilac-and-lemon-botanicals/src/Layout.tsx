@@ -38,7 +38,7 @@ export default function Layout() {
   <img
     src="/icons/cart.png"
     alt="Illustrated shopping cart"
-    style={{ width: "70px", height: "70px", objectFit: "contain" }}
+    style={{ width: "50px", height: "50px", objectFit: "contain" }}
   />
 </div>
               {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
