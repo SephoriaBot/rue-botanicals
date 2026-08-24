@@ -1,293 +1,1736 @@
 :root {
-  /* =========================================================
-     RUE BOTANICALS
-     Soft French · Feminine · Botanical · Romantic
-     ========================================================= */
-  /* ---------------------------------------------------------
-     CORE — warm ivory / French parchment
-     --------------------------------------------------------- */
-  --cream: #FFF9F3;
-  --cream-deep: #F2E4D8;
-  --surface: #FFFDFC;
-  --surface-soft: #FDF4EF;
-  /* ---------------------------------------------------------
-     TEXT — warm French brown
-     --------------------------------------------------------- */
-  --brown: #49372E;
-  --brown-soft: #80695C;
-  --brown-muted: #B7A399;
-  /* ---------------------------------------------------------
-     PINK — primary feminine brand color
-     --------------------------------------------------------- */
-  --pink: #E6AAA5;
-  --pink-soft: #F3D8D4;
-  --pink-pale: #FBEDEA;
-  /* ---------------------------------------------------------
-     ROSE — deeper accent / interaction color
-     --------------------------------------------------------- */
-  --rose: #C97973;
-  --rose-soft: #EBC8C3;
-  --rose-deep: #A95F5A;
-  /* ---------------------------------------------------------
-     BOTANICAL — muted sage
-     --------------------------------------------------------- */
-  --sage: #7D8D6C;
-  --sage-soft: #E3E9DB;
-  --sage-pale: #F1F4EB;
-  /* ---------------------------------------------------------
-     GOLD — restrained luxury accent
-     Use sparingly.
-     --------------------------------------------------------- */
-  --gold: #C6A05A;
-  --gold-soft: #E9D8B1;
-  /* ---------------------------------------------------------
-     BORDERS
-     --------------------------------------------------------- */
-  --line: rgba(73, 55, 46, 0.10);
-  --line-soft: rgba(73, 55, 46, 0.055);
-  --line-pink: rgba(201, 121, 115, 0.22);
-  --line-sage: rgba(125, 141, 108, 0.20);
-  /* ---------------------------------------------------------
-     RADIUS
-     --------------------------------------------------------- */
+  /* Rue Botanicals — French botanical / soft feminine */
+
+  /* Ivory + warm parchment */
+  --cream: #FBF6EE;
+  --cream-deep: #F2E5D5;
+  --surface: #FFFCF8;
+  --surface-soft: #F9F1E7;
+
+  /* Warm espresso / French ink */
+  --brown: #4A382D;
+  --brown-soft: #806A5A;
+  --brown-muted: #B9A394;
+
+  /* Botanical sage */
+  --sage: #7C8B68;
+  --sage-soft: #E4E9DA;
+
+  /* Blush pink */
+  --pink: #E8C2BC;
+  --pink-soft: #F6E5E1;
+
+  /* Dusty French rose */
+  --rose: #C9827D;
+  --rose-soft: #EED2CD;
+
+  /* Antique champagne gold */
+  --gold: #C9A45C;
+  --gold-soft: #E9D9B5;
+
+  /* Very subtle warm borders */
+  --line: rgba(74, 56, 45, 0.11);
+  --line-soft: rgba(74, 56, 45, 0.055);
+
   --radius: 22px;
   --radius-sm: 14px;
-  /* ---------------------------------------------------------
-     SHADOWS
-     --------------------------------------------------------- */
+
   --shadow-soft:
-    0 8px 30px rgba(73, 55, 46, 0.055);
+    0 8px 30px rgba(74, 56, 45, 0.055);
+
   --shadow-hover:
-    0 18px 45px rgba(73, 55, 46, 0.10);
-  --shadow-pink:
-    0 12px 35px rgba(201, 121, 115, 0.12);
-  /* =========================================================
-     SEMANTIC COLORS
-     These make the palette actually appear throughout
-     the interface instead of leaving pink unused.
-     ========================================================= */
-  --color-background: var(--cream);
-  --color-surface: var(--surface);
-  --color-surface-soft: var(--surface-soft);
-  --color-text: var(--brown);
-  --color-text-soft: var(--brown-soft);
-  --color-text-muted: var(--brown-muted);
-  --color-primary: var(--rose);
-  --color-primary-soft: var(--pink-soft);
-  --color-primary-pale: var(--pink-pale);
-  --color-secondary: var(--sage);
-  --color-secondary-soft: var(--sage-soft);
-  --color-accent: var(--gold);
-  --color-accent-soft: var(--gold-soft);
-  --color-border: var(--line);
-  --color-border-soft: var(--line-soft);
+    0 18px 45px rgba(74, 56, 45, 0.10);
 }
+
+
+
 /* =========================================================
-   BASE
+   RESET / BASE
    ========================================================= */
-html {
-  background: var(--cream);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--cream);
   color: var(--brown);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+img {
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.wrap {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
 /* =========================================================
    TYPOGRAPHY
    ========================================================= */
+
 .eyebrow,
 .label {
-  color: var(--rose);
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--gold);
 }
-.muted,
-.secondary-text {
-  color: var(--brown-soft);
-}
-.subtle {
-  color: var(--brown-muted);
-}
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-/* Primary action — rose, not gold */
-.primary-button,
-.btn-primary {
-  background: var(--rose);
-  color: var(--cream);
-  border: 1px solid var(--rose);
-  box-shadow: var(--shadow-pink);
-}
-.primary-button:hover,
-.btn-primary:hover {
-  background: var(--rose-deep);
-  border-color: var(--rose-deep);
-}
-/* Soft feminine secondary action */
-.secondary-button,
-.btn-secondary {
-  background: var(--pink-soft);
+
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', serif;
   color: var(--brown);
-  border: 1px solid var(--line-pink);
+  font-weight: 500;
 }
-.secondary-button:hover,
-.btn-secondary:hover {
-  background: var(--pink);
-  border-color: var(--pink);
-}
+
+
 /* =========================================================
-   CARDS
+   ART FRAMES
    ========================================================= */
-.card {
-  background: var(--surface);
+
+.art-frame {
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  background: rgba(255, 253, 248, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 24px;
+
+  color: var(--brown-soft);
+}
+
+.art-frame .art-frame-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+.art-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.art-frame.filled {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(247, 242, 232, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid var(--line-soft);
+}
+
+nav .wrap {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.wordmark em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex: 1;
+}
+
+.nav-link {
+  position: relative;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--brown-soft);
+  text-decoration: none;
+
+  padding: 7px 0;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--gold);
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--brown);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: var(--brown);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+/* =========================================================
+   STATUS PILL
+   ========================================================= */
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 11px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--sage);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.status-pill::before {
+  content: '';
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: var(--sage);
+
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+
+/* =========================================================
+   CART
+   ========================================================= */
+
+.cart-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  color: var(--brown-soft);
+  text-decoration: none;
+
+  border-radius: 50%;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cart-link:hover,
+.cart-link.active {
+  color: var(--brown);
+  background: rgba(115, 123, 99, 0.08);
+}
+
+.cart-link img {
+  width: 44px !important;
+  height: 44px !important;
+  object-fit: contain;
+}
+
+.cart-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--gold);
+  color: white;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.cart-label {
+  display: block;
+  text-align: center;
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+header.hero {
+  padding: 110px 0 90px;
+  text-align: center;
+}
+
+header.hero h1 {
+  max-width: 800px;
+  margin: 0 auto;
+
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+header.hero h1 .accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.tagline {
+  max-width: 480px;
+
+  margin: 28px auto 0;
+
+  font-size: 1rem;
+  line-height: 1.75;
+
+  color: var(--brown-soft);
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 38px;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 10px 20px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--brown);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-link:hover {
+  background: var(--surface);
+  border-color: rgba(122, 40, 80, 0.2);
+  transform: translateY(-1px);
+}
+
+.hero-art {
+  max-width: 320px;
+  margin: 54px auto 0;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+section.story {
+  padding: 105px 0;
+}
+
+section.story .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px;
+  align-items: center;
+}
+
+section.story h2 {
+  max-width: 600px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+
+  margin: 16px 0 24px;
+}
+
+section.story p {
+  max-width: 48ch;
+
+  color: var(--brown-soft);
+}
+
+section.story p + p {
+  margin-top: 16px;
+}
+
+.story-mark {
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   ROUTINE
+   ========================================================= */
+
+section.routine {
+  padding: 100px 0;
+
+  background: var(--surface);
+
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.routine-head {
+  max-width: 560px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.routine-head h2 {
+  font-size: 2.25rem;
+  margin: 16px 0;
+}
+
+.routine-head p {
+  color: var(--brown-soft);
+}
+
+.progress-track {
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.progress-bar-outer {
+  height: 3px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  width: 0%;
+
+  background: linear-gradient(
+    90deg,
+    var(--sage),
+    var(--gold)
+  );
+
+  transition: width 0.5s ease;
+  border-radius: 999px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--brown-soft);
+}
+
+.progress-label strong {
+  color: var(--sage);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.step {
+  background: var(--cream);
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  padding: 20px 16px 18px;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.step:hover {
+  border-color: rgba(115, 123, 99, 0.35);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-soft);
 }
-/* Soft pink card */
-.card-pink {
-  background: var(--pink-pale);
-  border-color: var(--line-pink);
-}
-/* Botanical card */
-.card-sage {
-  background: var(--sage-pale);
-  border-color: var(--line-sage);
-}
-/* =========================================================
-   ACTIVE / SELECTED STATES
-   ========================================================= */
-.active,
-.is-active,
-.selected,
-.is-selected {
-  background: var(--pink-soft);
-  border-color: var(--rose-soft);
-  color: var(--rose-deep);
-}
-/* =========================================================
-   BADGES / TAGS
-   ========================================================= */
-.badge,
-.tag {
-  background: var(--pink-soft);
-  color: var(--rose-deep);
-  border: 1px solid var(--line-pink);
-}
-.badge-sage,
-.tag-sage {
-  background: var(--sage-soft);
-  color: var(--sage);
-  border: 1px solid var(--line-sage);
-}
-/* =========================================================
-   LINKS
-   ========================================================= */
-a {
-  color: var(--rose);
-}
-a:hover {
-  color: var(--rose-deep);
-}
-/* =========================================================
-   ICONS
-   ========================================================= */
-.icon-primary {
-  color: var(--rose);
-  stroke: var(--rose);
-}
-.icon-secondary {
-  color: var(--sage);
-  stroke: var(--sage);
-}
-.icon-accent {
+
+.step-num {
+  font-size: 0.63rem;
+  font-weight: 600;
   color: var(--gold);
-  stroke: var(--gold);
+  letter-spacing: 0.06em;
 }
-/* =========================================================
-   BOTANICAL ACCENTS
-   ========================================================= */
-.botanical {
+
+.step-ritual {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
   color: var(--sage);
+  margin: 8px 0 6px;
 }
-.botanical-soft {
-  color: var(--sage-soft);
+
+.step-task {
+  font-size: 0.81rem;
+  color: var(--brown-soft);
+  line-height: 1.45;
 }
+
+.step-check {
+  margin-top: 12px;
+
+  width: 20px;
+  height: 20px;
+
+  border: 1.5px solid var(--sage);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s ease;
+}
+
+.step-check svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.step.done {
+  border-color: var(--sage);
+  background: #F4F3EA;
+}
+
+.step.done .step-check {
+  background: var(--sage);
+}
+
+.step.done .step-check svg {
+  opacity: 1;
+}
+
+.step.done .step-ritual {
+  text-decoration: line-through;
+  text-decoration-color: var(--sage-soft);
+}
+
+
 /* =========================================================
-   DIVIDERS
+   PRODUCTS — MAIN REDESIGN
    ========================================================= */
-.divider {
-  background: var(--line);
+
+section.products {
+  padding: 105px 0 120px;
 }
-.divider-pink {
-  background: var(--rose-soft);
+
+.products-head {
+  max-width: 610px;
+  margin: 0 auto 62px;
+
+  text-align: center;
 }
+
+.products-head h2 {
+  margin: 17px 0 18px;
+
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.products-head p {
+  max-width: 54ch;
+  margin: 0 auto;
+
+  color: var(--brown-soft);
+
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+
 /* =========================================================
-   FORM ELEMENTS
+   PRODUCT GRID
    ========================================================= */
-input,
-textarea,
-select {
-  background: var(--surface);
-  color: var(--brown);
-  border: 1px solid var(--line);
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+
+  align-items: stretch;
 }
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: var(--pink);
-  box-shadow: 0 0 0 3px var(--pink-pale);
-}
+
+
 /* =========================================================
-   CHECKBOXES / TOGGLES
+   PRODUCT CARD
    ========================================================= */
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
-  accent-color: var(--rose);
-}
-/* =========================================================
-   GOLD — KEEP QUIET
-   Gold should feel like jewelry, not the main brand color.
-   ========================================================= */
-.gold {
-  color: var(--gold);
-}
-.gold-accent {
-  color: var(--gold);
-}
-.gold-line {
-  background: var(--gold-soft);
-}
-/* =========================================================
-   HOVER
-   ========================================================= */
-.interactive {
+
+.product-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+
+  overflow: hidden;
+
+  padding: 18px 20px 22px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 22%,
+      rgba(255, 255, 255, 0.7),
+      transparent 42%
+    ),
+    var(--surface);
+
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-soft);
+
   transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+    transform 0.35s cubic-bezier(.2,.7,.2,1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
-.interactive:hover {
-  background: var(--pink-pale);
-  border-color: var(--pink);
+
+.product-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(122, 40, 80, 0.13);
+
+  box-shadow: var(--shadow-hover);
 }
+
+
 /* =========================================================
-   SELECTION
+   BOTANICAL ACCENT
    ========================================================= */
-::selection {
-  background: var(--pink);
-  color: var(--brown);
+
+.product-card-accent {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  width: 62px;
+  height: 62px;
+
+  object-fit: contain;
+
+  opacity: 0.2;
+
+  z-index: 0;
+
+  filter: saturate(0.65);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s ease;
 }
 
-The intended hierarchy
+.product-card:hover .product-card-accent {
+  opacity: 0.28;
+  transform: rotate(4deg) scale(1.04);
+}
 
-Cream = environment
-Pink = Rue’s femininity
-Rose = primary interaction/accent
-Sage = botanical identity
-Brown = typography
-Gold = tiny luxury detail
 
-So the site should now visually read pink + cream first, with sage supporting it and gold appearing sparingly — rather than the current gold/sage-heavy look.
+/* =========================================================
+   PRODUCT BOTTLE AREA
+   ========================================================= */
+
+.product-bottle-wrap {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 205px;
+
+  margin: 8px 0 14px;
+
+  /*
+    Very subtle warm botanical "stage".
+    Keeps the illustration from floating against blank space.
+  */
+  background:
+    radial-gradient(
+      ellipse at center bottom,
+      rgba(246, 226, 138, 0.35),
+      transparent 62%
+    );
+}
+
+.product-bottle {
+  display: block;
+
+  width: auto;
+  max-width: 125px;
+  max-height: 185px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 12px 12px rgba(122, 40, 80, 0.13));
+
+  transition:
+    transform 0.5s cubic-bezier(.2,.7,.2,1),
+    filter 0.5s ease;
+}
+
+.product-card:hover .product-bottle {
+  transform: translateY(-5px) scale(1.025);
+
+  filter:
+    drop-shadow(0 16px 16px rgba(122, 40, 80, 0.16));
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+   ========================================================= */
+
+.product-info {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.product-card .ingredient {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--sage);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.59rem;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+  line-height: 1.45;
+
+  text-transform: uppercase;
+}
+
+.ingredient-stem {
+  display: block;
+
+  width: 28px;
+  height: 2px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 999px;
+
+  opacity: 0.85;
+}
+
+.product-card h3 {
+  margin: 0;
+
+  font-family: 'Fraunces', serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.01em;
+}
+
+.product-card p {
+  font-size: 0.8rem;
+  color: var(--brown-soft);
+  margin: 8px 0 12px;
+}
+
+
+/*
+  ProductGrid currently renders the description in a span
+  rather than a <p>, so style that exact structure.
+*/
+.product-info > span:not(.ingredient):not(.ingredient-stem) {
+  display: block;
+
+  max-width: 30ch;
+
+  margin: 9px auto 15px;
+
+  color: var(--brown-soft);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   PRODUCT META
+   ========================================================= */
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 14px;
+
+  border-top: 1px solid var(--line-soft);
+
+  color: var(--brown-muted);
+
+  font-family: 'Space Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.01em;
+}
+
+.product-meta .dot {
+  color: var(--brown-muted);
+  opacity: 0.5;
+}
+
+.product-meta .price {
+  color: var(--brown);
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.badge-soon,
+.badge-available {
+  position: absolute;
+
+  top: 16px;
+  left: 16px;
+
+  z-index: 3;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.56rem;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.badge-soon {
+  background: rgba(247, 242, 232, 0.92);
+  color: var(--gold);
+
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.badge-available {
+  background: var(--sage);
+  color: #FDFBFF;
+
+  border: 1px solid var(--sage);
+}
+
+
+/* =========================================================
+   ADD TO CART
+   ========================================================= */
+
+.add-to-cart-row {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.qty-stepper button {
+  width: 29px;
+  height: 29px;
+
+  background: none;
+  border: none;
+
+  color: var(--brown);
+
+  font-size: 0.82rem;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+}
+
+.qty-stepper button:hover {
+  background: var(--cream-deep);
+}
+
+.qty-stepper span {
+  min-width: 19px;
+
+  text-align: center;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 0.67rem;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+
+  min-height: 31px;
+
+  padding: 7px 14px;
+
+  background: var(--sage);
+  color: #FDFBFF;
+
+  border: none;
+  border-radius: 999px;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.61rem;
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: var(--brown);
+  transform: translateY(-1px);
+}
+
+.add-to-cart-btn.added {
+  background: var(--gold);
+}
+
+
+/* =========================================================
+   CART / CHECKOUT
+   ========================================================= */
+
+section.cart-section,
+section.checkout-section {
+  padding: 80px 0;
+  min-height: 50vh;
+}
+
+.cart-section .wrap,
+.checkout-section .wrap {
+  max-width: 760px;
+}
+
+.cart-head {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.cart-head h2 {
+  font-size: 2.2rem;
+  margin: 16px 0 8px;
+}
+
+.cart-head p {
+  color: var(--brown-soft);
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 55px 24px;
+}
+
+.cart-empty p {
+  color: var(--brown-soft);
+  margin-bottom: 24px;
+}
+
+.cart-empty a {
+  display: inline-block;
+
+  padding: 11px 22px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--brown);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cart-empty a:hover {
+  border-color: rgba(122, 40, 80, 0.2);
+  background: var(--surface);
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  margin-bottom: 32px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+
+  padding: 14px 18px;
+
+  box-shadow: var(--shadow-soft);
+}
+
+.cart-item-img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-item-info h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 2px;
+}
+
+.cart-item-info span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--brown-soft);
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-item-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  min-width: 60px;
+  text-align: right;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+
+  color: var(--brown-soft);
+
+  cursor: pointer;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  transition: color 0.2s ease;
+}
+
+.cart-item-remove:hover {
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .wrap {
+    width: min(100% - 36px, 700px);
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .product-bottle-wrap {
+    height: 190px;
+  }
+
+  .product-bottle {
+    max-height: 170px;
+  }
+
+  section.story .wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .wrap {
+    width: calc(100% - 24px);
+    max-width: none;
+  }
+
+  /* MOBILE NAV */
+  nav .wrap {
+    width: calc(100% - 18px);
+    min-height: 64px;
+    gap: 8px;
+  }
+
+  .nav-inner {
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .wordmark {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    min-width: 0;
+    flex: 1;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .status-pill {
+    display: none;
+  }
+
+  .nav-right {
+    flex-shrink: 0;
+  }
+
+  .cart-link {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+  }
+
+  .cart-link img {
+    width: 41px !important;
+    height: 41px !important;
+    object-fit: contain;
+  }
+
+
+  /* HERO */
+
+  header.hero {
+    padding: 75px 0 65px;
+  }
+
+  header.hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+
+  /* SECTIONS */
+
+  section.story,
+  section.routine,
+  section.products {
+    padding: 75px 0;
+  }
+
+
+  /* PRODUCTS */
+
+  .products-head {
+    margin-bottom: 42px;
+  }
+
+  .products-head h2 {
+    font-size: 2rem;
+  }
+
+  .products-head p {
+    font-size: 0.85rem;
+  }
+
+
+  /* PRODUCT GRID */
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .product-card {
+    padding: 12px 11px 15px;
+    border-radius: 18px;
+  }
+
+  .product-card-accent {
+    width: 44px;
+    height: 44px;
+
+    top: 8px;
+    right: 8px;
+
+    opacity: 0.18;
+  }
+
+
+  /* PRODUCT BADGES */
+
+  .badge-soon,
+  .badge-available {
+    top: 9px;
+    left: 9px;
+
+    padding: 4px 7px;
+
+    font-size: 0.48rem;
+  }
+
+
+  /* PRODUCT IMAGE */
+
+  .product-bottle-wrap {
+    height: 145px;
+    margin: 5px 0 8px;
+  }
+
+  .product-bottle {
+    max-width: 90px;
+    max-height: 135px;
+  }
+
+
+  /* PRODUCT TEXT */
+
+  .product-card .ingredient {
+    font-size: 0.48rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .ingredient-stem {
+    width: 22px;
+    height: 2px;
+    margin-bottom: 9px;
+  }
+
+  .product-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .product-info > span:not(.ingredient):not(.ingredient-stem) {
+    font-size: 0.68rem;
+    line-height: 1.45;
+
+    max-width: 25ch;
+
+    margin: 7px auto 10px;
+  }
+
+
+  /* PRODUCT META */
+
+  .product-meta {
+    gap: 5px;
+    padding-top: 10px;
+    font-size: 0.55rem;
+  }
+
+
+  /* ADD TO CART */
+
+  .add-to-cart-row {
+    flex-direction: column;
+    gap: 7px;
+
+    margin-top: 10px;
+  }
+
+  .qty-stepper {
+    align-self: center;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+  }
+
+
+  /* ROUTINE STEPS */
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CART */
+
+  .cart-item {
+    padding: 12px;
+  }
+
+  .cart-item-controls {
+    gap: 9px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .wrap {
+    width: min(100% - 22px, 360px);
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-link {
+    font-size: 0.53rem;
+  }
+
+  .product-grid {
+    gap: 9px;
+  }
+
+  .product-card {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .product-bottle-wrap {
+    height: 130px;
+  }
+
+  .product-bottle {
+    max-height: 120px;
+    max-width: 78px;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+  }
+
+  .product-info > span:not(.ingredient):not(.ingredient-stem) {
+    font-size: 0.63rem;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cart-link {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cart-link img {
+    width: 41px !important;
+    height: 41px !important;
+  }
+}
+
+/* =========================================================
+   EMAIL / WAITLIST SIGNUP
+   ========================================================= */
+
+input[type="email"] {
+  width: 100%;
+  min-height: 46px;
+
+  padding: 11px 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--brown);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input[type="email"]::placeholder {
+  color: var(--brown-muted);
+  opacity: 0.75;
+}
+
+input[type="email"]:focus {
+  border-color: rgba(115, 123, 99, 0.55);
+
+  background: #fff;
+
+  box-shadow:
+    0 0 0 3px rgba(115, 123, 99, 0.08);
+}
+
+
+/* Signup / waitlist button */
+
+button[type="submit"] {
+  min-height: 46px;
+
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--sage);
+  color: #FDFBFF;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--brown);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 18px rgba(122, 40, 80, 0.12);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+
+/* Signup form layout */
+
+form:has(input[type="email"]) {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+}
+
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+  form:has(input[type="email"]) {
+    flex-direction: column;
+    gap: 9px;
+
+    width: 100%;
+  }
+
+  form:has(input[type="email"]) input[type="email"],
+  form:has(input[type="email"]) button[type="submit"] {
+    width: 100%;
+  }
+}
