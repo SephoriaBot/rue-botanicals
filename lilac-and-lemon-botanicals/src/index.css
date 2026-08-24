@@ -1,34 +1,40 @@
 :root {
-  /* Cream + gold + nasturtium (marigold-orange, coral, leaf green) */
-  --cream: #FFF8EC;
-  --cream-deep: #FBE9CE;
-  --surface: #FFFDF9;
-  --surface-soft: #FFFAF1;
+  /* Rue Botanicals — soft French botanical */
+  --cream: #FBF6EC;
+  --cream-deep: #F1E6D5;
+  --surface: #FFFCF7;
+  --surface-soft: #F8F2E8;
 
-  --brown: #4A2E18;
-  --brown-soft: #8C6A4A;
-  --brown-muted: #C9A876;
+  /* Warm French apothecary brown */
+  --brown: #4B3A2D;
+  --brown-soft: #8A7563;
+  --brown-muted: #B8A493;
 
-  --sage: #6B8E3D;
-  --sage-soft: #E3ECD1;
+  /* Botanical sage */
+  --sage: #7C8B68;
+  --sage-soft: #E4E8DA;
 
-  --rose: #E4572E;
-  --rose-soft: #FBD9C7;
+  /* Dusty rose — feminine but not sugary */
+  --rose: #C98F86;
+  --rose-soft: #F1DDD7;
 
-  --gold: #E0932A;
-  --gold-soft: #F5DFA8;
+  /* Antique botanical gold */
+  --gold: #C6A15B;
+  --gold-soft: #E9D9B4;
 
-  --line: rgba(140, 90, 40, 0.13);
-  --line-soft: rgba(140, 90, 40, 0.07);
+  /* Fine, warm borders */
+  --line: rgba(75, 58, 45, 0.11);
+  --line-soft: rgba(75, 58, 45, 0.055);
 
   --radius: 22px;
   --radius-sm: 14px;
 
+  /* Soft, diffused shadows */
   --shadow-soft:
-    0 8px 30px rgba(90, 55, 20, 0.06);
+    0 8px 30px rgba(75, 58, 45, 0.055);
 
   --shadow-hover:
-    0 18px 45px rgba(90, 55, 20, 0.12);
+    0 18px 45px rgba(75, 58, 45, 0.10);
 }
 
 
