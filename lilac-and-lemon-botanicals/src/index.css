@@ -1,35 +1,36 @@
 :root {
-  /* Pink + pearlescent white + gold, no blue */
-  --cream: #FDF3F8;
-  --cream-deep: #F9E7F0;
-  --surface: #FFFFFF;
-  --surface-soft: #FFFAFC;
+  /* Cream + gold + nasturtium (marigold-orange, coral, leaf green) */
+  --cream: #FFF8EC;
+  --cream-deep: #FBE9CE;
+  --surface: #FFFDF9;
+  --surface-soft: #FFFAF1;
 
-  --brown: #8A4468;
-  --brown-soft: #B07C97;
-  --brown-muted: #C7A3B5;
+  --brown: #4A2E18;
+  --brown-soft: #8C6A4A;
+  --brown-muted: #C9A876;
 
-  --sage: #C89B3C;
-  --sage-soft: #F3E6BB;
+  --sage: #6B8E3D;
+  --sage-soft: #E3ECD1;
 
-  --rose: #F6E28A;
-  --rose-soft: #FBF3D0;
+  --rose: #E4572E;
+  --rose-soft: #FBD9C7;
 
-  --gold: #D4AF37;
-  --gold-soft: #F2E4B0;
+  --gold: #E0932A;
+  --gold-soft: #F5DFA8;
 
-  --line: rgba(122, 40, 80, 0.1);
-  --line-soft: rgba(122, 40, 80, 0.06);
+  --line: rgba(140, 90, 40, 0.13);
+  --line-soft: rgba(140, 90, 40, 0.07);
 
   --radius: 22px;
   --radius-sm: 14px;
 
   --shadow-soft:
-    0 8px 30px rgba(122, 40, 80, 0.05);
+    0 8px 30px rgba(90, 55, 20, 0.06);
 
   --shadow-hover:
-    0 18px 45px rgba(122, 40, 80, 0.1);
+    0 18px 45px rgba(90, 55, 20, 0.12);
 }
+
 
 
 /* =========================================================
