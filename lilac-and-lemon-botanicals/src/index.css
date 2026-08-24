@@ -1734,3 +1734,239 @@ form:has(input[type="email"]) {
     width: 100%;
   }
 }
+
+/* =========================================================
+   RUE BOTANICALS — SOFT FRENCH PALETTE
+   Safe override: preserves existing layout/components
+   ========================================================= */
+
+:root {
+  /* Warm French ivory */
+  --cream: #FFF8F2;
+  --surface: #FFFDFC;
+
+  /* Soft blush */
+  --lavender: #EBCBC5;
+  --lavender-deep: #C9827D;
+
+  /* Warm French brown */
+  --plum: #49372E;
+  --plum-soft: #806A5D;
+
+  /* Soft blush / champagne */
+  --butter: #F0D6D0;
+  --butter-deep: #B96F69;
+
+  /* Botanical sage */
+  --sage: #829071;
+  --sage-soft: #E5E9DE;
+
+  /* Borders */
+  --line: rgba(73, 55, 46, 0.11);
+}
+
+
+/* ---------- typography accents ---------- */
+
+.eyebrow,
+.label {
+  color: var(--butter-deep);
+}
+
+.wordmark em {
+  color: var(--butter-deep);
+}
+
+header.hero h1 .accent {
+  color: var(--butter-deep);
+}
+
+.story-mark {
+  color: var(--butter-deep);
+}
+
+
+/* ---------- navigation ---------- */
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--lavender-deep);
+}
+
+.nav-link.active {
+  border-bottom-color: var(--lavender-deep);
+}
+
+.status-pill {
+  color: var(--lavender-deep);
+  border-color: var(--lavender);
+}
+
+.status-pill::before {
+  background: var(--butter-deep);
+}
+
+.cart-link:hover,
+.cart-link.active {
+  color: var(--lavender-deep);
+  background: rgba(235, 203, 197, 0.24);
+}
+
+.cart-count {
+  background: var(--butter-deep);
+}
+
+
+/* ---------- hero ---------- */
+
+.hero-link:hover {
+  border-color: var(--lavender-deep);
+  background: rgba(235, 203, 197, 0.22);
+}
+
+.divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lavender),
+    transparent
+  );
+}
+
+
+/* ---------- routine ---------- */
+
+.progress-bar-inner {
+  background: linear-gradient(
+    90deg,
+    var(--lavender-deep),
+    var(--butter)
+  );
+}
+
+.progress-label strong {
+  color: var(--lavender-deep);
+}
+
+.step:hover {
+  border-color: var(--lavender-deep);
+}
+
+.step-num {
+  color: var(--butter-deep);
+}
+
+.step-ritual {
+  color: var(--lavender-deep);
+}
+
+.step-check {
+  border-color: var(--lavender-deep);
+}
+
+.step.done {
+  border-color: var(--lavender-deep);
+}
+
+.step.done .step-check {
+  background: var(--lavender-deep);
+}
+
+.step.done .step-ritual {
+  text-decoration-color: var(--lavender);
+}
+
+
+/* ---------- products ---------- */
+
+.product-card:hover {
+  border-color: var(--lavender-deep);
+}
+
+.product-meta .dot {
+  color: var(--lavender);
+}
+
+.badge-soon {
+  color: var(--butter-deep);
+}
+
+.badge-available {
+  background: var(--lavender-deep);
+}
+
+.qty-stepper button:hover {
+  background: rgba(235, 203, 197, 0.28);
+}
+
+.add-to-cart-btn {
+  background: var(--lavender-deep);
+}
+
+.add-to-cart-btn:hover {
+  background: var(--plum);
+}
+
+.add-to-cart-btn.added {
+  background: var(--butter-deep);
+}
+
+
+/* ---------- cart ---------- */
+
+.cart-item-remove:hover {
+  color: var(--butter-deep);
+}
+
+.checkout-btn {
+  background: var(--lavender-deep);
+}
+
+.checkout-btn:hover {
+  background: var(--plum);
+}
+
+
+/* ---------- checkout ---------- */
+
+.order-form-field input:focus,
+.order-form-field textarea:focus {
+  border-color: var(--lavender-deep);
+}
+
+.order-confirmed .checkmark {
+  background: var(--lavender-deep);
+}
+
+
+/* =========================================================
+   FOLLOW / EMAIL SECTION
+
+   This is where we intentionally introduce more pink.
+   ========================================================= */
+
+section.follow {
+  background: var(--lavender-deep);
+}
+
+section.follow .label {
+  color: var(--butter);
+}
+
+.follow-form button {
+  background: var(--butter);
+  color: var(--plum);
+}
+
+.follow-form button:hover {
+  background: var(--cream);
+}
+
+
+/* ---------- focus ---------- */
+
+.step:focus-visible,
+.follow-form input:focus-visible,
+.follow-form button:focus-visible {
+  outline-color: var(--lavender-deep);
+}
