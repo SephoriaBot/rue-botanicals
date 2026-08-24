@@ -1,40 +1,45 @@
 :root {
-  /* Rue Botanicals — soft French botanical */
-  --cream: #FBF6EC;
-  --cream-deep: #F1E6D5;
-  --surface: #FFFCF7;
-  --surface-soft: #F8F2E8;
+  /* Rue Botanicals — French botanical / soft feminine */
 
-  /* Warm French apothecary brown */
-  --brown: #4B3A2D;
-  --brown-soft: #8A7563;
-  --brown-muted: #B8A493;
+  /* Ivory + warm parchment */
+  --cream: #FBF6EE;
+  --cream-deep: #F2E5D5;
+  --surface: #FFFCF8;
+  --surface-soft: #F9F1E7;
+
+  /* Warm espresso / French ink */
+  --brown: #4A382D;
+  --brown-soft: #806A5A;
+  --brown-muted: #B9A394;
 
   /* Botanical sage */
   --sage: #7C8B68;
-  --sage-soft: #E4E8DA;
+  --sage-soft: #E4E9DA;
 
-  /* Dusty rose — feminine but not sugary */
-  --rose: #C98F86;
-  --rose-soft: #F1DDD7;
+  /* Blush pink */
+  --pink: #E8C2BC;
+  --pink-soft: #F6E5E1;
 
-  /* Antique botanical gold */
-  --gold: #C6A15B;
-  --gold-soft: #E9D9B4;
+  /* Dusty French rose */
+  --rose: #C9827D;
+  --rose-soft: #EED2CD;
 
-  /* Fine, warm borders */
-  --line: rgba(75, 58, 45, 0.11);
-  --line-soft: rgba(75, 58, 45, 0.055);
+  /* Antique champagne gold */
+  --gold: #C9A45C;
+  --gold-soft: #E9D9B5;
+
+  /* Very subtle warm borders */
+  --line: rgba(74, 56, 45, 0.11);
+  --line-soft: rgba(74, 56, 45, 0.055);
 
   --radius: 22px;
   --radius-sm: 14px;
 
-  /* Soft, diffused shadows */
   --shadow-soft:
-    0 8px 30px rgba(75, 58, 45, 0.055);
+    0 8px 30px rgba(74, 56, 45, 0.055);
 
   --shadow-hover:
-    0 18px 45px rgba(75, 58, 45, 0.10);
+    0 18px 45px rgba(74, 56, 45, 0.10);
 }
 
 
