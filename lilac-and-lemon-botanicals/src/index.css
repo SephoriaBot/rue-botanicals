@@ -1,45 +1,45 @@
 :root {
-  /* Rue Botanicals — French botanical / soft feminine */
+  /* Rue Botanicals — dainty French pink & white */
 
-  /* Ivory + warm parchment */
-  --cream: #FBF6EE;
-  --cream-deep: #F2E5D5;
-  --surface: #FFFCF8;
-  --surface-soft: #F9F1E7;
+  /* Whisper-pink ivory base */
+  --cream: #FDF6F9;
+  --cream-deep: #FBEAF0;
+  --surface: #FFFFFF;
+  --surface-soft: #FDF0F5;
 
-  /* Warm espresso / French ink */
-  --brown: #4A382D;
-  --brown-soft: #806A5A;
-  --brown-muted: #B9A394;
+  /* Soft plum-brown ink (still readable, but warmer than espresso) */
+  --brown: #4F3A44;
+  --brown-soft: #8C7480;
+  --brown-muted: #C7AFB9;
 
-  /* Botanical sage */
-  --sage: #7C8B68;
-  --sage-soft: #E4E9DA;
+  /* Dusty rose — replaces the old green sage as the primary accent */
+  --sage: #E39CB4;
+  --sage-soft: #FBE4EC;
 
   /* Blush pink */
-  --pink: #E8C2BC;
-  --pink-soft: #F6E5E1;
+  --pink: #F4C9D6;
+  --pink-soft: #FDF0F4;
 
   /* Dusty French rose */
-  --rose: #C9827D;
-  --rose-soft: #EED2CD;
+  --rose: #DE93A8;
+  --rose-soft: #F6DCE4;
 
-  /* Antique champagne gold */
-  --gold: #C9A45C;
-  --gold-soft: #E9D9B5;
+  /* Soft champagne gold, used sparingly for contrast */
+  --gold: #D8B989;
+  --gold-soft: #F0E2C8;
 
-  /* Very subtle warm borders */
-  --line: rgba(74, 56, 45, 0.11);
-  --line-soft: rgba(74, 56, 45, 0.055);
+  /* Very subtle warm-pink borders */
+  --line: rgba(79, 58, 68, 0.10);
+  --line-soft: rgba(79, 58, 68, 0.05);
 
   --radius: 22px;
   --radius-sm: 14px;
 
   --shadow-soft:
-    0 8px 30px rgba(74, 56, 45, 0.055);
+    0 8px 30px rgba(222, 147, 168, 0.10);
 
   --shadow-hover:
-    0 18px 45px rgba(74, 56, 45, 0.10);
+    0 18px 45px rgba(222, 147, 168, 0.16);
 }
 
 
@@ -131,7 +131,7 @@ h3 {
 .art-frame {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 253, 248, 0.55);
+  background: rgba(255, 255, 255, 0.6);
 
   display: flex;
   align-items: center;
@@ -172,7 +172,7 @@ nav {
   top: 0;
   z-index: 50;
 
-  background: rgba(247, 242, 232, 0.88);
+  background: rgba(253, 246, 249, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 
@@ -206,7 +206,7 @@ nav .wrap {
 
 .wordmark em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--rose);
 }
 
 .nav-links {
@@ -246,7 +246,7 @@ nav .wrap {
   width: 100%;
   height: 1px;
 
-  background: var(--gold);
+  background: var(--rose);
 
   transform: scaleX(0);
   transform-origin: center;
@@ -285,10 +285,10 @@ nav .wrap {
 
   padding: 6px 11px;
 
-  border: 1px solid var(--line);
+  border: 1px solid var(--pink);
   border-radius: 999px;
 
-  color: var(--sage);
+  color: var(--rose);
 
   font-family: 'Jost', sans-serif;
   font-size: 0.61rem;
@@ -304,7 +304,7 @@ nav .wrap {
   height: 5px;
 
   border-radius: 50%;
-  background: var(--sage);
+  background: var(--rose);
 
   animation: pulse 2.8s ease-in-out infinite;
 }
@@ -347,8 +347,8 @@ nav .wrap {
 
 .cart-link:hover,
 .cart-link.active {
-  color: var(--brown);
-  background: rgba(115, 123, 99, 0.08);
+  color: var(--rose);
+  background: rgba(228, 156, 180, 0.10);
 }
 
 .cart-link img {
@@ -371,7 +371,7 @@ nav .wrap {
   align-items: center;
   justify-content: center;
 
-  background: var(--gold);
+  background: var(--rose);
   color: white;
 
   font-family: 'Jost', sans-serif;
@@ -410,7 +410,7 @@ header.hero h1 {
 header.hero h1 .accent {
   font-style: italic;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--rose);
 }
 
 .tagline {
@@ -463,7 +463,7 @@ header.hero h1 .accent {
 
 .hero-link:hover {
   background: var(--surface);
-  border-color: rgba(122, 40, 80, 0.2);
+  border-color: var(--rose);
   transform: translateY(-1px);
 }
 
@@ -477,7 +477,7 @@ header.hero h1 .accent {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--line),
+    var(--pink),
     transparent
   );
 }
@@ -520,7 +520,7 @@ section.story p + p {
 .story-mark {
   font-style: italic;
   font-family: 'Fraunces', serif;
-  color: var(--gold);
+  color: var(--rose);
 }
 
 
@@ -531,7 +531,7 @@ section.story p + p {
 section.routine {
   padding: 100px 0;
 
-  background: var(--surface);
+  background: var(--surface-soft);
 
   border-top: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
@@ -570,7 +570,7 @@ section.routine {
 
   background: linear-gradient(
     90deg,
-    var(--sage),
+    var(--rose),
     var(--gold)
   );
 
@@ -594,7 +594,7 @@ section.routine {
 }
 
 .progress-label strong {
-  color: var(--sage);
+  color: var(--rose);
 }
 
 .steps {
@@ -604,7 +604,7 @@ section.routine {
 }
 
 .step {
-  background: var(--cream);
+  background: var(--surface);
 
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -621,7 +621,7 @@ section.routine {
 }
 
 .step:hover {
-  border-color: rgba(115, 123, 99, 0.35);
+  border-color: var(--rose);
   transform: translateY(-2px);
   box-shadow: var(--shadow-soft);
 }
@@ -637,7 +637,7 @@ section.routine {
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-size: 1rem;
-  color: var(--sage);
+  color: var(--rose);
   margin: 8px 0 6px;
 }
 
@@ -653,7 +653,7 @@ section.routine {
   width: 20px;
   height: 20px;
 
-  border: 1.5px solid var(--sage);
+  border: 1.5px solid var(--rose);
   border-radius: 50%;
 
   display: flex;
@@ -671,12 +671,12 @@ section.routine {
 }
 
 .step.done {
-  border-color: var(--sage);
-  background: #F4F3EA;
+  border-color: var(--rose);
+  background: var(--pink-soft);
 }
 
 .step.done .step-check {
-  background: var(--sage);
+  background: var(--rose);
 }
 
 .step.done .step-check svg {
@@ -685,7 +685,7 @@ section.routine {
 
 .step.done .step-ritual {
   text-decoration: line-through;
-  text-decoration-color: var(--sage-soft);
+  text-decoration-color: var(--pink);
 }
 
 
@@ -760,7 +760,7 @@ section.products {
   background:
     radial-gradient(
       circle at 50% 22%,
-      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.85),
       transparent 42%
     ),
     var(--surface);
@@ -779,7 +779,7 @@ section.products {
 .product-card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(122, 40, 80, 0.13);
+  border-color: var(--rose);
 
   box-shadow: var(--shadow-hover);
 }
@@ -834,13 +834,13 @@ section.products {
   margin: 8px 0 14px;
 
   /*
-    Very subtle warm botanical "stage".
+    Very subtle pink botanical "stage".
     Keeps the illustration from floating against blank space.
   */
   background:
     radial-gradient(
       ellipse at center bottom,
-      rgba(246, 226, 138, 0.35),
+      rgba(244, 201, 214, 0.45),
       transparent 62%
     );
 }
@@ -855,7 +855,7 @@ section.products {
   object-fit: contain;
 
   filter:
-    drop-shadow(0 12px 12px rgba(122, 40, 80, 0.13));
+    drop-shadow(0 12px 12px rgba(222, 147, 168, 0.18));
 
   transition:
     transform 0.5s cubic-bezier(.2,.7,.2,1),
@@ -866,7 +866,7 @@ section.products {
   transform: translateY(-5px) scale(1.025);
 
   filter:
-    drop-shadow(0 16px 16px rgba(122, 40, 80, 0.16));
+    drop-shadow(0 16px 16px rgba(222, 147, 168, 0.22));
 }
 
 
@@ -889,7 +889,7 @@ section.products {
 
   margin-bottom: 8px;
 
-  color: var(--sage);
+  color: var(--rose);
 
   font-family: 'Jost', sans-serif;
   font-size: 0.59rem;
@@ -912,6 +912,8 @@ section.products {
   border-radius: 999px;
 
   opacity: 0.85;
+
+  background: var(--gold);
 }
 
 .product-card h3 {
@@ -977,8 +979,8 @@ section.products {
 }
 
 .product-meta .dot {
-  color: var(--brown-muted);
-  opacity: 0.5;
+  color: var(--pink);
+  opacity: 0.8;
 }
 
 .product-meta .price {
@@ -1015,17 +1017,17 @@ section.products {
 }
 
 .badge-soon {
-  background: rgba(247, 242, 232, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--gold);
 
-  border: 1px solid rgba(212, 175, 55, 0.28);
+  border: 1px solid var(--gold-soft);
 }
 
 .badge-available {
-  background: var(--sage);
-  color: #FDFBFF;
+  background: var(--rose);
+  color: #FFFFFF;
 
-  border: 1px solid var(--sage);
+  border: 1px solid var(--rose);
 }
 
 
@@ -1053,7 +1055,7 @@ section.products {
 
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .qty-stepper button {
@@ -1073,7 +1075,7 @@ section.products {
 }
 
 .qty-stepper button:hover {
-  background: var(--cream-deep);
+  background: var(--pink-soft);
 }
 
 .qty-stepper span {
@@ -1092,8 +1094,8 @@ section.products {
 
   padding: 7px 14px;
 
-  background: var(--sage);
-  color: #FDFBFF;
+  background: var(--rose);
+  color: #FFFFFF;
 
   border: none;
   border-radius: 999px;
@@ -1186,7 +1188,7 @@ section.checkout-section {
 }
 
 .cart-empty a:hover {
-  border-color: rgba(122, 40, 80, 0.2);
+  border-color: var(--rose);
   background: var(--surface);
 }
 
@@ -1272,7 +1274,130 @@ section.checkout-section {
 }
 
 .cart-item-remove:hover {
-  color: var(--gold);
+  color: var(--rose);
+}
+
+.checkout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 48px;
+
+  padding: 12px 24px;
+
+  background: var(--rose);
+  color: #FFFFFF;
+
+  border: none;
+  border-radius: 999px;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: var(--brown);
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CHECKOUT FORM
+   ========================================================= */
+
+.order-form-field input,
+.order-form-field textarea {
+  width: 100%;
+
+  padding: 11px 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+
+  color: var(--brown);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-form-field input:focus,
+.order-form-field textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px var(--pink-soft);
+}
+
+.order-confirmed .checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  background: var(--rose);
+  color: #FFFFFF;
+
+  margin: 0 auto 20px;
+}
+
+
+/* =========================================================
+   FOLLOW / EMAIL SECTION
+   Intentionally the most saturated pink moment on the page.
+   ========================================================= */
+
+section.follow {
+  padding: 90px 0;
+  text-align: center;
+
+  background: var(--rose);
+}
+
+section.follow .label {
+  color: var(--gold-soft);
+}
+
+section.follow h2,
+section.follow p {
+  color: #FFFFFF;
+}
+
+.follow-form {
+  max-width: 480px;
+  margin: 24px auto 0;
+}
+
+.follow-form input {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.follow-form button {
+  background: #FFFFFF;
+  color: var(--rose);
+}
+
+.follow-form button:hover {
+  background: var(--cream);
 }
 
 
@@ -1591,7 +1716,7 @@ section.checkout-section {
    ========================================================= */
 
 :focus-visible {
-  outline: 2px solid var(--sage);
+  outline: 2px solid var(--rose);
   outline-offset: 3px;
 }
 
@@ -1606,17 +1731,6 @@ section.checkout-section {
   }
 }
 
-@media (max-width: 640px) {
-  .cart-link {
-    width: 46px;
-    height: 46px;
-  }
-
-  .cart-link img {
-    width: 41px !important;
-    height: 41px !important;
-  }
-}
 
 /* =========================================================
    EMAIL / WAITLIST SIGNUP
@@ -1653,12 +1767,12 @@ input[type="email"]::placeholder {
 }
 
 input[type="email"]:focus {
-  border-color: rgba(115, 123, 99, 0.55);
+  border-color: var(--rose);
 
   background: #fff;
 
   box-shadow:
-    0 0 0 3px rgba(115, 123, 99, 0.08);
+    0 0 0 3px var(--pink-soft);
 }
 
 
@@ -1672,8 +1786,8 @@ button[type="submit"] {
   border: none;
   border-radius: 999px;
 
-  background: var(--sage);
-  color: #FDFBFF;
+  background: var(--rose);
+  color: #FFFFFF;
 
   font-family: 'Jost', sans-serif;
   font-size: 0.64rem;
@@ -1696,7 +1810,7 @@ button[type="submit"]:hover {
   transform: translateY(-1px);
 
   box-shadow:
-    0 6px 18px rgba(122, 40, 80, 0.12);
+    0 6px 18px rgba(222, 147, 168, 0.22);
 }
 
 button[type="submit"]:active {
@@ -1733,240 +1847,14 @@ form:has(input[type="email"]) {
   form:has(input[type="email"]) button[type="submit"] {
     width: 100%;
   }
-}
 
-/* =========================================================
-   RUE BOTANICALS — SOFT FRENCH PALETTE
-   Safe override: preserves existing layout/components
-   ========================================================= */
-
-:root {
-  /* Warm French ivory */
-  --cream: #FFF8F2;
-  --surface: #FFFDFC;
-
-  /* Soft blush */
-  --lavender: #EBCBC5;
-  --lavender-deep: #C9827D;
-
-  /* Warm French brown */
-  --plum: #49372E;
-  --plum-soft: #806A5D;
-
-  /* Soft blush / champagne */
-  --butter: #F0D6D0;
-  --butter-deep: #B96F69;
-
-  /* Botanical sage */
-  --sage: #829071;
-  --sage-soft: #E5E9DE;
-
-  /* Borders */
-  --line: rgba(73, 55, 46, 0.11);
-}
-
-
-/* ---------- typography accents ---------- */
-
-.eyebrow,
-.label {
-  color: var(--butter-deep);
-}
-
-.wordmark em {
-  color: var(--butter-deep);
-}
-
-header.hero h1 .accent {
-  color: var(--butter-deep);
-}
-
-.story-mark {
-  color: var(--butter-deep);
-}
-
-
-/* ---------- navigation ---------- */
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--lavender-deep);
-}
-
-.nav-link.active {
-  border-bottom-color: var(--lavender-deep);
-}
-
-.status-pill {
-  color: var(--lavender-deep);
-  border-color: var(--lavender);
-}
-
-.status-pill::before {
-  background: var(--butter-deep);
-}
-
-.cart-link:hover,
-.cart-link.active {
-  color: var(--lavender-deep);
-  background: rgba(235, 203, 197, 0.24);
-}
-
-.cart-count {
-  background: var(--butter-deep);
-}
-
-
-/* ---------- hero ---------- */
-
-.hero-link:hover {
-  border-color: var(--lavender-deep);
-  background: rgba(235, 203, 197, 0.22);
-}
-
-.divider {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--lavender),
-    transparent
-  );
-}
-
-
-/* ---------- routine ---------- */
-
-.progress-bar-inner {
-  background: linear-gradient(
-    90deg,
-    var(--lavender-deep),
-    var(--butter)
-  );
-}
-
-.progress-label strong {
-  color: var(--lavender-deep);
-}
-
-.step:hover {
-  border-color: var(--lavender-deep);
-}
-
-.step-num {
-  color: var(--butter-deep);
-}
-
-.step-ritual {
-  color: var(--lavender-deep);
-}
-
-.step-check {
-  border-color: var(--lavender-deep);
-}
-
-.step.done {
-  border-color: var(--lavender-deep);
-}
-
-.step.done .step-check {
-  background: var(--lavender-deep);
-}
-
-.step.done .step-ritual {
-  text-decoration-color: var(--lavender);
-}
-
-
-/* ---------- products ---------- */
-
-.product-card:hover {
-  border-color: var(--lavender-deep);
-}
-
-.product-meta .dot {
-  color: var(--lavender);
-}
-
-.badge-soon {
-  color: var(--butter-deep);
-}
-
-.badge-available {
-  background: var(--lavender-deep);
-}
-
-.qty-stepper button:hover {
-  background: rgba(235, 203, 197, 0.28);
-}
-
-.add-to-cart-btn {
-  background: var(--lavender-deep);
-}
-
-.add-to-cart-btn:hover {
-  background: var(--plum);
-}
-
-.add-to-cart-btn.added {
-  background: var(--butter-deep);
-}
-
-
-/* ---------- cart ---------- */
-
-.cart-item-remove:hover {
-  color: var(--butter-deep);
-}
-
-.checkout-btn {
-  background: var(--lavender-deep);
-}
-
-.checkout-btn:hover {
-  background: var(--plum);
-}
-
-
-/* ---------- checkout ---------- */
-
-.order-form-field input:focus,
-.order-form-field textarea:focus {
-  border-color: var(--lavender-deep);
-}
-
-.order-confirmed .checkmark {
-  background: var(--lavender-deep);
-}
-
-
-/* =========================================================
-   FOLLOW / EMAIL SECTION
-
-   This is where we intentionally introduce more pink.
-   ========================================================= */
-
-section.follow {
-  background: var(--lavender-deep);
-}
-
-section.follow .label {
-  color: var(--butter);
-}
-
-.follow-form button {
-  background: var(--butter);
-  color: var(--plum);
-}
-
-.follow-form button:hover {
-  background: var(--cream);
-}
-
-
-/* ---------- focus ---------- */
-
-.step:focus-visible,
-.follow-form input:focus-visible,
-.follow-form button:focus-visible {
-  outline-color: var(--lavender-deep);
+  .cart-link {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cart-link img {
+    width: 41px !important;
+    height: 41px !important;
+  }
 }
