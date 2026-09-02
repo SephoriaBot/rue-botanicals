@@ -29,6 +29,7 @@ export default function ProductGrid() {
     106: '/illustrations/6_aube_moisturizer.png',
     107: '/illustrations/7_reveuse.png',
     108: '/illustrations/8_rosee.png',
+    109: '/illustrations/9_polie_exfoliator.png',
   };
 
   // Actual bottle/jar renders, layered on top of the backdrop
@@ -41,6 +42,7 @@ export default function ProductGrid() {
     106: '/illustrations/06_Aube.png',
     107: '/illustrations/07_Reveuse.png',
     108: '/illustrations/08_Rosee.png',
+    109: '/illustrations/09_Polie.png',
   };
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export default function ProductGrid() {
       .then((rows: Product[]) =>
         setProducts(
           rows
-            .filter((p) => p.id >= 101 && p.id <= 108)
+            .filter((p) => p.id >= 101 && p.id <= 109)
             .sort((a, b) => a.sort_order - b.sort_order)
         )
       )
