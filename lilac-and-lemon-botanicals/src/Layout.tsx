@@ -7,6 +7,7 @@ const navLinks = [
   { to: '/about', label: 'About the Brand' },
   { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Join Waitlist' },
+  { to: '/tester', label: 'Product Tester Portal' },
 ];
 
 export default function Layout() {
