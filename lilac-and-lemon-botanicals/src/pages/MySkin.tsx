@@ -226,12 +226,13 @@ export default function MySkin() {
     return {
       baseType,
       sensitive,
-      title: sensitive ? `Sensitive ${baseType}` : baseType,
-
+     title: sensitive ? 'Sensitive ' + baseType : baseType,
+     
       description: sensitive
-        ? `${profile.description} Your answers also suggest that your skin is more reactive, so your routine should stay especially gentle.`
-        : profile.description,
-
+  ? profile.description +
+    ' Your answers also suggest that your skin is more reactive, so your routine should stay especially gentle.'
+  : profile.description,
+  
       routine: profile.routine.map((item) =>
         sensitive && item.title === 'Polish'
           ? {
@@ -395,7 +396,7 @@ export default function MySkin() {
 
         <section
           className="my-skin-card"
-          aria-label={`Question ${step + 1} of ${questions.length}`}
+          aria-label={'Question ' + (step + 1) + ' of ' + questions.length}
         >
 
           <div className="my-skin-progress">
@@ -406,7 +407,7 @@ export default function MySkin() {
             <div className="my-skin-progress-track">
               <div
                 style={{
-                  width: `${((step + 1) / questions.length) * 100}%`,
+                  width: ((step + 1) / questions.length) * 100 + '%',
                 }}
               />
             </div>
