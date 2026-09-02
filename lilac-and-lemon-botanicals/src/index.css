@@ -273,6 +273,13 @@ nav .wrap {
   color: var(--brown);
 }
 
+.nav-link-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
 .nav-right {
   display: flex;
   align-items: center;

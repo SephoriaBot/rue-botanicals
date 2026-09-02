@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useUser } from '@clerk/react-router';
 
 const stats = [
   { label: 'Testing day', value: 'Day 1', detail: 'of 28' },
@@ -29,11 +30,21 @@ const tasks = [
 ];
 
 export default function TesterDashboard() {
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  if (!isLoaded) {
+    return null;
+  }
+
+  if (!isSignedIn) {
+    return <Navigate to="/tester/login" replace />;
+  }
+
   return (
     <main className="tester-page">
       <section className="tester-hero wrap">
         <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
-        <h1>Welcome to your<br />testing journal.</h1>
+        <h1>Welcome{user?.firstName ? `, ${user.firstName}` : ''}<br />to your testing journal.</h1>
         <p>
           Thank you for helping us test and improve Rue Botanicals.
           Everything you record here helps us understand how our formulas

@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { SignedIn, SignedOut, useClerk } from '@clerk/react-router';
 import { useCart } from './CartContext';
 
 const navLinks = [
@@ -8,11 +9,16 @@ const navLinks = [
   { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Join Waitlist' },
   { to: '/tester', label: 'Product Tester Portal' },
-  { to: '/tester/login', label: 'Tester Login' },
 ];
 
 export default function Layout() {
   const { totalItems } = useCart();
+  const { signOut } = useClerk();
+  const navigate = useNavigate();
+
+  function handleSignOut() {
+    signOut(() => navigate('/tester/login'));
+  }
 
   return (
     <>
@@ -29,6 +35,21 @@ export default function Layout() {
                 {link.label}
               </NavLink>
             ))}
+
+            <SignedOut>
+              <NavLink
+                to="/tester/login"
+                className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+              >
+                Tester Login
+              </NavLink>
+            </SignedOut>
+
+            <SignedIn>
+              <button type="button" className="nav-link nav-link-button" onClick={handleSignOut}>
+                Log Out
+              </button>
+            </SignedIn>
           </div>
           <div className="nav-right">
            <NavLink
