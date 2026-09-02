@@ -1,0 +1,312 @@
+```css
+/* Rue Botanicals — My Skin */
+
+.my-skin-page {
+  padding: 72px 0 96px;
+}
+
+.my-skin-assessment {
+  max-width: 860px;
+}
+
+.my-skin-intro,
+.my-skin-result-intro {
+  max-width: 720px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.my-skin-intro h1,
+.my-skin-result-intro h1 {
+  margin: 10px 0 16px;
+  font-size: clamp(2.35rem, 5vw, 4.2rem);
+  line-height: 1.04;
+}
+
+.my-skin-intro p,
+.my-skin-result-intro p {
+  color: var(--brown-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.my-skin-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.my-skin-progress {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 44px;
+  color: var(--brown-muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.my-skin-progress-track {
+  height: 3px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--gold-soft);
+}
+
+.my-skin-progress-track div {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gold);
+  transition: width 240ms ease;
+}
+
+.my-skin-question {
+  margin-bottom: 28px;
+}
+
+.my-skin-question h2 {
+  max-width: 680px;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.my-skin-hint {
+  margin-top: 10px;
+  color: var(--brown-soft);
+  font-size: 0.9rem;
+}
+
+.my-skin-options {
+  display: grid;
+  gap: 12px;
+}
+
+.my-skin-option {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 17px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--brown);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.my-skin-option:hover {
+  transform: translateY(-1px);
+  border-color: rgba(201, 166, 107, 0.55);
+  box-shadow: var(--shadow-soft);
+}
+
+.my-skin-option.selected {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.my-skin-option-mark {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--brown);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.my-skin-option strong {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.my-skin-option small {
+  display: block;
+  margin-top: 3px;
+  color: var(--brown-soft);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.my-skin-navigation,
+.my-skin-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.my-skin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--brown);
+  color: var(--surface);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.my-skin-button:hover {
+  transform: translateY(-1px);
+}
+
+.my-skin-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.my-skin-button.secondary {
+  background: transparent;
+  color: var(--brown);
+  border-color: var(--line);
+}
+
+.my-skin-footnote {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--brown-muted);
+  font-size: 0.72rem;
+}
+
+.my-skin-result-intro {
+  margin-bottom: 64px;
+}
+
+.my-skin-section {
+  margin-top: 58px;
+}
+
+.my-skin-section-heading {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+.my-skin-section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+}
+
+.my-skin-section-heading p {
+  color: var(--brown-soft);
+}
+
+.my-skin-routine {
+  display: grid;
+  gap: 12px;
+}
+
+.my-skin-routine-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 18px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.my-skin-routine-number {
+  color: var(--gold);
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+}
+
+.my-skin-routine-card h3 {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.my-skin-routine-card p {
+  color: var(--brown-soft);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.my-skin-notes {
+  display: grid;
+  gap: 10px;
+}
+
+.my-skin-notes p {
+  padding: 16px 18px;
+  border-left: 2px solid var(--gold);
+  background: var(--surface-soft);
+  color: var(--brown-soft);
+  font-size: 0.9rem;
+}
+
+.my-skin-disclaimer {
+  margin-top: 52px;
+  padding: 18px 20px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  color: var(--brown-muted);
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.my-skin-actions {
+  justify-content: center;
+  margin-top: 32px;
+}
+
+@media (max-width: 640px) {
+  .my-skin-page {
+    padding: 48px 0 72px;
+  }
+
+  .my-skin-card {
+    padding: 22px 18px;
+  }
+
+  .my-skin-progress {
+    margin-bottom: 32px;
+  }
+
+  .my-skin-navigation,
+  .my-skin-actions {
+    flex-direction: column-reverse;
+  }
+
+  .my-skin-button {
+    width: 100%;
+  }
+
+  .my-skin-routine-card {
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    padding: 18px;
+  }
+}
+```
