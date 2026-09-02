@@ -1864,3 +1864,80 @@ form:has(input[type="email"]) {
     height: 41px !important;
   }
 }
+
+/* ================= NAVIGATION — CLEAN + COLLISION SAFE ================= */
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Navigation links get all available space */
+.nav-links {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  gap: 8px 16px;
+}
+
+/* Links are allowed to shrink/wrap instead of pushing into Cart */
+.nav-link {
+  white-space: nowrap;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Cart NEVER gets squeezed */
+.nav-right {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.cart-link {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+
+/* ================= MEDIUM SCREENS ================= */
+
+@media (max-width: 1100px) {
+  .nav-inner {
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 6px 12px;
+  }
+
+  .nav-link {
+    font-size: 0.62rem;
+  }
+}
+
+
+/* ================= SMALL SCREENS ================= */
+
+@media (max-width: 850px) {
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    flex: 1 1 100%;
+    width: 100%;
+    order: 2;
+    justify-content: center;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+}
