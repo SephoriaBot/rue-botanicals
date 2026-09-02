@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/tester/login" element={<TesterLogin />} />
+        <Route path="/tester/login/*" element={<TesterLogin />} />
         <Route path="/tester" element={<TesterDashboard />} />
       </Route>
     </Routes>
