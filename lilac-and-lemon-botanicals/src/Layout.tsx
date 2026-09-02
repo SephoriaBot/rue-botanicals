@@ -3,6 +3,7 @@ import { useCart } from './CartContext';
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
+  { to: '/my-skin', label: 'My Skin Assessment' },
   { to: '/about', label: 'About the Brand' },
   { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Join Waitlist' },
