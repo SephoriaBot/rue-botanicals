@@ -195,9 +195,11 @@ function concernNotes(
     );
   }
 
- if (!notes.length) {
+if (!notes.length) {
   notes.push(
-    `Your ${baseType.toLowerCase()} routine is designed to support balance without overcomplicating your skincare.`
+    'Your ' +
+      baseType.toLowerCase() +
+      ' routine is designed to support balance without overcomplicating your skincare.'
   );
 }
 
