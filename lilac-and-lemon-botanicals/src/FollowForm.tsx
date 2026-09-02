@@ -41,7 +41,7 @@ export default function FollowForm() {
           </button>
         </form>
         <p className="follow-note">
-          {status === 'error' ? 'Something went wrong — try again in a moment.' : 'no spam, just news when there\'s actually news'}
+          {status === 'error' ? 'Something went wrong — try again in a moment.' : 'No spam, just deals'}
         </p>
       </div>
     </section>

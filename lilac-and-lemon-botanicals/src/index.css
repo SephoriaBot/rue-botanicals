@@ -1,47 +1,53 @@
 :root {
-  /* Rue Botanicals — dainty French pink & white */
 
-  /* Whisper-pink ivory base */
-  --cream: #FDF6F9;
-  --cream-deep: #FBEAF0;
-  --surface: #FFFFFF;
-  --surface-soft: #FDF0F5;
+  /* =========================================================
+     RUE BOTANICALS — French Apothecary / Parisian Rose
+     ========================================================= */
 
-  /* Soft plum-brown ink (still readable, but warmer than espresso) */
-  --brown: #4F3A44;
-  --brown-soft: #8C7480;
-  --brown-muted: #C7AFB9;
+  /* Warm French ivory — softer than pure white */
+  --cream: #FBF5F3;
+  --cream-deep: #F4E5E7;
 
-  /* Dusty rose — replaces the old green sage as the primary accent */
-  --sage: #E39CB4;
-  --sage-soft: #FBE4EC;
+  /* Porcelain */
+  --surface: #FFFCFB;
+  --surface-soft: #F9EFF1;
 
-  /* Blush pink */
-  --pink: #F4C9D6;
-  --pink-soft: #FDF0F4;
+  /* French plum-brown ink */
+  --brown: #4A3840;
+  --brown-soft: #806B73;
+  --brown-muted: #BDA9B0;
 
-  /* Dusty French rose */
-  --rose: #DE93A8;
-  --rose-soft: #F6DCE4;
+  /* Antique rose — primary botanical accent */
+  --sage: #C98B9D;
+  --sage-soft: #F1DCE2;
 
-  /* Soft champagne gold, used sparingly for contrast */
-  --gold: #D8B989;
-  --gold-soft: #F0E2C8;
+  /* Powder blush */
+  --pink: #EFC4CF;
+  --pink-soft: #FAEAEE;
 
-  /* Very subtle warm-pink borders */
-  --line: rgba(79, 58, 68, 0.10);
-  --line-soft: rgba(79, 58, 68, 0.05);
+  /* Deep dusty French rose */
+  --rose: #C97F94;
+  --rose-soft: #F2D5DC;
 
-  --radius: 22px;
-  --radius-sm: 14px;
+  /* Champagne / antique gold */
+  --gold: #C9A66B;
+  --gold-soft: #EDE0C8;
 
+  /* Delicate warm borders */
+  --line: rgba(74, 56, 64, 0.11);
+  --line-soft: rgba(74, 56, 64, 0.055);
+
+  /* Soft, elegant corners */
+  --radius: 20px;
+  --radius-sm: 12px;
+
+  /* Rosy porcelain shadows */
   --shadow-soft:
-    0 8px 30px rgba(222, 147, 168, 0.10);
+    0 8px 28px rgba(120, 76, 91, 0.09);
 
   --shadow-hover:
-    0 18px 45px rgba(222, 147, 168, 0.16);
+    0 16px 40px rgba(120, 76, 91, 0.15);
 }
-
 
 
 /* =========================================================

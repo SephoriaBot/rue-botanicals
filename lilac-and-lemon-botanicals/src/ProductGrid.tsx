@@ -92,10 +92,7 @@ export default function ProductGrid() {
           <h2>Inspired by our personal garden.</h2>
 
           <p>
-            Every formula begins with botanicals chosen for a reason — rose,
-            calendula, green tea, hibiscus, yarrow, and nasturtium, thoughtfully
-            paired with gentle, effective ingredients. Nothing extra, nothing
-            borrowed — just thoughtful formulas rooted in the garden.
+            Chosen with intention, paired with gentle, effective ingredients. Nothing extra, nothing borrowed — just formulas rooted in the garden.
           </p>
         </div>
 
