@@ -195,11 +195,11 @@ function concernNotes(
     );
   }
 
-  if (!notes.length) {
-    notes.push(
-      `Your ${baseType.toLowerCase()} routine is designed to support balance without overcomplicating your skincare.`
-    );
-  }
+ if (!notes.length) {
+  notes.push(
+    `Your ${baseType.toLowerCase()} routine is designed to support balance without overcomplicating your skincare.`
+  );
+}
 
   return notes;
 }
