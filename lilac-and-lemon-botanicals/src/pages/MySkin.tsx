@@ -1,4 +1,3 @@
-```tsx
 import { useMemo, useState } from 'react';
 import './my-skin.css';
 
@@ -755,4 +754,3 @@ export default function MySkin() {
     </main>
   );
 }
-```
