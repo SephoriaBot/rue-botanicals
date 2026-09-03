@@ -8,13 +8,7 @@ const stats = [
   { label: 'Photos', value: '0', detail: 'uploaded' },
 ];
 
-const tasks = [
-  {
-    title: 'Complete your first daily log',
-    description: 'Tell us how your skin feels today before you begin testing.',
-    to: '/tester/log',
-    action: 'Start log',
-  },
+const setupTasks = [
   {
     title: 'Upload your baseline photos',
     description: 'Take your starting photos so you can compare your progress later.',
@@ -62,6 +56,18 @@ export default function TesterDashboard() {
         </div>
       </section>
 
+      <section className="tester-primary-cta wrap">
+        <div className="tester-primary-cta-text">
+          <span className="tester-kicker">TODAY'S ENTRY</span>
+          <h2>Log how your skin feels today</h2>
+          <p>Takes about a minute. Do this once a day while you're testing.</p>
+        </div>
+        <Link className="tester-primary-cta-button" to="/tester/log">
+          Start today's log
+          <span>→</span>
+        </Link>
+      </section>
+
       <section className="tester-stats wrap">
         {stats.map((stat) => (
           <div className="tester-stat" key={stat.label}>
@@ -75,14 +81,14 @@ export default function TesterDashboard() {
       <section className="tester-content wrap">
         <div className="tester-section-heading">
           <div>
-            <span className="tester-kicker">YOUR TEST</span>
-            <h2>What needs your attention</h2>
+            <span className="tester-kicker">GETTING SET UP</span>
+            <h2>One-time setup</h2>
           </div>
           <span className="tester-date">Today</span>
         </div>
 
         <div className="tester-task-list">
-          {tasks.map((task, index) => (
+          {setupTasks.map((task, index) => (
             <article className="tester-task" key={task.title}>
               <div className="tester-task-number">
                 {String(index + 1).padStart(2, '0')}

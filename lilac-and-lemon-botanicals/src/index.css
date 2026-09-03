@@ -2282,3 +2282,84 @@ form:has(input[type="email"]) {
 .tester-submit { margin:24px 34px 34px; border:0; border-radius:999px; padding:14px 22px; background:var(--brown); color:#fff; cursor:pointer; display:flex; align-items:center; gap:20px; }
 .tester-submit:disabled { opacity:.6; cursor:wait; }
 @media (max-width:700px) { .tester-log { padding-top:32px; } .tester-form-section { grid-template-columns:1fr; gap:8px; padding:24px 20px; } .tester-choice-grid { grid-template-columns:1fr; } .tester-form-error,.tester-form-success { margin-left:20px; margin-right:20px; } .tester-submit { margin-left:20px; margin-right:20px; } }
+
+.tester-primary-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  padding: 30px 32px;
+  border: 1px solid #ded5cc;
+  background: #f7f1e9;
+}
+
+.tester-primary-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tester-primary-cta-text .tester-kicker {
+  margin-bottom: 6px;
+}
+
+.tester-primary-cta-text h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3d2b1f;
+}
+
+.tester-primary-cta-text p {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #897c70;
+}
+
+.tester-primary-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 15px 26px;
+  border-radius: 999px;
+  background: #3d2b1f;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tester-primary-cta-button:hover {
+  background: #65745c;
+  transform: translateY(-1px);
+}
+
+.tester-primary-cta-button span {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.tester-primary-cta-button:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 760px) {
+  .tester-primary-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+  }
+
+  .tester-primary-cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
