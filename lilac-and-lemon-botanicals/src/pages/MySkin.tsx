@@ -327,7 +327,7 @@ export default function MySkin() {
 
             {!isSignedIn && (
               <p className="my-skin-saved-note">
-                <a href="/tester/login">Log in</a> to save these results to your account.
+                <a href="/login">Log in</a> to save these results to your account.
               </p>
             )}
           </section>

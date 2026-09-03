@@ -30,9 +30,9 @@ export default function TesterDashboard() {
     return null;
   }
 
-  if (!isSignedIn) {
-    return <Navigate to="/tester/login" replace />;
-  }
+if (!isSignedIn) {
+  return <Navigate to="/login" replace />;
+}
 
   return (
     <main className="tester-page">

@@ -48,7 +48,7 @@ function Scale({ label, value, onChange, helper }: {
 
 export default function TesterLog() {
   const { isLoaded, isSignedIn, user } = useUser();
-  const email = user?.primaryEmailAddress?.emailAddress ?? '';
+  const userId = user?.id ?? '';
 
   const [weekNumber, setWeekNumber] = useState(1);
   const [afterUseFeel, setAfterUseFeel] = useState<Feel | ''>('');
@@ -63,9 +63,9 @@ export default function TesterLog() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!email) return;
+    if (!userId) return;
 
-    fetch(`/api/tester-checkin?email=${encodeURIComponent(email)}`)
+    fetch(`/api/tester-checkin?userId=${encodeURIComponent(userId)}`)
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || 'Unable to load your check-in.');
@@ -84,10 +84,10 @@ export default function TesterLog() {
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
-  }, [email]);
+  }, [userId]);
 
   if (!isLoaded) return null;
-  if (!isSignedIn) return <Navigate to="/tester/login" replace />;
+if (!isSignedIn) return <Navigate to="/login" replace />;
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
@@ -105,14 +105,14 @@ export default function TesterLog() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email,
-          afterUseFeel,
-          daytimeFeel,
-          hydration,
-          breakouts,
-          sensitivity,
-          notes,
-        }),
+  userId,
+  afterUseFeel,
+  daytimeFeel,
+  hydration,
+  breakouts,
+  sensitivity,
+  notes,
+}),
       });
 
       const data = await response.json();

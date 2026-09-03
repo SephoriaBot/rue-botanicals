@@ -16,9 +16,9 @@ export default function Layout() {
   const { signOut } = useClerk();
   const navigate = useNavigate();
 
-  function handleSignOut() {
-    signOut(() => navigate('/tester/login'));
-  }
+function handleSignOut() {
+  signOut(() => navigate('/'));
+}
 
   return (
     <>
@@ -37,19 +37,30 @@ export default function Layout() {
             ))}
 
             <SignedOut>
-              <NavLink
-                to="/tester/login"
-                className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-              >
-                Tester Login
-              </NavLink>
-            </SignedOut>
+  <NavLink
+    to="/login"
+    className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+  >
+    Log In
+  </NavLink>
+</SignedOut>
 
             <SignedIn>
-              <button type="button" className="nav-link nav-link-button" onClick={handleSignOut}>
-                Log Out
-              </button>
-            </SignedIn>
+  <NavLink
+    to="/account"
+    className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+  >
+    My Account
+  </NavLink>
+
+  <button
+    type="button"
+    className="nav-link nav-link-button"
+    onClick={handleSignOut}
+  >
+    Log Out
+  </button>
+</SignedIn>
           </div>
           <div className="nav-right">
            <NavLink

@@ -5,8 +5,8 @@ export default function TesterLogin() {
     <div className="tester-login-page">
       <SignIn
         routing="path"
-        path="/tester/login"
-        fallbackRedirectUrl="/tester"
+        path="/login"
+        fallbackRedirectUrl="/"
       />
     </div>
   );

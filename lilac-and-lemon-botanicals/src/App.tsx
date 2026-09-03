@@ -22,7 +22,11 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/tester/login/*" element={<TesterLogin />} />
+
+        {/* General site login */}
+        <Route path="/login/*" element={<TesterLogin />} />
+
+        {/* Signed-in user areas */}
         <Route path="/tester/log" element={<TesterLog />} />
         <Route path="/tester" element={<TesterDashboard />} />
       </Route>
