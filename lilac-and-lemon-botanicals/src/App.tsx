@@ -9,6 +9,7 @@ import Checkout from './pages/Checkout';
 import MySkin from './pages/MySkin';
 import TesterDashboard from './pages/TesterDashboard';
 import TesterLogin from './pages/TesterLogin';
+import TesterLog from './pages/TesterLog';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/tester/login/*" element={<TesterLogin />} />
+        <Route path="/tester/log" element={<TesterLog />} />
         <Route path="/tester" element={<TesterDashboard />} />
       </Route>
     </Routes>
