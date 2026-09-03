@@ -11,33 +11,54 @@ export default async function handler(
   }
 
   try {
-    const { userId, ...blobRequest } = req.body ?? {};
+    const body = req.body;
+
+    const userId =
+      typeof body?.userId === 'string'
+        ? body.userId.trim()
+        : '';
 
     if (!userId) {
-      return res.status(400).json({ error: 'Missing userId' });
+      return res.status(400).json({
+        error: 'Missing userId',
+      });
     }
 
-    const response = await handleUpload({
-      body: blobRequest,
+    const jsonResponse = await handleUpload({
+      body,
       request: req,
       onBeforeGenerateToken: async () => {
         return {
-          allowedContentTypes: ['image/jpeg', 'image/png', 'image/webp'],
+          allowedContentTypes: [
+            'image/jpeg',
+            'image/png',
+            'image/webp',
+          ],
           maximumSizeInBytes: 10 * 1024 * 1024,
+          addRandomSuffix: true,
+          tokenPayload: JSON.stringify({
+            userId,
+          }),
         };
       },
-      onUploadCompleted: async () => {
-        // The photo record will be created separately
-        // after the upload succeeds.
+      onUploadCompleted: async ({ blob, tokenPayload }) => {
+        console.log(
+          'Tester photo uploaded:',
+          blob.url,
+          tokenPayload
+        );
       },
     });
 
-    return res.status(200).json(response);
+    return res.status(200).json(jsonResponse);
   } catch (err) {
     console.error('Tester photo upload failed:', err);
 
-    return res.status(500).json({
-      error: 'Something went wrong preparing the upload.',
+    return res.status(400).json({
+      error:
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong.',
     });
   }
 }
