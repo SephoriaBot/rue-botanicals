@@ -1,5 +1,6 @@
 import { Link, Navigate } from 'react-router-dom';
 import { useUser } from '@clerk/react-router';
+import { useEffect, useState } from 'react';
 
 const stats = [
   { label: 'Testing day', value: 'Day 1', detail: 'of 28' },
@@ -23,8 +24,48 @@ const setupTasks = [
   },
 ];
 
+type Tester = {
+  id: number;
+  user_id: string;
+  name: string;
+  status: string;
+  test_start: string | null;
+  test_end: string | null;
+};
+
 export default function TesterDashboard() {
   const { isLoaded, isSignedIn, user } = useUser();
+  const [tester, setTester] = useState<Tester | null>(null);
+  const [loadingTester, setLoadingTester] = useState(true);
+
+useEffect(() => {
+  if (!isSignedIn || !user) {
+    setLoadingTester(false);
+    return;
+  }
+
+  async function loadTester() {
+    try {
+      const res = await fetch(
+        `/api/tester?userId=${encodeURIComponent(user.id)}`
+      );
+
+      if (!res.ok) {
+        throw new Error('Failed to load tester');
+      }
+
+      const data = await res.json();
+      setTester(data.tester ?? null);
+    } catch (err) {
+      console.error('Could not load tester:', err);
+      setTester(null);
+    } finally {
+      setLoadingTester(false);
+    }
+  }
+
+  loadTester();
+}, [isSignedIn, user]);
 
   if (!isLoaded) {
     return null;
@@ -33,6 +74,58 @@ export default function TesterDashboard() {
 if (!isSignedIn) {
   return <Navigate to="/login" replace />;
 }
+
+if (loadingTester) {
+  return null;
+}
+
+if (!tester || tester.status !== 'active') {
+  return (
+    <main className="tester-page">
+      <section className="tester-hero wrap">
+        <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
+        <h1>You’re not currently enrolled as a tester.</h1>
+        <p>
+          This area is for Rue Botanicals product testers. If you’ve been
+          invited to participate in a test, your enrollment will appear here
+          once it has been activated.
+        </p>
+      </section>
+    </main>
+  );
+}
+
+const testStart = tester.test_start
+  ? new Date(tester.test_start)
+  : null;
+
+const testEnd = tester.test_end
+  ? new Date(tester.test_end)
+  : null;
+
+const testingDay = testStart
+  ? Math.max(
+      1,
+      Math.floor(
+        (Date.now() - testStart.getTime()) / 86400000
+      ) + 1
+    )
+  : 1;
+
+const totalDays =
+  testStart && testEnd
+    ? Math.max(
+        1,
+        Math.floor(
+          (testEnd.getTime() - testStart.getTime()) / 86400000
+        ) + 1
+      )
+    : 28;
+
+const progress = Math.min(
+  100,
+  Math.round((testingDay / totalDays) * 100)
+);
 
   return (
     <main className="tester-page">
@@ -48,10 +141,10 @@ if (!isSignedIn) {
         <div className="tester-progress">
           <div className="tester-progress-top">
             <span>Testing progress</span>
-            <strong>Day 1 of 28</strong>
+            <strong>Day {testingDay} of {totalDays}</strong>
           </div>
           <div className="tester-progress-track">
-            <div className="tester-progress-fill" style={{ width: '4%' }} />
+            <div className="tester-progress-fill" style={{ width: `${progress}%` }} />
           </div>
         </div>
       </section>
