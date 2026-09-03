@@ -9,6 +9,7 @@ const navLinks = [
   { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Join Waitlist' },
   { to: '/tester', label: 'Product Tester Portal' },
+  { to: '/tester/photos', label: 'Testing Photos' },
 ];
 
 export default function Layout() {
