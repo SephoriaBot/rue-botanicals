@@ -2,12 +2,6 @@ import { Link, Navigate } from 'react-router-dom';
 import { useUser } from '@clerk/react-router';
 import { useEffect, useState } from 'react';
 
-const stats = [
-  { label: 'Testing day', value: 'Day 1', detail: 'of 28' },
-  { label: 'Products', value: '3', detail: 'assigned' },
-  { label: 'Check-ins', value: '0', detail: 'completed' },
-  { label: 'Photos', value: '0', detail: 'uploaded' },
-];
 
 const setupTasks = [
   {
@@ -33,10 +27,29 @@ type Tester = {
   test_end: string | null;
 };
 
+type TesterProduct = {
+  assignment_id: number;
+  id: number;
+  name: string;
+  description: string | null;
+  swatch_color: string | null;
+  size_oz: number | null;
+  price: number | null;
+};
+
 export default function TesterDashboard() {
   const { isLoaded, isSignedIn, user } = useUser();
   const [tester, setTester] = useState<Tester | null>(null);
   const [loadingTester, setLoadingTester] = useState(true);
+  const [checkins, setCheckins] = useState(0);
+  const [products, setProducts] = useState<TesterProduct[]>([]);
+
+const stats = [
+  { label: 'Testing day', value: '—', detail: '' },
+  { label: 'Products', value: String(products.length), detail: 'assigned' },
+  { label: 'Check-ins', value: String(checkins), detail: 'completed' },
+  { label: 'Photos', value: '0', detail: 'uploaded' },
+];
 
 useEffect(() => {
   if (!isSignedIn || !user) {
@@ -56,6 +69,24 @@ useEffect(() => {
 
       const data = await res.json();
       setTester(data.tester ?? null);
+
+      const statsRes = await fetch(
+  `/api/tester-stats?userId=${encodeURIComponent(user.id)}`
+);
+
+if (statsRes.ok) {
+  const statsData = await statsRes.json();
+  setCheckins(statsData.checkins ?? 0);
+}
+
+const productsRes = await fetch(
+  `/api/tester-products?userId=${encodeURIComponent(user.id)}`
+);
+
+if (productsRes.ok) {
+  const productsData = await productsRes.json();
+  setProducts(productsData.products ?? []);
+}
     } catch (err) {
       console.error('Could not load tester:', err);
       setTester(null);
@@ -210,32 +241,24 @@ const progress = Math.min(
         </div>
 
         <div className="tester-products">
-          <div className="tester-product">
-            <div className="tester-product-placeholder">01</div>
-            <div>
-              <span>Assigned product</span>
-              <h3>Product name</h3>
-              <p>Use as directed in your testing instructions.</p>
-            </div>
-          </div>
+          {products.map((product, index) => (
+  <div className="tester-product" key={product.assignment_id}>
+    <div
+      className="tester-product-placeholder"
+      style={{ backgroundColor: product.swatch_color || undefined }}
+    >
+      {String(index + 1).padStart(2, '0')}
+    </div>
 
-          <div className="tester-product">
-            <div className="tester-product-placeholder">02</div>
-            <div>
-              <span>Assigned product</span>
-              <h3>Product name</h3>
-              <p>Use as directed in your testing instructions.</p>
-            </div>
-          </div>
-
-          <div className="tester-product">
-            <div className="tester-product-placeholder">03</div>
-            <div>
-              <span>Assigned product</span>
-              <h3>Product name</h3>
-              <p>Use as directed in your testing instructions.</p>
-            </div>
-          </div>
+    <div>
+      <span>Assigned product</span>
+      <h3>{product.name}</h3>
+      <p>
+        {product.description || 'Use as directed in your testing instructions.'}
+      </p>
+    </div>
+  </div>
+))}
         </div>
       </section>
 
