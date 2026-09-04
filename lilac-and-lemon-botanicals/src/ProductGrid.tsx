@@ -82,12 +82,14 @@ export default function ProductGrid() {
                 <span className="badge-available">available</span>
               )}
 
-              <img
-                className="product-card-accent"
-                src={backgroundImages[p.id]}
-                alt=""
-                aria-hidden="true"
-              />
+              <div className="product-card-accent-wrap">
+  <img
+    className="product-card-accent"
+    src={backgroundImages[p.id]}
+    alt=""
+    aria-hidden="true"
+  />
+</div>
 
               <div className="product-bottle-wrap">
                 <img
