@@ -118,9 +118,10 @@ export default async function handler(
 
     const validFeels = ['dry_tight', 'comfortable', 'oily'];
 
-    const validScore = (value: unknown) =>
-      Number.isInteger(value) && value >= 1 && value <= 5;
-
+   const validScore = (value: unknown) => {
+  if (typeof value !== 'number') return false;
+  return Number.isInteger(value) && value >= 1 && value <= 5;
+};
     if (
       !validFeels.includes(afterUseFeel) ||
       !validFeels.includes(daytimeFeel)
