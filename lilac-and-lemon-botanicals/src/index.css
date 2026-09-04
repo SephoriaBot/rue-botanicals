@@ -2155,14 +2155,15 @@ form:has(input[type="email"]) {
 }
 
 .tester-product-placeholder {
-  width: 58px;
-  height: 76px;
-  flex: 0 0 58px;
+  width: 64px;
+  height: 96px;
+  flex: 0 0 64px;
   display: grid;
   place-items: center;
   background: #eee6dc;
   color: #8d7f73;
   font-family: Georgia, serif;
+  padding: 6px;
 }
 
 .tester-product span {
@@ -2305,8 +2306,8 @@ form:has(input[type="email"]) {
 }
 
 .tester-product-placeholder img {
-  width: 34px;
-  height: 34px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 

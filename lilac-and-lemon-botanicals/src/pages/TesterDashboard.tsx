@@ -1,6 +1,7 @@
 import { Link, Navigate } from 'react-router-dom';
 import { useUser } from '@clerk/react-router';
 import { useEffect, useState } from 'react';
+import { bottleImages } from '../productImages';
 
 
 const setupTasks = [
@@ -268,13 +269,8 @@ const stats = [
       style={{ backgroundColor: product.swatch_color || undefined }}
     >
       <img
-        src={
-          ['/icons/serum-dropper.png', '/icons/cream-jar.png', '/icons/pump-bottle.png', '/icons/tube.png'][
-            index % 4
-          ]
-        }
-        alt=""
-        aria-hidden="true"
+        src={bottleImages[product.id] || '/icons/serum-dropper.png'}
+        alt={`${product.name} bottle`}
       />
     </div>
 
