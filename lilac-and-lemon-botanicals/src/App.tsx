@@ -11,6 +11,7 @@ import TesterDashboard from './pages/TesterDashboard';
 import TesterLogin from './pages/TesterLogin';
 import TesterLog from './pages/TesterLog';
 import TesterPhotos from './pages/TesterPhotos';
+import TesterQuestionnaires from './pages/TesterQuestionnaires';
 
 export default function App() {
   return (
@@ -24,7 +25,10 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/tester/photos" element={<TesterPhotos />} />
-
+        <Route
+  path="/tester/questionnaires"
+  element={<TesterQuestionnaires />}
+/>
         {/* General site login */}
         <Route path="/login/*" element={<TesterLogin />} />
 
