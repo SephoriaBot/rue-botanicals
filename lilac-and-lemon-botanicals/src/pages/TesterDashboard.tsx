@@ -45,13 +45,6 @@ export default function TesterDashboard() {
   const [products, setProducts] = useState<TesterProduct[]>([]);
   const [photos, setPhotos] = useState(0);
 
-const stats = [
-  { label: 'Testing day', value: '—', detail: '' },
-  { label: 'Products', value: String(products.length), detail: 'assigned' },
-  { label: 'Check-ins', value: String(checkins), detail: 'completed' },
-  { label: 'Photos', value: String(photos), detail: 'uploaded' },
-];
-
 useEffect(() => {
   if (!isSignedIn || !user) {
     setLoadingTester(false);
@@ -159,6 +152,13 @@ const progress = Math.min(
   100,
   Math.round((testingDay / totalDays) * 100)
 );
+
+const stats = [
+  { label: 'Testing day', value: `${testingDay}`, detail: `of ${totalDays}` },
+  { label: 'Products', value: String(products.length), detail: 'assigned' },
+  { label: 'Check-ins', value: String(checkins), detail: 'completed' },
+  { label: 'Photos', value: String(photos), detail: 'uploaded' },
+];
 
   return (
     <main className="tester-page">
