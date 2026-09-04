@@ -2256,6 +2256,94 @@ form:has(input[type="email"]) {
 /* WEEKLY TESTER CHECK-IN */
 .tester-log { padding: 54px 0 100px; }
 .tester-back { display:inline-block; margin-bottom:36px; color:var(--brown-soft); text-decoration:none; font-size:.76rem; letter-spacing:.04em; }
+/* =========================================================
+   TESTER PORTAL ICONS
+   ========================================================= */
+
+.tester-page-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+}
+
+.tester-page-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tester-stat-icon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.tester-task-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+}
+
+.tester-task-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.tester-section-heading-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.tester-section-heading-icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tester-product-placeholder img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.tester-note-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+}
+
+.tester-note-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tester-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 48px 24px;
+  border: 1px dashed #ded5cc;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tester-empty-state img {
+  width: 120px;
+  height: auto;
+}
+
+.tester-empty-state p {
+  color: #897c70;
+  font-size: 0.85rem;
+  max-width: 320px;
+}
+
 .tester-log-header { max-width:720px; margin-bottom:34px; }
 .tester-log-header h1 { font-size:clamp(2.5rem,6vw,4.5rem); margin:8px 0 12px; }
 .tester-log-header p { color:var(--brown-soft); max-width:620px; }

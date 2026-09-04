@@ -9,12 +9,14 @@ const setupTasks = [
     description: 'Take your starting photos so you can compare your progress later.',
     to: '/tester/photos',
     action: 'Add photos',
+    icon: '/icons/cameo.png',
   },
   {
     title: 'Complete your starting questionnaire',
     description: 'A few questions about your skin and your usual routine.',
     to: '/tester/questionnaires',
     action: 'Answer questions',
+    icon: '/icons/journal.png',
   },
 ];
 
@@ -154,15 +156,18 @@ const progress = Math.min(
 );
 
 const stats = [
-  { label: 'Testing day', value: `${testingDay}`, detail: `of ${totalDays}` },
-  { label: 'Products', value: String(products.length), detail: 'assigned' },
-  { label: 'Check-ins', value: String(checkins), detail: 'completed' },
-  { label: 'Photos', value: String(photos), detail: 'uploaded' },
+  { label: 'Testing day', value: `${testingDay}`, detail: `of ${totalDays}`, icon: '/icons/calendar.png' },
+  { label: 'Products', value: String(products.length), detail: 'assigned', icon: '/icons/serum-dropper.png' },
+  { label: 'Check-ins', value: String(checkins), detail: 'completed', icon: '/icons/journal.png' },
+  { label: 'Photos', value: String(photos), detail: 'uploaded', icon: '/icons/cameo.png' },
 ];
 
   return (
     <main className="tester-page">
       <section className="tester-hero wrap">
+        <div className="tester-page-icon">
+          <img src="/icons/gear.png" alt="" aria-hidden="true" />
+        </div>
         <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
         <h1>Welcome{user?.firstName ? `, ${user.firstName}` : ''}<br />to your testing journal.</h1>
         <p>
@@ -197,6 +202,7 @@ const stats = [
       <section className="tester-stats wrap">
         {stats.map((stat) => (
           <div className="tester-stat" key={stat.label}>
+            <img className="tester-stat-icon" src={stat.icon} alt="" aria-hidden="true" />
             <span>{stat.label}</span>
             <strong>{stat.value}</strong>
             <small>{stat.detail}</small>
@@ -206,9 +212,12 @@ const stats = [
 
       <section className="tester-content wrap">
         <div className="tester-section-heading">
-          <div>
-            <span className="tester-kicker">GETTING SET UP</span>
-            <h2>One-time setup</h2>
+          <div className="tester-section-heading-icon-wrap">
+            <img className="tester-section-heading-icon" src="/icons/gear.png" alt="" aria-hidden="true" />
+            <div>
+              <span className="tester-kicker">GETTING SET UP</span>
+              <h2>One-time setup</h2>
+            </div>
           </div>
           <span className="tester-date">Today</span>
         </div>
@@ -216,8 +225,8 @@ const stats = [
         <div className="tester-task-list">
           {setupTasks.map((task, index) => (
             <article className="tester-task" key={task.title}>
-              <div className="tester-task-number">
-                {String(index + 1).padStart(2, '0')}
+              <div className="tester-task-icon">
+                <img src={task.icon} alt="" aria-hidden="true" />
               </div>
 
               <div className="tester-task-body">
@@ -236,12 +245,21 @@ const stats = [
 
       <section className="tester-content wrap">
         <div className="tester-section-heading">
-          <div>
-            <span className="tester-kicker">YOUR PRODUCTS</span>
-            <h2>Currently testing</h2>
+          <div className="tester-section-heading-icon-wrap">
+            <img className="tester-section-heading-icon" src="/icons/serum-dropper.png" alt="" aria-hidden="true" />
+            <div>
+              <span className="tester-kicker">YOUR PRODUCTS</span>
+              <h2>Currently testing</h2>
+            </div>
           </div>
         </div>
 
+        {products.length === 0 ? (
+          <div className="tester-empty-state">
+            <img src="/illustrations/03_flower_basket.png" alt="" aria-hidden="true" />
+            <p>Your assigned products will show up here once your testing kit is set up.</p>
+          </div>
+        ) : (
         <div className="tester-products">
           {products.map((product, index) => (
   <div className="tester-product" key={product.assignment_id}>
@@ -249,7 +267,15 @@ const stats = [
       className="tester-product-placeholder"
       style={{ backgroundColor: product.swatch_color || undefined }}
     >
-      {String(index + 1).padStart(2, '0')}
+      <img
+        src={
+          ['/icons/serum-dropper.png', '/icons/cream-jar.png', '/icons/pump-bottle.png', '/icons/tube.png'][
+            index % 4
+          ]
+        }
+        alt=""
+        aria-hidden="true"
+      />
     </div>
 
     <div>
@@ -262,10 +288,13 @@ const stats = [
   </div>
 ))}
         </div>
+        )}
       </section>
 
       <section className="tester-note wrap">
-        <div className="tester-note-mark">✦</div>
+        <div className="tester-note-icon">
+          <img src="/icons/heart.png" alt="" aria-hidden="true" />
+        </div>
         <div>
           <h3>A little reminder</h3>
           <p>

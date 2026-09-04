@@ -124,6 +124,9 @@ export default function TesterQuestionnaires() {
   return (
     <main className="tester-page">
       <section className="tester-hero wrap">
+        <div className="tester-page-icon">
+          <img src="/icons/journal.png" alt="" aria-hidden="true" />
+        </div>
         <div className="tester-eyebrow">
           RUE BOTANICALS · TESTER PORTAL
         </div>

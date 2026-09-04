@@ -133,6 +133,9 @@ if (!isSignedIn) return <Navigate to="/login" replace />;
         <Link className="tester-back" to="/tester">← Back to your journal</Link>
 
         <div className="tester-log-header">
+          <div className="tester-page-icon">
+            <img src="/icons/magnifier.png" alt="" aria-hidden="true" />
+          </div>
           <span className="tester-kicker">WEEKLY CHECK-IN</span>
           <h1>Week {weekNumber}</h1>
           <p>Tell us how your skin has been feeling this week. There are no right answers.</p>

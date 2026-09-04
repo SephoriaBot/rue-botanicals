@@ -168,6 +168,9 @@ export default function TesterPhotos() {
   return (
     <main className="tester-page">
       <section className="tester-hero wrap">
+        <div className="tester-page-icon">
+          <img src="/icons/cameo.png" alt="" aria-hidden="true" />
+        </div>
         <div className="tester-eyebrow">
           RUE BOTANICALS · TESTER PORTAL
         </div>
@@ -206,7 +209,7 @@ export default function TesterPhotos() {
           />
         </label>
 
-        {baselinePhotos.length > 0 && (
+        {baselinePhotos.length > 0 ? (
           <div className="tester-photo-grid">
             {baselinePhotos.map((photo) => (
               <div key={photo.id} className="tester-photo-card">
@@ -226,6 +229,11 @@ export default function TesterPhotos() {
                 </button>
               </div>
             ))}
+          </div>
+        ) : (
+          <div className="tester-empty-state">
+            <img src="/illustrations/03_flower_basket.png" alt="" aria-hidden="true" />
+            <p>No baseline photos yet — add one before you start testing.</p>
           </div>
         )}
       </section>
@@ -256,7 +264,7 @@ export default function TesterPhotos() {
           />
         </label>
 
-        {progressPhotos.length > 0 && (
+        {progressPhotos.length > 0 ? (
           <div className="tester-photo-grid">
             {progressPhotos.map((photo) => (
               <div key={photo.id} className="tester-photo-card">
@@ -276,6 +284,11 @@ export default function TesterPhotos() {
                 </button>
               </div>
             ))}
+          </div>
+        ) : (
+          <div className="tester-empty-state">
+            <img src="/icons/cameo.png" alt="" aria-hidden="true" />
+            <p>No progress photos yet — check back in as your test continues.</p>
           </div>
         )}
       </section>
