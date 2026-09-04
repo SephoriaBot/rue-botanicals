@@ -28,7 +28,7 @@ export default function TesterPhotos() {
     async function loadPhotos() {
       try {
         const res = await fetch(
-          `/api/tester-photos?userId=${encodeURIComponent(user.id)}`
+          `/api/tester/photos?userId=${encodeURIComponent(user.id)}`
         );
 
         if (!res.ok) {
@@ -65,14 +65,14 @@ export default function TesterPhotos() {
         file,
         {
           access: 'public',
-          handleUploadUrl: '/api/tester-photo-upload',
+          handleUploadUrl: '/api/tester/photo-upload',
           clientPayload: JSON.stringify({
             userId: user.id,
           }),
         }
       );
 
-      const saveRes = await fetch('/api/tester-photos', {
+      const saveRes = await fetch('/api/tester/photos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export default function TesterPhotos() {
       }
 
       const refreshRes = await fetch(
-        `/api/tester-photos?userId=${encodeURIComponent(user.id)}`
+        `/api/tester/photos?userId=${encodeURIComponent(user.id)}`
       );
 
       if (refreshRes.ok) {
@@ -118,7 +118,7 @@ export default function TesterPhotos() {
     setError('');
 
     try {
-      const res = await fetch('/api/tester-photos', {
+      const res = await fetch('/api/tester/photos', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -65,7 +65,7 @@ export default function TesterLog() {
   useEffect(() => {
     if (!userId) return;
 
-    fetch(`/api/tester-checkin?userId=${encodeURIComponent(userId)}`)
+    fetch(`/api/tester/checkin?userId=${encodeURIComponent(userId)}`)
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || 'Unable to load your check-in.');
@@ -101,7 +101,7 @@ if (!isSignedIn) return <Navigate to="/login" replace />;
 
     setSaving(true);
     try {
-      const response = await fetch('/api/tester-checkin', {
+      const response = await fetch('/api/tester/checkin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

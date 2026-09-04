@@ -40,7 +40,7 @@ export default function TesterQuestionnaires() {
     async function loadQuestionnaire() {
       try {
         const res = await fetch(
-          `/api/tester-questionnaire?userId=${encodeURIComponent(user.id)}`
+          `/api/tester/questionnaire?userId=${encodeURIComponent(user.id)}`
         );
 
         if (!res.ok) {
@@ -84,7 +84,7 @@ export default function TesterQuestionnaires() {
     setError('');
 
     try {
-      const res = await fetch('/api/tester-questionnaire', {
+      const res = await fetch('/api/tester/questionnaire', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

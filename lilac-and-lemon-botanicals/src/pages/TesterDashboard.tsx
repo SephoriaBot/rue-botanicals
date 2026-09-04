@@ -61,7 +61,7 @@ useEffect(() => {
   async function loadTester() {
     try {
       const res = await fetch(
-        `/api/tester?userId=${encodeURIComponent(user.id)}`
+        `/api/tester/profile?userId=${encodeURIComponent(user.id)}`
       );
 
       if (!res.ok) {
@@ -72,7 +72,7 @@ useEffect(() => {
       setTester(data.tester ?? null);
 
       const statsRes = await fetch(
-  `/api/tester-stats?userId=${encodeURIComponent(user.id)}`
+  `/api/tester/stats?userId=${encodeURIComponent(user.id)}`
 );
 
 if (statsRes.ok) {
@@ -82,7 +82,7 @@ if (statsRes.ok) {
 }
 
 const productsRes = await fetch(
-  `/api/tester-products?userId=${encodeURIComponent(user.id)}`
+  `/api/tester/products?userId=${encodeURIComponent(user.id)}`
 );
 
 if (productsRes.ok) {
