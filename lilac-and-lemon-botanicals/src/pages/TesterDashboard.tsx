@@ -43,12 +43,13 @@ export default function TesterDashboard() {
   const [loadingTester, setLoadingTester] = useState(true);
   const [checkins, setCheckins] = useState(0);
   const [products, setProducts] = useState<TesterProduct[]>([]);
+  const [photos, setPhotos] = useState(0);
 
 const stats = [
   { label: 'Testing day', value: '—', detail: '' },
   { label: 'Products', value: String(products.length), detail: 'assigned' },
   { label: 'Check-ins', value: String(checkins), detail: 'completed' },
-  { label: 'Photos', value: '0', detail: 'uploaded' },
+  { label: 'Photos', value: String(photos), detail: 'uploaded' },
 ];
 
 useEffect(() => {
@@ -77,6 +78,7 @@ useEffect(() => {
 if (statsRes.ok) {
   const statsData = await statsRes.json();
   setCheckins(statsData.checkins ?? 0);
+  setPhotos(statsData.photos ?? 0);
 }
 
 const productsRes = await fetch(
