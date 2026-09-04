@@ -2458,3 +2458,536 @@ form:has(input[type="email"]) {
     justify-content: center;
   }
 }
+
+/* =========================================================
+   PRODUCTS — CLEAN BOTANICAL GRID
+   ========================================================= */
+
+section.products {
+  padding: 105px 0 120px;
+}
+
+.products-head {
+  max-width: 610px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.products-head h2 {
+  margin: 17px 0 18px;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.products-head p {
+  max-width: 54ch;
+  margin: 0 auto;
+  color: var(--brown-soft);
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 42px;
+  row-gap: 72px;
+}
+
+.product-tile {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-tile-image {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 290px;
+  padding-bottom: 8px;
+}
+
+/* Very subtle grounding underneath each bottle */
+.product-tile-image::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 115px;
+  height: 24px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgba(201, 127, 148, 0.13),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.product-tile-image img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  max-width: 155px;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  filter: drop-shadow(0 13px 13px rgba(74, 56, 64, 0.11));
+  transition:
+    transform 0.45s cubic-bezier(.2,.7,.2,1),
+    filter 0.45s ease;
+}
+
+.product-tile h3 {
+  position: relative;
+  z-index: 2;
+  margin: 18px 0 0;
+  color: var(--brown);
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.product-tile:hover .product-tile-image img {
+  transform: translateY(-7px) scale(1.025);
+  filter: drop-shadow(0 18px 17px rgba(74, 56, 64, 0.15));
+}
+
+.product-tile:hover h3 {
+  color: var(--rose);
+}
+
+
+/* =========================================================
+   PRODUCT MODAL
+   ========================================================= */
+
+.product-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(50, 39, 43, 0.38);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  animation: productModalFade 0.25s ease;
+}
+
+.product-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  width: min(680px, 100%);
+  max-height: min(600px, 90vh);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(74, 56, 64, 0.09);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(74, 56, 64, 0.2);
+  animation: productModalIn 0.35s cubic-bezier(.2,.7,.2,1);
+}
+
+.product-modal-close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 252, 251, 0.82);
+  color: var(--brown-soft);
+  font-size: 1.45rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.product-modal-close:hover {
+  background: var(--cream-deep);
+  color: var(--brown);
+  transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   MODAL BLOB / BOTANICAL IMAGE
+   ========================================================= */
+
+.product-modal-blob {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  padding: 42px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(241, 220, 226, 0.7),
+      transparent 62%
+    ),
+    var(--cream);
+}
+
+.product-modal-blob img {
+  display: block;
+  width: 78%;
+  max-width: 245px;
+  height: auto;
+  object-fit: contain;
+  filter:
+    saturate(0.72)
+    drop-shadow(1px 0 0 rgba(198, 166, 107, 0.55))
+    drop-shadow(-1px 0 0 rgba(198, 166, 107, 0.55))
+    drop-shadow(0 1px 0 rgba(198, 166, 107, 0.55))
+    drop-shadow(0 -1px 0 rgba(198, 166, 107, 0.55));
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+   ========================================================= */
+
+.product-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px 48px 48px;
+}
+
+.product-modal-ingredient {
+  color: var(--rose);
+  font-family: "Space Mono", monospace;
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.product-modal-stem {
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin: 13px 0 16px;
+  border-radius: 999px;
+}
+
+.product-modal-content h2 {
+  margin: 0 0 16px;
+  color: var(--brown);
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.product-modal-description {
+  margin: 0;
+  max-width: 39ch;
+  color: var(--brown-soft);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.product-modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: var(--brown-muted);
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.product-modal-meta .price {
+  color: var(--brown);
+}
+
+.product-modal-meta .dot {
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   MODAL CART
+   ========================================================= */
+
+.product-modal-cart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.product-modal-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 105px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.product-modal-quantity button {
+  width: 36px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brown-soft);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.product-modal-quantity button:hover {
+  color: var(--rose);
+}
+
+.product-modal-quantity span {
+  color: var(--brown);
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.product-modal-add {
+  flex: 1;
+  height: 46px;
+  padding: 0 22px;
+  border: 1px solid var(--brown);
+  border-radius: 999px;
+  background: var(--brown);
+  color: var(--surface);
+  font-family: "Jost", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.product-modal-add:hover {
+  background: var(--rose);
+  border-color: var(--rose);
+  transform: translateY(-1px);
+}
+
+.product-modal-add.added {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+
+.product-modal-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 42px;
+  margin-top: 28px;
+  padding: 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--brown-soft);
+  font-family: "Space Mono", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes productModalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes productModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .product-grid {
+    column-gap: 28px;
+    row-gap: 58px;
+  }
+
+  .product-tile-image {
+    height: 255px;
+  }
+
+  .product-tile-image img {
+    max-width: 140px;
+    max-height: 230px;
+  }
+
+  .product-modal {
+    width: min(620px, 100%);
+  }
+
+  .product-modal-content {
+    padding: 44px 34px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  section.products {
+    padding: 78px 0 90px;
+  }
+
+  .products-head {
+    margin-bottom: 48px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 48px;
+  }
+
+  .product-tile-image {
+    height: 220px;
+  }
+
+  .product-tile-image img {
+    max-width: 120px;
+    max-height: 205px;
+  }
+
+  .product-tile h3 {
+    margin-top: 15px;
+    font-size: 1.02rem;
+  }
+
+  .product-modal-backdrop {
+    align-items: flex-end;
+    padding: 12px;
+  }
+
+  .product-modal {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 88vh;
+    border-radius: 24px;
+  }
+
+  .product-modal-blob {
+    min-height: 190px;
+    max-height: 210px;
+    padding: 25px;
+  }
+
+  .product-modal-blob img {
+    width: 145px;
+    max-width: 145px;
+  }
+
+  .product-modal-content {
+    padding: 28px 26px 30px;
+  }
+
+  .product-modal-content h2 {
+    font-size: 2rem;
+  }
+
+  .product-modal-cart {
+    margin-top: 24px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .product-grid {
+    column-gap: 12px;
+    row-gap: 42px;
+  }
+
+  .product-tile-image {
+    height: 195px;
+  }
+
+  .product-tile-image img {
+    max-width: 105px;
+    max-height: 180px;
+  }
+
+  .product-tile h3 {
+    font-size: 0.96rem;
+  }
+
+  .product-modal-content {
+    padding: 25px 21px 26px;
+  }
+
+  .product-modal-quantity {
+    width: 95px;
+  }
+}

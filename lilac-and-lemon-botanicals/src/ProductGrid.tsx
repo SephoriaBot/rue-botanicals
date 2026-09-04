@@ -16,8 +16,10 @@ type Product = {
 
 export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [quantities, setQuantities] = useState<Record<number, number>>({});
-  const [justAdded, setJustAdded] = useState<number | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [quantity, setQuantity] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
+
   const { addItem } = useCart();
 
   useEffect(() => {
@@ -33,122 +35,240 @@ export default function ProductGrid() {
       .catch(() => setProducts([]));
   }, []);
 
-  function getQty(id: number) {
-    return quantities[id] ?? 1;
+  function openProduct(product: Product) {
+    setSelectedProduct(product);
+    setQuantity(1);
+    setJustAdded(false);
   }
 
-  function setQty(id: number, qty: number) {
-    setQuantities((prev) => ({ ...prev, [id]: Math.max(1, qty) }));
+  function closeProduct() {
+    setSelectedProduct(null);
+    setQuantity(1);
+    setJustAdded(false);
   }
 
-  const allComingSoon = products.length > 0 && products.every((p) => p.status === 'soon');
-  const eyebrowLabel = products.length === 0 || allComingSoon ? 'Coming Soon' : 'Now Available';
+  function handleAddToCart() {
+    if (!selectedProduct || selectedProduct.status === 'soon') return;
 
-  function handleAddToCart(p: Product) {
     addItem(
       {
-        id: p.id,
-        name: p.name,
-        price: p.price,
-        size_oz: p.size_oz,
-        image: bottleImages[p.id],
+        id: selectedProduct.id,
+        name: selectedProduct.name,
+        price: selectedProduct.price,
+        size_oz: selectedProduct.size_oz,
+        image: bottleImages[selectedProduct.id],
       },
-      getQty(p.id)
+      quantity
     );
-    setQty(p.id, 1);
-    setJustAdded(p.id);
-    setTimeout(() => setJustAdded((cur) => (cur === p.id ? null : cur)), 1400);
+
+    setQuantity(1);
+    setJustAdded(true);
+
+    setTimeout(() => {
+      setJustAdded(false);
+    }, 1400);
   }
 
+  useEffect(() => {
+    if (!selectedProduct) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        closeProduct();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedProduct]);
+
+  useEffect(() => {
+    if (selectedProduct) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProduct]);
+
+  const allComingSoon =
+    products.length > 0 &&
+    products.every((p) => p.status === 'soon');
+
+  const eyebrowLabel =
+    products.length === 0 || allComingSoon
+      ? 'Coming Soon'
+      : 'Now Available';
+
   return (
-    <section className="products">
-      <div className="wrap">
-        <div className="products-head">
-          <span className="label">{eyebrowLabel}</span>
+    <>
+      <section className="products">
+        <div className="wrap">
 
-          <h2>Inspired by our personal garden.</h2>
+          <div className="products-head">
+            <span className="label">{eyebrowLabel}</span>
 
-          <p>
-            Chosen with intention, paired with gentle, effective ingredients. Nothing extra, nothing borrowed — just formulas rooted in the garden.
-          </p>
-        </div>
+            <h2>Inspired by our personal garden.</h2>
 
-        <div className="product-grid">
-          {products.map((p) => (
-            <div className="product-card" key={p.id}>
-              {p.status === 'soon' ? (
-                <span className="badge-soon">soon</span>
-              ) : (
-                <span className="badge-available">available</span>
-              )}
+            <p>
+              Chosen with intention, paired with gentle, effective ingredients.
+              Nothing extra, nothing borrowed — just formulas rooted in the garden.
+            </p>
+          </div>
 
-              <div className="product-card-accent-wrap">
-  <img
-    className="product-card-accent"
-    src={backgroundImages[p.id]}
-    alt=""
-    aria-hidden="true"
-  />
-</div>
-
-              <div className="product-bottle-wrap">
-                <img
-                  className="product-bottle"
-                  src={bottleImages[p.id]}
-                  alt={`${p.name} bottle`}
-                />
-              </div>
-
-              <div className="product-info">
-                <span className="ingredient">{p.ingredient_label}</span>
-                <span
-                  className="ingredient-stem"
-                  style={{ background: p.swatch_color || 'var(--butter-deep)' }}
-                />
-
-                <h3>{p.name}</h3>
-
-                <span>{p.description}</span>
-
-                <div className="product-meta">
-                  <span>{p.size_oz} oz</span>
-                  <span className="dot" aria-hidden="true">·</span>
-                  <span className="price">${p.price.toFixed(2)}</span>
+          <div className="product-grid">
+            {products.map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                className="product-tile"
+                onClick={() => openProduct(p)}
+                aria-label={`View ${p.name}`}
+              >
+                <div className="product-tile-image">
+                  <img
+                    src={bottleImages[p.id]}
+                    alt=""
+                    aria-hidden="true"
+                  />
                 </div>
 
-                {p.status !== 'soon' && (
-                  <div className="add-to-cart-row">
-                    <div className="qty-stepper">
-                      <button
-                        type="button"
-                        onClick={() => setQty(p.id, getQty(p.id) - 1)}
-                        aria-label="Decrease quantity"
-                      >
-                        −
-                      </button>
-                      <span>{getQty(p.id)}</span>
-                      <button
-                        type="button"
-                        onClick={() => setQty(p.id, getQty(p.id) + 1)}
-                        aria-label="Increase quantity"
-                      >
-                        +
-                      </button>
-                    </div>
+                <h3>{p.name}</h3>
+              </button>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {selectedProduct && (
+        <div
+          className="product-modal-backdrop"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              closeProduct();
+            }
+          }}
+        >
+          <div
+            className="product-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="product-modal-title"
+          >
+            <button
+              type="button"
+              className="product-modal-close"
+              onClick={closeProduct}
+              aria-label="Close product details"
+            >
+              ×
+            </button>
+
+            <div className="product-modal-blob">
+              {backgroundImages[selectedProduct.id] && (
+                <img
+                  src={backgroundImages[selectedProduct.id]}
+                  alt=""
+                  aria-hidden="true"
+                />
+              )}
+            </div>
+
+            <div className="product-modal-content">
+
+              <span className="product-modal-ingredient">
+                {selectedProduct.ingredient_label}
+              </span>
+
+              <span
+                className="product-modal-stem"
+                style={{
+                  background:
+                    selectedProduct.swatch_color ||
+                    'var(--butter-deep)',
+                }}
+              />
+
+              <h2 id="product-modal-title">
+                {selectedProduct.name}
+              </h2>
+
+              <p className="product-modal-description">
+                {selectedProduct.description}
+              </p>
+
+              <div className="product-modal-meta">
+                <span>{selectedProduct.size_oz} oz</span>
+
+                <span
+                  className="dot"
+                  aria-hidden="true"
+                >
+                  ·
+                </span>
+
+                <span className="price">
+                  ${selectedProduct.price.toFixed(2)}
+                </span>
+              </div>
+
+              {selectedProduct.status === 'soon' ? (
+                <div className="product-modal-coming-soon">
+                  Coming Soon
+                </div>
+              ) : (
+                <div className="product-modal-cart">
+
+                  <div className="product-modal-quantity">
                     <button
                       type="button"
-                      className={`add-to-cart-btn${justAdded === p.id ? ' added' : ''}`}
-                      onClick={() => handleAddToCart(p)}
+                      onClick={() =>
+                        setQuantity((current) =>
+                          Math.max(1, current - 1)
+                        )
+                      }
+                      aria-label="Decrease quantity"
                     >
-                      {justAdded === p.id ? 'Added ♡' : 'Add to Cart'}
+                      −
+                    </button>
+
+                    <span>{quantity}</span>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setQuantity((current) => current + 1)
+                      }
+                      aria-label="Increase quantity"
+                    >
+                      +
                     </button>
                   </div>
-                )}
-              </div>
+
+                  <button
+                    type="button"
+                    className={`product-modal-add${
+                      justAdded ? ' added' : ''
+                    }`}
+                    onClick={handleAddToCart}
+                  >
+                    {justAdded ? 'Added ♡' : 'Add to Cart'}
+                  </button>
+
+                </div>
+              )}
+
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      )}
+    </>
   );
 }
