@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { del } from '@vercel/blob';
 import { turso } from '../src/lib/turso.js';
 
 export default async function handler(
@@ -79,6 +80,10 @@ export default async function handler(
         });
       }
 
+      // Delete the actual image from Vercel Blob
+      await del(String(photo.image_url));
+
+      // Delete the photo record from Turso
       await turso.execute({
         sql: `
           DELETE FROM tester_photos
