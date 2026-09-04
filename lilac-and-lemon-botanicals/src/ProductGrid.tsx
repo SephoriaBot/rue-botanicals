@@ -14,6 +14,29 @@ type Product = {
   price: number;
 };
 
+const PRODUCT_GROUPS = [
+  {
+    name: 'Cleanse',
+    ids: [101, 104, 107],
+  },
+  {
+    name: 'Polish',
+    ids: [109],
+  },
+  {
+    name: 'Essence',
+    ids: [102, 105],
+  },
+  {
+    name: 'Hydrate',
+    ids: [103, 106],
+  },
+  {
+    name: 'Finish',
+    ids: [108],
+  },
+];
+
 export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -122,27 +145,43 @@ export default function ProductGrid() {
             </p>
           </div>
 
-          <div className="product-grid">
-            {products.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                className="product-tile"
-                onClick={() => openProduct(p)}
-                aria-label={`View ${p.name}`}
-              >
-                <div className="product-tile-image">
-                  <img
-                    src={bottleImages[p.id]}
-                    alt=""
-                    aria-hidden="true"
-                  />
+          {PRODUCT_GROUPS.map((group) => {
+            const groupProducts = group.ids
+              .map((id) => products.find((p) => p.id === id))
+              .filter((p): p is Product => Boolean(p));
+
+            if (groupProducts.length === 0) return null;
+
+            return (
+              <div className="product-group" key={group.name}>
+                <div className="product-group-heading">
+                  <h3>{group.name}</h3>
                 </div>
 
-                <h3>{p.name}</h3>
-              </button>
-            ))}
-          </div>
+                <div className="product-grid">
+                  {groupProducts.map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      className="product-tile"
+                      onClick={() => openProduct(p)}
+                      aria-label={`View ${p.name}`}
+                    >
+                      <div className="product-tile-image">
+                        <img
+                          src={bottleImages[p.id]}
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </div>
+
+                      <h3>{p.name}</h3>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
 
         </div>
       </section>

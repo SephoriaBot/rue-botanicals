@@ -2991,3 +2991,41 @@ section.products {
     width: 95px;
   }
 }
+
+/* Product phase groups */
+
+.product-group {
+  margin-top: 5rem;
+}
+
+.product-group:first-of-type {
+  margin-top: 4rem;
+}
+
+.product-group-heading {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.product-group-heading h3 {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted, #7a7065);
+}
+
+@media (max-width: 640px) {
+  .product-group {
+    margin-top: 4rem;
+  }
+
+  .product-group:first-of-type {
+    margin-top: 3rem;
+  }
+
+  .product-group-heading {
+    margin-bottom: 1.25rem;
+  }
+}
