@@ -820,6 +820,13 @@ section.products {
   transition:
     opacity 0.35s ease,
     transform 0.5s ease;
+
+    background:
+  radial-gradient(
+    ellipse at center,
+    rgba(239, 215, 166, 0.28),
+    transparent 68%
+  );
 }
 
 .product-card:hover .product-card-accent {
