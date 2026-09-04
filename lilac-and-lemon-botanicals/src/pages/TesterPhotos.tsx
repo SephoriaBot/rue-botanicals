@@ -16,6 +16,7 @@ export default function TesterPhotos() {
   const [photos, setPhotos] = useState<TesterPhoto[]>([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [deleting, setDeleting] = useState<number | null>(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -104,6 +105,50 @@ export default function TesterPhotos() {
     }
   }
 
+  async function handleDelete(photoId: number) {
+    if (!user) return;
+
+    const confirmed = window.confirm(
+      'Delete this photo? This cannot be undone.'
+    );
+
+    if (!confirmed) return;
+
+    setDeleting(photoId);
+    setError('');
+
+    try {
+      const res = await fetch('/api/tester-photos', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: user.id,
+          photoId,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || 'Could not delete photo.');
+      }
+
+      setPhotos((currentPhotos) =>
+        currentPhotos.filter((photo) => photo.id !== photoId)
+      );
+    } catch (err) {
+      console.error('Photo delete failed:', err);
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Could not delete that photo. Please try again.'
+      );
+    } finally {
+      setDeleting(null);
+    }
+  }
+
   if (!isLoaded) {
     return null;
   }
@@ -154,7 +199,7 @@ export default function TesterPhotos() {
             accept="image/jpeg,image/png,image/webp"
             capture="environment"
             hidden
-            disabled={uploading}
+            disabled={uploading || deleting !== null}
             onChange={(event) =>
               handleUpload(event, 'baseline')
             }
@@ -164,12 +209,22 @@ export default function TesterPhotos() {
         {baselinePhotos.length > 0 && (
           <div className="tester-photo-grid">
             {baselinePhotos.map((photo) => (
-              <img
-                key={photo.id}
-                src={photo.image_url}
-                alt="Baseline"
-                className="tester-photo"
-              />
+              <div key={photo.id} className="tester-photo-card">
+                <img
+                  src={photo.image_url}
+                  alt="Baseline"
+                  className="tester-photo"
+                />
+
+                <button
+                  type="button"
+                  className="tester-photo-delete"
+                  onClick={() => handleDelete(photo.id)}
+                  disabled={deleting === photo.id}
+                >
+                  {deleting === photo.id ? 'Deleting…' : 'Delete'}
+                </button>
+              </div>
             ))}
           </div>
         )}
@@ -194,7 +249,7 @@ export default function TesterPhotos() {
             accept="image/jpeg,image/png,image/webp"
             capture="environment"
             hidden
-            disabled={uploading}
+            disabled={uploading || deleting !== null}
             onChange={(event) =>
               handleUpload(event, 'progress')
             }
@@ -204,12 +259,22 @@ export default function TesterPhotos() {
         {progressPhotos.length > 0 && (
           <div className="tester-photo-grid">
             {progressPhotos.map((photo) => (
-              <img
-                key={photo.id}
-                src={photo.image_url}
-                alt="Progress"
-                className="tester-photo"
-              />
+              <div key={photo.id} className="tester-photo-card">
+                <img
+                  src={photo.image_url}
+                  alt="Progress"
+                  className="tester-photo"
+                />
+
+                <button
+                  type="button"
+                  className="tester-photo-delete"
+                  onClick={() => handleDelete(photo.id)}
+                  disabled={deleting === photo.id}
+                >
+                  {deleting === photo.id ? 'Deleting…' : 'Delete'}
+                </button>
+              </div>
             ))}
           </div>
         )}
