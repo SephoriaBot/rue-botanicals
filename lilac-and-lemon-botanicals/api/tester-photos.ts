@@ -5,8 +5,12 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  if (req.method !== 'GET' && req.method !== 'POST') {
-    res.setHeader('Allow', 'GET, POST');
+  if (
+    req.method !== 'GET' &&
+    req.method !== 'POST' &&
+    req.method !== 'DELETE'
+  ) {
+    res.setHeader('Allow', 'GET, POST, DELETE');
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -46,6 +50,50 @@ export default async function handler(
       });
     }
 
+    // DELETE PHOTO
+    if (req.method === 'DELETE') {
+      const photoId = Number(req.body?.photoId);
+
+      if (!Number.isInteger(photoId) || photoId <= 0) {
+        return res.status(400).json({
+          error: 'Invalid photo ID.',
+        });
+      }
+
+      const photoResult = await turso.execute({
+        sql: `
+          SELECT id, image_url
+          FROM tester_photos
+          WHERE id = ?
+            AND tester_id = ?
+          LIMIT 1
+        `,
+        args: [photoId, tester.id],
+      });
+
+      const photo = photoResult.rows[0];
+
+      if (!photo) {
+        return res.status(404).json({
+          error: 'Photo not found.',
+        });
+      }
+
+      await turso.execute({
+        sql: `
+          DELETE FROM tester_photos
+          WHERE id = ?
+            AND tester_id = ?
+        `,
+        args: [photoId, tester.id],
+      });
+
+      return res.status(200).json({
+        ok: true,
+      });
+    }
+
+    // GET PHOTOS
     if (req.method === 'GET') {
       const result = await turso.execute({
         sql: `
@@ -66,6 +114,7 @@ export default async function handler(
       });
     }
 
+    // POST PHOTO
     const { photoType, imageUrl } = req.body ?? {};
 
     if (!['baseline', 'progress'].includes(photoType)) {
