@@ -21,18 +21,29 @@ export default async function handler(
 
   try {
     const result = await turso.execute({
-      sql: `
-        SELECT COUNT(*) AS checkins
+  sql: `
+    SELECT
+      (
+        SELECT COUNT(*)
         FROM tester_checkins tc
-        JOIN testers t ON t.id = tc.tester_id
-        WHERE t.user_id = ?
-      `,
-      args: [userId],
-    });
+        WHERE tc.tester_id = t.id
+      ) AS checkins,
+      (
+        SELECT COUNT(*)
+        FROM tester_photos tp
+        WHERE tp.tester_id = t.id
+      ) AS photos
+    FROM testers t
+    WHERE t.user_id = ?
+    LIMIT 1
+  `,
+  args: [userId],
+});
 
     return res.status(200).json({
-      checkins: Number(result.rows[0]?.checkins ?? 0),
-    });
+  checkins: Number(result.rows[0]?.checkins ?? 0),
+  photos: Number(result.rows[0]?.photos ?? 0),
+});
   } catch (err) {
     console.error('Tester stats lookup failed:', err);
     return res.status(500).json({ error: 'Something went wrong' });
