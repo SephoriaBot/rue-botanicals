@@ -98,7 +98,7 @@ export default async function handler(
 
     return res.status(200).json({
       ok: true,
-      id: result.lastInsertRowid,
+      id: Number(result.lastInsertRowid),
     });
   } catch (err) {
     console.error('Tester photos request failed:', err);
