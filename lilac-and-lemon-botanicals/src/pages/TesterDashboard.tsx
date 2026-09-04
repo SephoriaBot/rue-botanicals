@@ -166,7 +166,7 @@ const stats = [
     <main className="tester-page">
       <section className="tester-hero wrap">
         <div className="tester-page-icon">
-          <img src="/icons/gear.png" alt="" aria-hidden="true" />
+          <img src="/icons/journal.png" alt="" aria-hidden="true" />
         </div>
         <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
         <h1>Welcome{user?.firstName ? `, ${user.firstName}` : ''}<br />to your testing journal.</h1>
