@@ -12,24 +12,24 @@ export default async function handler(
 
   try {
     const body = typeof req.body === 'string'
-  ? JSON.parse(req.body)
-  : req.body;
-
-    const userId =
-      typeof body?.userId === 'string'
-        ? body.userId.trim()
-        : '';
-
-    if (!userId) {
-      return res.status(400).json({
-        error: 'Missing userId',
-      });
-    }
+      ? JSON.parse(req.body)
+      : req.body;
 
     const jsonResponse = await handleUpload({
       body,
       request: req,
-      onBeforeGenerateToken: async () => {
+      onBeforeGenerateToken: async (pathname, clientPayload) => {
+        const payload = clientPayload
+          ? JSON.parse(clientPayload)
+          : {};
+
+        const userId =
+          typeof payload?.userId === 'string' ? payload.userId.trim() : '';
+
+        if (!userId) {
+          throw new Error('Missing userId');
+        }
+
         return {
           allowedContentTypes: [
             'image/jpeg',
@@ -55,7 +55,6 @@ export default async function handler(
     return res.status(200).json(jsonResponse);
   } catch (err) {
     console.error('Tester photo upload failed:', err);
-
     return res.status(400).json({
       error:
         err instanceof Error
