@@ -813,8 +813,6 @@ section.products {
 
   object-fit: contain;
 
-  opacity: 0.2;
-
   z-index: 0;
 
   filter: saturate(0.65);
