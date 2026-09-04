@@ -11,7 +11,9 @@ export default async function handler(
   }
 
   try {
-    const body = req.body;
+    const body = typeof req.body === 'string'
+  ? JSON.parse(req.body)
+  : req.body;
 
     const userId =
       typeof body?.userId === 'string'
