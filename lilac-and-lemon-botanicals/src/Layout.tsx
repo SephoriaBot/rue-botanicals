@@ -46,6 +46,12 @@ function handleSignOut() {
 </SignedOut>
 
             <SignedIn>
+  <NavLink
+    to="/account"
+    className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+  >
+    My Account
+  </NavLink>
   <button
     type="button"
     className="nav-link nav-link-button"

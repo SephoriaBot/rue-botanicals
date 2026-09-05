@@ -3071,3 +3071,226 @@ section.products {
   margin-right: 16px;
   margin-bottom: 8px;
 }
+
+/* =========================================================
+   ACCOUNT PAGE
+   ========================================================= */
+
+.account-page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.account-wrap {
+  max-width: 720px;
+}
+
+.account-intro {
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+
+.account-intro h1 {
+  margin: 14px 0 10px;
+  font-size: 2.2rem;
+}
+
+.account-intro p {
+  max-width: 480px;
+  margin: 0 auto;
+  color: var(--brown-soft);
+  line-height: 1.6;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account-card {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 28px 30px;
+}
+
+.account-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.account-card-note {
+  font-size: 0.8rem;
+  color: var(--brown-soft);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.account-form-field {
+  margin-bottom: 16px;
+}
+
+.account-form-field:last-child {
+  margin-bottom: 0;
+}
+
+.account-form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brown-soft);
+}
+
+.account-form-field input {
+  width: 100%;
+  padding: 11px 16px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--brown);
+  font-family: "Jost", sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.account-form-field input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px var(--pink-soft);
+}
+
+.account-form-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.account-saved-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.account-saved-card-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--brown);
+}
+
+.account-card-brand {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  color: var(--rose);
+}
+
+.account-card-exp {
+  color: var(--brown-soft);
+}
+
+.account-link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--rose);
+  font-family: "Jost", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.account-link-button:hover {
+  color: var(--brown);
+}
+
+.account-skin-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.account-skin-type {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--brown);
+}
+
+.account-save-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.account-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  background: var(--rose);
+  color: var(--on-dark);
+  border: none;
+  border-radius: 999px;
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.account-button:hover {
+  background: var(--brown);
+  transform: translateY(-1px);
+}
+
+.account-saved-note {
+  font-size: 0.78rem;
+  color: var(--brown-soft);
+}
+
+.account-saved-note.error {
+  color: var(--error);
+}
+
+.account-footnote {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--brown-soft);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .account-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .account-card {
+    padding: 22px 20px;
+  }
+
+  .account-saved-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
