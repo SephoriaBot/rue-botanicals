@@ -6,13 +6,17 @@ export default function Home() {
     <header className="hero">
       <div className="wrap">
         <span className="eyebrow">Small-batch skincare · founded by a master esthetician</span>
-          <div className="art-frame filled story-art">
-  <img
-    src="/rue-botanicals-logo.png"
-    alt="logo for rue"
-  />
-         <RueMascot size={100} />
-          </div>
+         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+  <div className="art-frame filled story-art">
+    <img
+      src="/rue-botanicals-logo.png"
+      alt="logo for rue"
+    />
+  </div>
+  <RueMascot size={100} />
+</div>
+
+          
 
         <p className="tagline">
        Formulas built on your needs and nothing else. Tested only on those that can consent (animals are safe here).
