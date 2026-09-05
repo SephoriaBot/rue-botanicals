@@ -13,7 +13,6 @@ export default function Home() {
       alt="logo for rue"
     />
   </div>
-  <RueMascot size={100} />
 </div>
 
           
