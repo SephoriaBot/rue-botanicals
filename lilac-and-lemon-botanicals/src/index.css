@@ -1414,7 +1414,7 @@ section.follow {
   padding: 90px 0;
   text-align: center;
 
-  background: var(--rose);
+  background: var(--cream);
 }
 
 section.follow .label {
@@ -1437,11 +1437,11 @@ section.follow p {
 
 .follow-form button {
   background: #FFFFFF;
-  color: var(--rose);
+  color: var(--cream);
 }
 
 .follow-form button:hover {
-  background: var(--cream);
+  background: var(--rose);
 }
 
 
