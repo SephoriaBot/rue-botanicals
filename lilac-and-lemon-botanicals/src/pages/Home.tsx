@@ -7,7 +7,7 @@ export default function Home() {
       <div className="wrap">
         <span className="eyebrow">Small-batch skincare · founded by a master esthetician</span>
           <div className="art-frame filled story-art">
-         <RueMascot size={200} />
+         <RueMascot size={100} />
         </div>
 
         <p className="tagline">
