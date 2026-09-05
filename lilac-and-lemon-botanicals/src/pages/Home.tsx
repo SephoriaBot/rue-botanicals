@@ -6,7 +6,7 @@ export default function Home() {
       <div className="wrap">
         <span className="eyebrow">Small-batch skincare · founded by a master esthetician</span>
           <div className="art-frame filled story-art">
-          <img src="/illustrations/rue-logo-official.png" alt="Brand logo" />
+         <RueMascot size={200} />
         </div>
 
         <p className="tagline">
