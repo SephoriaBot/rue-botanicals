@@ -47,6 +47,7 @@ export default function TesterDashboard() {
   const [checkins, setCheckins] = useState(0);
   const [products, setProducts] = useState<TesterProduct[]>([]);
   const [photos, setPhotos] = useState(0);
+  const [fullName, setFullName] = useState('');
 
 useEffect(() => {
   if (!isSignedIn || !user) {
@@ -66,6 +67,15 @@ useEffect(() => {
 
       const data = await res.json();
       setTester(data.tester ?? null);
+
+      const profileRes = await fetch(
+  `/api/account/profile?userId=${encodeURIComponent(user.id)}`
+);
+
+if (profileRes.ok) {
+  const profileData = await profileRes.json();
+  setFullName(profileData.profile?.fullName ?? '');
+}
 
       const statsRes = await fetch(
   `/api/tester/stats?userId=${encodeURIComponent(user.id)}`
@@ -170,7 +180,11 @@ const stats = [
           <img src="/icons/welcome-wreath.png" alt="" aria-hidden="true" />
         </div>
         <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
-        <h1>Welcome{user?.firstName ? `, ${user.firstName}` : ''}<br />to your testing journal.</h1>
+        <h1>
+  Welcome{fullName ? `, ${fullName}` : user?.firstName ? `, ${user.firstName}` : ''}
+  <br />
+  to your testing journal.
+</h1>
         <p>
           Thank you for helping us test and improve Rue Botanicals.
           Everything you record here helps us understand how our formulas

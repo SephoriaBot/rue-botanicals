@@ -3082,7 +3082,28 @@ section.products {
 }
 
 .account-wrap {
-  max-width: 720px;
+  max-width: 900px;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.account-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 32px 36px;
+}
+
+.account-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
 .account-intro {
@@ -3103,33 +3124,10 @@ section.products {
   line-height: 1.6;
 }
 
-.account-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.account-card {
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  padding: 28px 30px;
-}
-
-.account-card h2 {
-  font-size: 1.25rem;
-  margin-bottom: 16px;
-}
-
 .account-card-note {
   font-size: 0.8rem;
   color: var(--brown-soft);
   line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.account-form-field {
   margin-bottom: 16px;
 }
 
@@ -3148,15 +3146,20 @@ section.products {
   color: var(--brown-soft);
 }
 
+.account-form-field {
+  margin-bottom: 20px;
+}
+
 .account-form-field input {
   width: 100%;
-  padding: 11px 16px;
+  box-sizing: border-box;
+  padding: 13px 16px;
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   color: var(--brown);
   font-family: "Jost", sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -3168,16 +3171,16 @@ section.products {
 
 .account-form-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 18px;
 }
 
 .account-saved-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 18px;
+  gap: 24px;
+  padding: 18px 20px;
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -3186,7 +3189,8 @@ section.products {
 .account-saved-card-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
+  flex-wrap: wrap;
   font-family: "Space Mono", monospace;
   font-size: 0.82rem;
   color: var(--brown);
