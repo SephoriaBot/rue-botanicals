@@ -9,7 +9,7 @@ export default function About() {
           <h2>Made to be worthy of your skin.</h2>
 
           <div className="mascot-float">
-            <RueMascot size={100} />
+            <RueMascot size={200} />
           </div>
 
           <p>I began practicing skincare around 2020, and it didn't take long before formulating felt inevitable. The more I learned, the more I wanted to create products with intention—where every ingredient has a reason to be there, and nothing is included simply to fill space or justify a price.</p>
