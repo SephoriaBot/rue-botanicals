@@ -1423,7 +1423,7 @@ section.follow .label {
 
 section.follow h2,
 section.follow p {
-  color: #FFFFFF;
+  color: #4A3840;
 }
 
 .follow-form {
@@ -1445,8 +1445,8 @@ section.follow p {
 }
 
 .follow-icon {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
