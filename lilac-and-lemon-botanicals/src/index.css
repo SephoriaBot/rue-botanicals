@@ -1441,7 +1441,7 @@ section.follow p {
 }
 
 .follow-form button:hover {
-  background: var(--rose);
+  background: var(--brown);
 }
 
 .follow-icon {
