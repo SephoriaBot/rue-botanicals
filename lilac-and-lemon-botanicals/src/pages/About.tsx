@@ -1,3 +1,5 @@
+import RueMascot from '../components/RueMascot';
+
 export default function About() {
   return (
     <section className="story">
