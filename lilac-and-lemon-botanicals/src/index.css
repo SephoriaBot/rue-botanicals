@@ -131,6 +131,32 @@ h3 {
 
 
 /* =========================================================
+   PAGE ICONS
+   ========================================================= */
+
+.page-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 10px;
+  object-fit: contain;
+}
+
+.page-icon-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.page-icon-inline img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+
+/* =========================================================
    ART FRAMES
    ========================================================= */
 

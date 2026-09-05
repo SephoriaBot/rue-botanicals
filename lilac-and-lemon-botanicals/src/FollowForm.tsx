@@ -24,7 +24,7 @@ export default function FollowForm() {
   return (
     <section className="follow">
       <div className="wrap">
-        <img className="follow-icon" src="/icons/envelope.png" alt="" aria-hidden="true" />
+        <img className="follow-icon" src="/icons/contact_email.png" alt="" aria-hidden="true" />
         <span className="label">Stay Close</span>
         <h2>Be here when the doors open.</h2>
         <p>Leave your email and you'll be the first to know when the shop goes live.</p>

@@ -135,6 +135,7 @@ export default function ProductGrid() {
         <div className="wrap">
 
           <div className="products-head">
+            <img className="page-icon" src="/icons/shop_products.png" alt="" aria-hidden="true" />
             <span className="label">{eyebrowLabel}</span>
 
             <h2>Inspired by our personal garden.</h2>
@@ -222,9 +223,12 @@ export default function ProductGrid() {
 
             <div className="product-modal-content">
 
-              <span className="product-modal-ingredient">
-                {selectedProduct.ingredient_label}
-              </span>
+              <div className="page-icon-inline">
+                <img src="/icons/product_detail.png" alt="" aria-hidden="true" />
+                <span className="product-modal-ingredient">
+                  {selectedProduct.ingredient_label}
+                </span>
+              </div>
 
               <span
                 className="product-modal-stem"

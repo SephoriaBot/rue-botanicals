@@ -5,7 +5,10 @@ export default function About() {
     <section className="story">
       <div className="wrap">
         <div>
-          <span className="label">The Idea</span>
+          <div className="page-icon-inline">
+            <img src="/icons/about.png" alt="" aria-hidden="true" />
+            <span className="label">The Idea</span>
+          </div>
           <h2>Made to be worthy of your skin.</h2>
 
           <div className="mascot-float">

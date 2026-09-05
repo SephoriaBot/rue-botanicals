@@ -125,7 +125,7 @@ export default function TesterQuestionnaires() {
     <main className="tester-page">
       <section className="tester-hero wrap">
         <div className="tester-page-icon">
-          <img src="/icons/journal.png" alt="" aria-hidden="true" />
+          <img src="/icons/tester_questionnaire.png" alt="" aria-hidden="true" />
         </div>
         <div className="tester-eyebrow">
           RUE BOTANICALS · TESTER PORTAL

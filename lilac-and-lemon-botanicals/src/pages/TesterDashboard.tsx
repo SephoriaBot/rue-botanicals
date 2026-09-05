@@ -190,7 +190,10 @@ const stats = [
 
       <section className="tester-primary-cta wrap">
         <div className="tester-primary-cta-text">
-          <span className="tester-kicker">TODAY'S ENTRY</span>
+          <div className="tester-section-heading-icon-wrap">
+            <img className="tester-section-heading-icon" src="/icons/tester_dashboard.png" alt="" aria-hidden="true" />
+            <span className="tester-kicker">TODAY'S ENTRY</span>
+          </div>
           <h2>Log how your skin feels today</h2>
           <p>Takes about a minute. Do this once a day while you're testing.</p>
         </div>

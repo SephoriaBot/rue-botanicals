@@ -96,6 +96,7 @@ export default function Checkout() {
     <section className="checkout-section">
       <div className="wrap">
         <div className="cart-head">
+          <img className="page-icon" src="/icons/cart_checkout.png" alt="" aria-hidden="true" />
           <span className="label">Reserve Your Order</span>
           <h2>Just a few details.</h2>
           <p>No payment yet — this holds your spot for when we open the shop.</p>

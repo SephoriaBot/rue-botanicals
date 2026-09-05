@@ -308,6 +308,7 @@ export default function MySkin() {
       <main className="page-wrap my-skin-page">
         <div className="wrap">
           <section className="my-skin-result-intro">
+            <img className="page-icon" src="/icons/skin_assessment.png" alt="" aria-hidden="true" />
             <span className="eyebrow">Your skin profile</span>
             <h1>{result.title}</h1>
             <p>{result.description}</p>
@@ -384,6 +385,7 @@ export default function MySkin() {
     <main className="page-wrap my-skin-page">
       <div className="wrap my-skin-assessment">
         <section className="my-skin-intro">
+          <img className="page-icon" src="/icons/skin_assessment.png" alt="" aria-hidden="true" />
           <span className="eyebrow">My Skin</span>
           <h1>Understand what your skin needs.</h1>
           <p>A short esthetician-informed assessment to help you understand your skin type, sensitivity, and everyday skincare priorities.</p>

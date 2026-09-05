@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <header className="hero">
       <div className="wrap">
+        <img className="page-icon" src="/icons/home.png" alt="" aria-hidden="true" />
         <span className="eyebrow">Small-batch skincare · founded by a master esthetician</span>
          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
   <div className="art-frame filled story-art">

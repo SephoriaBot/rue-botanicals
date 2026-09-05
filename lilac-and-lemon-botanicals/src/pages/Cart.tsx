@@ -9,8 +9,9 @@ export default function Cart() {
       <section className="cart-section">
         <div className="wrap">
           <div className="cart-head">
+            <img className="page-icon" src="/icons/cart_checkout.png" alt="" aria-hidden="true" />
             <span className="label">Your Cart</span>
-            
+
             <h2>Nothing here yet.</h2>
           </div>
           <div className="cart-empty">
@@ -26,8 +27,9 @@ export default function Cart() {
     <section className="cart-section">
       <div className="wrap">
         <div className="cart-head">
+          <img className="page-icon" src="/icons/cart_checkout.png" alt="" aria-hidden="true" />
           <span className="label">Your Cart</span>
-  
+
           <h2>Ready when you are.</h2>
         </div>
 

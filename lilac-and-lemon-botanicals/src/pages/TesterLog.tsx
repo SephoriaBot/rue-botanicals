@@ -134,7 +134,7 @@ if (!isSignedIn) return <Navigate to="/login" replace />;
 
         <div className="tester-log-header">
           <div className="tester-page-icon">
-            <img src="/icons/magnifier.png" alt="" aria-hidden="true" />
+            <img src="/icons/tester_log.png" alt="" aria-hidden="true" />
           </div>
           <span className="tester-kicker">WEEKLY CHECK-IN</span>
           <h1>Week {weekNumber}</h1>
