@@ -26,9 +26,8 @@ export default function FollowForm() {
       <div className="wrap">
         <img className="follow-icon" src="/icons/contact_email.png" alt="" aria-hidden="true" />
         <span className="label">Stay Close</span>
-        <h2>Be here when the doors open.</h2>
-        <p>Leave your email and you'll be the first to know when the shop goes live.</p>
-        <form className="follow-form" onSubmit={handleSubmit}>
+        <h2 className="follow-heading">Be here when the doors open.</h2>
+<p className="follow-text">Leave your email and you'll be the first to know when the shop goes live.</p>        <form className="follow-form" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="your@email.com"
