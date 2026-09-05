@@ -1,52 +1,60 @@
 :root {
 
   /* =========================================================
-     RUE BOTANICALS — French Apothecary / Parisian Rose
+     RUE BOTANICALS — Botanical Study / Tester Journal
+     (palette drawn from the tester portal)
      ========================================================= */
 
-  /* Warm French ivory — softer than pure white */
-  --cream: #FBF5F3;
-  --cream-deep: #F4E5E7;
+  /* Warm linen paper — softer than pure white */
+  --cream: #F7F1E9;
+  --cream-deep: #EEE6DC;
 
   /* Porcelain */
-  --surface: #FFFCFB;
-  --surface-soft: #F9EFF1;
+  --surface: #FFFDF9;
+  --surface-soft: #F2EAE0;
 
-  /* French plum-brown ink */
-  --brown: #4A3840;
-  --brown-soft: #806B73;
-  --brown-muted: #BDA9B0;
+  /* Ink brown */
+  --brown: #3D2B1F;
+  --brown-soft: #75685D;
+  --brown-muted: #B4A99F;
 
-  /* Antique rose — primary botanical accent */
-  --sage: #C98B9D;
-  --sage-soft: #F1DCE2;
+  /* Olive — primary botanical accent */
+  --sage: #65745C;
+  --sage-soft: #E8DFD5;
 
-  /* Powder blush */
-  --pink: #EFC4CF;
-  --pink-soft: #FAEAEE;
+  /* Soft tan highlight */
+  --pink: #DED5CC;
+  --pink-soft: #EEE6DC;
 
-  /* Deep dusty French rose */
-  --rose: #C97F94;
-  --rose-soft: #F2D5DC;
+  /* Olive accent (aliases --sage; kept for existing call sites) */
+  --rose: #65745C;
+  --rose-soft: #E8DFD5;
 
-  /* Champagne / antique gold */
-  --gold: #C9A66B;
-  --gold-soft: #EDE0C8;
+  /* Antique brass — secondary accent for labels/eyebrows */
+  --gold: #8A7B5C;
+  --gold-soft: #E8DFD5;
+
+  /* Error / validation */
+  --error: #8B4D5D;
+  --error-soft: #F7E7E7;
+
+  /* Text on dark/filled buttons */
+  --on-dark: #FFFDF9;
 
   /* Delicate warm borders */
-  --line: rgba(74, 56, 64, 0.11);
-  --line-soft: rgba(74, 56, 64, 0.055);
+  --line: rgba(61, 43, 31, 0.13);
+  --line-soft: rgba(61, 43, 31, 0.07);
 
   /* Soft, elegant corners */
   --radius: 20px;
   --radius-sm: 12px;
 
-  /* Rosy porcelain shadows */
+  /* Warm ink shadows */
   --shadow-soft:
-    0 8px 28px rgba(120, 76, 91, 0.09);
+    0 8px 28px rgba(61, 43, 31, 0.09);
 
   --shadow-hover:
-    0 16px 40px rgba(120, 76, 91, 0.15);
+    0 16px 40px rgba(61, 43, 31, 0.15);
 }
 
 
@@ -74,7 +82,7 @@ body {
 body {
   background: var(--cream);
   color: var(--brown);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 300;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -112,7 +120,7 @@ a {
 .eyebrow,
 .label {
   display: block;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -124,7 +132,7 @@ a {
 h1,
 h2,
 h3 {
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   color: var(--brown);
   font-weight: 500;
 }
@@ -176,7 +184,7 @@ h3 {
 }
 
 .art-frame .art-frame-label {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   line-height: 1.7;
@@ -229,7 +237,7 @@ nav .wrap {
 }
 
 .wordmark {
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -252,7 +260,7 @@ nav .wrap {
 .nav-link {
   position: relative;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.67rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -329,7 +337,7 @@ nav .wrap {
 
   color: var(--rose);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.61rem;
   font-weight: 600;
   letter-spacing: 0.09em;
@@ -413,7 +421,7 @@ nav .wrap {
   background: var(--rose);
   color: white;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.58rem;
   font-weight: 700;
 
@@ -488,7 +496,7 @@ header.hero h1 .accent {
   background: var(--brown);
   border-color: var(--gold-soft);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -559,7 +567,7 @@ section.story p + p {
 
 .story-mark {
   font-style: italic;
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   color: var(--rose);
 }
 
@@ -624,7 +632,7 @@ section.routine {
 
   margin-top: 10px;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.63rem;
   font-weight: 600;
   letter-spacing: 0.07em;
@@ -674,7 +682,7 @@ section.routine {
 }
 
 .step-ritual {
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   font-style: italic;
   font-size: 1rem;
   color: var(--rose);
@@ -936,7 +944,7 @@ section.products {
 
   color: var(--rose);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.59rem;
   font-weight: 600;
 
@@ -964,7 +972,7 @@ section.products {
 .product-card h3 {
   margin: 0;
 
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   font-size: 1.45rem;
   font-weight: 500;
 
@@ -993,7 +1001,7 @@ section.products {
 
   color: var(--brown-soft);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.78rem;
   font-weight: 300;
 
@@ -1018,7 +1026,7 @@ section.products {
 
   color: var(--brown-muted);
 
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 0.66rem;
   letter-spacing: 0.01em;
 }
@@ -1051,7 +1059,7 @@ section.products {
 
   border-radius: 999px;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.56rem;
   font-weight: 600;
 
@@ -1070,7 +1078,7 @@ section.products {
 
 .badge-available {
   background: var(--rose);
-  color: #FFFFFF;
+  color: var(--on-dark);
 
   border: 1px solid var(--rose);
 }
@@ -1128,11 +1136,11 @@ section.products {
 
   text-align: center;
 
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 0.67rem;
 }
 
-.add-to-cart-btn {
+.add-to-cart-button {
   flex: 1;
 
   min-height: 31px;
@@ -1140,12 +1148,12 @@ section.products {
   padding: 7px 14px;
 
   background: var(--rose);
-  color: #FFFFFF;
+  color: var(--on-dark);
 
   border: none;
   border-radius: 999px;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.61rem;
   font-weight: 600;
 
@@ -1159,12 +1167,12 @@ section.products {
     transform 0.2s ease;
 }
 
-.add-to-cart-btn:hover {
+.add-to-cart-button:hover {
   background: var(--brown);
   transform: translateY(-1px);
 }
 
-.add-to-cart-btn.added {
+.add-to-cart-button.added {
   background: var(--gold);
 }
 
@@ -1218,7 +1226,7 @@ section.checkout-section {
 
   color: var(--brown);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
 
@@ -1274,14 +1282,14 @@ section.checkout-section {
 }
 
 .cart-item-info h4 {
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   font-weight: 500;
   font-size: 1.05rem;
   margin-bottom: 2px;
 }
 
 .cart-item-info span {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 0.68rem;
   color: var(--brown-soft);
 }
@@ -1293,7 +1301,7 @@ section.checkout-section {
 }
 
 .cart-item-price {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 0.82rem;
   font-weight: 700;
 
@@ -1309,7 +1317,7 @@ section.checkout-section {
 
   cursor: pointer;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.62rem;
 
   text-transform: uppercase;
@@ -1322,7 +1330,7 @@ section.checkout-section {
   color: var(--rose);
 }
 
-.checkout-btn {
+.checkout-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1333,12 +1341,12 @@ section.checkout-section {
   padding: 12px 24px;
 
   background: var(--rose);
-  color: #FFFFFF;
+  color: var(--on-dark);
 
   border: none;
   border-radius: 999px;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
 
@@ -1352,7 +1360,7 @@ section.checkout-section {
     transform 0.2s ease;
 }
 
-.checkout-btn:hover {
+.checkout-button:hover {
   background: var(--brown);
   transform: translateY(-1px);
 }
@@ -1375,7 +1383,7 @@ section.checkout-section {
 
   color: var(--brown);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.85rem;
 
   outline: none;
@@ -1400,7 +1408,7 @@ section.checkout-section {
   border-radius: 50%;
 
   background: var(--rose);
-  color: #FFFFFF;
+  color: var(--on-dark);
 
   margin: 0 auto 20px;
 }
@@ -1424,7 +1432,7 @@ section.follow .label {
 
 section.follow h2,
 section.follow p {
-  color: #4A3840;
+  color: var(--brown);
 }
 
 .follow-form {
@@ -1598,7 +1606,7 @@ section.follow p {
 
   .product-card {
     padding: 12px 11px 15px;
-    border-radius: 18px;
+    border-radius: var(--radius-sm);
     position:relative;
   }
 
@@ -1689,7 +1697,7 @@ section.follow p {
     align-self: center;
   }
 
-  .add-to-cart-btn {
+  .add-to-cart-button {
     width: 100%;
   }
 
@@ -1797,7 +1805,7 @@ input[type="email"] {
 
   color: var(--brown);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.78rem;
   font-weight: 300;
 
@@ -1817,7 +1825,7 @@ input[type="email"]::placeholder {
 input[type="email"]:focus {
   border-color: var(--rose);
 
-  background: #fff;
+  background: var(--surface);
 
   box-shadow:
     0 0 0 3px var(--pink-soft);
@@ -1835,9 +1843,9 @@ button[type="submit"] {
   border-radius: 999px;
 
   background: var(--rose);
-  color: #FFFFFF;
+  color: var(--on-dark);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.64rem;
   font-weight: 600;
 
@@ -2006,7 +2014,7 @@ form:has(input[type="email"]) {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
-  color: #65745c;
+  color: var(--sage);
   margin-bottom: 14px;
 }
 
@@ -2017,7 +2025,7 @@ form:has(input[type="email"]) {
   font-size: clamp(2.8rem, 7vw, 5.4rem);
   line-height: 0.98;
   letter-spacing: -0.04em;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-hero > p {
@@ -2025,7 +2033,7 @@ form:has(input[type="email"]) {
   margin: 26px 0 34px;
   font-size: 1rem;
   line-height: 1.75;
-  color: #75685d;
+  color: var(--brown-soft);
 }
 
 .tester-progress {
@@ -2038,37 +2046,37 @@ form:has(input[type="email"]) {
   gap: 20px;
   margin-bottom: 10px;
   font-size: 0.76rem;
-  color: #75685d;
+  color: var(--brown-soft);
 }
 
 .tester-progress-top strong {
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-progress-track {
   height: 5px;
   border-radius: 999px;
-  background: #e8dfd5;
+  background: var(--sage-soft);
   overflow: hidden;
 }
 
 .tester-progress-fill {
   height: 100%;
   border-radius: inherit;
-  background: #65745c;
+  background: var(--sage);
 }
 
 .tester-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid #ded5cc;
-  border-bottom: 1px solid #ded5cc;
+  border-top: 1px solid var(--pink);
+  border-bottom: 1px solid var(--pink);
   max-width: 1100px;
 }
 
 .tester-stat {
   padding: 25px 24px;
-  border-right: 1px solid #ded5cc;
+  border-right: 1px solid var(--pink);
 }
 
 .tester-stat:last-child {
@@ -2078,7 +2086,7 @@ form:has(input[type="email"]) {
 .tester-stat span,
 .tester-stat small {
   display: block;
-  color: #897c70;
+  color: var(--brown-soft);
   font-size: 0.72rem;
 }
 
@@ -2088,7 +2096,7 @@ form:has(input[type="email"]) {
   font-family: Georgia, serif;
   font-size: 2rem;
   font-weight: 400;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-stat small {
@@ -2114,16 +2122,16 @@ form:has(input[type="email"]) {
   font-family: Georgia, serif;
   font-weight: 400;
   font-size: 2rem;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-date {
   font-size: 0.75rem;
-  color: #897c70;
+  color: var(--brown-soft);
 }
 
 .tester-task-list {
-  border-top: 1px solid #ded5cc;
+  border-top: 1px solid var(--pink);
 }
 
 .tester-task {
@@ -2132,12 +2140,12 @@ form:has(input[type="email"]) {
   align-items: center;
   gap: 24px;
   padding: 25px 0;
-  border-bottom: 1px solid #ded5cc;
+  border-bottom: 1px solid var(--pink);
 }
 
 .tester-task-number {
   font-family: Georgia, serif;
-  color: #b4a99f;
+  color: var(--brown-muted);
   font-size: 1rem;
 }
 
@@ -2145,12 +2153,12 @@ form:has(input[type="email"]) {
   margin: 0 0 5px;
   font-size: 0.98rem;
   font-weight: 600;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-task-body p {
   margin: 0;
-  color: #897c70;
+  color: var(--brown-soft);
   font-size: 0.82rem;
   line-height: 1.55;
 }
@@ -2159,7 +2167,7 @@ form:has(input[type="email"]) {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #65745c;
+  color: var(--sage);
   text-decoration: none;
   font-size: 0.78rem;
   font-weight: 700;
@@ -2185,7 +2193,7 @@ form:has(input[type="email"]) {
   display: flex;
   gap: 18px;
   padding: 20px;
-  border: 1px solid #ded5cc;
+  border: 1px solid var(--pink);
   background: rgba(255, 255, 255, 0.45);
 }
 
@@ -2195,8 +2203,8 @@ form:has(input[type="email"]) {
   flex: 0 0 64px;
   display: grid;
   place-items: center;
-  background: #eee6dc;
-  color: #8d7f73;
+  background: var(--cream-deep);
+  color: var(--brown-soft);
   font-family: Georgia, serif;
   padding: 6px;
 }
@@ -2207,7 +2215,7 @@ form:has(input[type="email"]) {
   font-size: 0.63rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #897c70;
+  color: var(--brown-soft);
 }
 
 .tester-product h3 {
@@ -2215,14 +2223,14 @@ form:has(input[type="email"]) {
   font-family: Georgia, serif;
   font-weight: 400;
   font-size: 1.15rem;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-product p {
   margin: 0;
   font-size: 0.74rem;
   line-height: 1.5;
-  color: #897c70;
+  color: var(--brown-soft);
 }
 
 .tester-note {
@@ -2232,12 +2240,12 @@ form:has(input[type="email"]) {
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  border: 1px solid #ded5cc;
-  background: #f7f1e9;
+  border: 1px solid var(--pink);
+  background: var(--cream);
 }
 
 .tester-note-mark {
-  color: #65745c;
+  color: var(--sage);
   font-size: 1.25rem;
 }
 
@@ -2246,13 +2254,13 @@ form:has(input[type="email"]) {
   font-family: Georgia, serif;
   font-size: 1.1rem;
   font-weight: 400;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-note p {
   margin: 0;
   max-width: 700px;
-  color: #75685d;
+  color: var(--brown-soft);
   font-size: 0.8rem;
   line-height: 1.6;
 }
@@ -2365,7 +2373,7 @@ form:has(input[type="email"]) {
   text-align: center;
   gap: 12px;
   padding: 48px 24px;
-  border: 1px dashed #ded5cc;
+  border: 1px dashed var(--pink);
   background: rgba(255, 255, 255, 0.4);
 }
 
@@ -2375,7 +2383,7 @@ form:has(input[type="email"]) {
 }
 
 .tester-empty-state p {
-  color: #897c70;
+  color: var(--brown-soft);
   font-size: 0.85rem;
   max-width: 320px;
 }
@@ -2385,7 +2393,7 @@ form:has(input[type="email"]) {
 .tester-log-header p { color:var(--brown-soft); max-width:620px; }
 .tester-form-card { background:rgba(255,252,251,.78); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-soft); overflow:hidden; }
 .tester-form-section { display:grid; grid-template-columns:58px 1fr; gap:24px; padding:34px; border-bottom:1px solid var(--line-soft); }
-.tester-form-number { font-family:'Fraunces',serif; color:var(--gold); font-size:1rem; padding-top:3px; }
+.tester-form-number { font-family:Georgia,serif; color:var(--gold); font-size:1rem; padding-top:3px; }
 .tester-form-section h2 { font-size:1.35rem; margin-bottom:18px; }
 .tester-choice-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
 .tester-choice { border:1px solid var(--line); background:var(--surface); color:var(--brown); border-radius:12px; padding:14px 12px; cursor:pointer; transition:.2s ease; }
@@ -2393,7 +2401,7 @@ form:has(input[type="email"]) {
 .tester-form-scales { display:grid; gap:28px; }
 .tester-form-scales > h2 { margin-bottom:-4px; }
 .tester-scale { border:0; padding:0; }
-.tester-scale legend { font-family:'Fraunces',serif; font-size:1.05rem; margin-bottom:2px; }
+.tester-scale legend { font-family:Georgia,serif; font-size:1.05rem; margin-bottom:2px; }
 .tester-scale p,.tester-notes p { color:var(--brown-muted); font-size:.74rem; margin-bottom:10px; }
 .tester-scale-options { display:flex; gap:8px; }
 .tester-score { width:46px; height:46px; border:1px solid var(--line); border-radius:50%; background:var(--surface); color:var(--brown); cursor:pointer; }
@@ -2401,9 +2409,9 @@ form:has(input[type="email"]) {
 .tester-notes textarea { width:100%; resize:vertical; border:1px solid var(--line); border-radius:12px; background:var(--surface); color:var(--brown); padding:14px; outline:none; }
 .tester-notes textarea:focus { border-color:var(--rose); }
 .tester-form-error,.tester-form-success { margin:22px 34px 0; padding:12px 14px; border-radius:10px; font-size:.82rem; }
-.tester-form-error { background:#f7e7e7; color:#8b4d5d; }
+.tester-form-error { background:var(--error-soft); color:var(--error); }
 .tester-form-success { background:var(--pink-soft); color:var(--brown); }
-.tester-submit { margin:24px 34px 34px; border:0; border-radius:999px; padding:14px 22px; background:var(--brown); color:#fff; cursor:pointer; display:flex; align-items:center; gap:20px; }
+.tester-submit { margin:24px 34px 34px; border:0; border-radius:999px; padding:14px 22px; background:var(--brown); color:var(--on-dark); cursor:pointer; display:flex; align-items:center; gap:20px; }
 .tester-submit:disabled { opacity:.6; cursor:wait; }
 @media (max-width:700px) { .tester-log { padding-top:32px; } .tester-form-section { grid-template-columns:1fr; gap:8px; padding:24px 20px; } .tester-choice-grid { grid-template-columns:1fr; } .tester-form-error,.tester-form-success { margin-left:20px; margin-right:20px; } .tester-submit { margin-left:20px; margin-right:20px; } }
 
@@ -2415,8 +2423,8 @@ form:has(input[type="email"]) {
   flex-wrap: wrap;
   margin-bottom: 48px;
   padding: 30px 32px;
-  border: 1px solid #ded5cc;
-  background: #f7f1e9;
+  border: 1px solid var(--pink);
+  background: var(--cream);
 }
 
 .tester-primary-cta-text {
@@ -2434,14 +2442,14 @@ form:has(input[type="email"]) {
   font-family: Georgia, serif;
   font-weight: 400;
   font-size: 1.6rem;
-  color: #3d2b1f;
+  color: var(--brown);
 }
 
 .tester-primary-cta-text p {
   margin: 6px 0 0;
   font-size: 0.82rem;
   line-height: 1.5;
-  color: #897c70;
+  color: var(--brown-soft);
 }
 
 .tester-primary-cta-button {
@@ -2451,8 +2459,8 @@ form:has(input[type="email"]) {
   flex-shrink: 0;
   padding: 15px 26px;
   border-radius: 999px;
-  background: #3d2b1f;
-  color: #fff;
+  background: var(--brown);
+  color: var(--on-dark);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -2462,7 +2470,7 @@ form:has(input[type="email"]) {
 }
 
 .tester-primary-cta-button:hover {
-  background: #65745c;
+  background: var(--sage);
   transform: translateY(-1px);
 }
 
@@ -2588,7 +2596,7 @@ section.products {
   z-index: 2;
   margin: 18px 0 0;
   color: var(--brown);
-  font-family: "Fraunces", serif;
+  font-family: Georgia, serif;
   font-size: 1.15rem;
   font-weight: 500;
   line-height: 1.2;
@@ -2633,7 +2641,7 @@ section.products {
   overflow: hidden;
   background: var(--surface);
   border: 1px solid rgba(74, 56, 64, 0.09);
-  border-radius: 24px;
+  border-radius: var(--radius);
   box-shadow: 0 24px 70px rgba(74, 56, 64, 0.2);
   animation: productModalIn 0.35s cubic-bezier(.2,.7,.2,1);
 }
@@ -2738,7 +2746,7 @@ section.products {
 .product-modal-content h2 {
   margin: 0 0 16px;
   color: var(--brown);
-  font-family: "Fraunces", serif;
+  font-family: Georgia, serif;
   font-size: clamp(2rem, 4vw, 2.65rem);
   font-weight: 500;
   line-height: 1;
@@ -2961,7 +2969,7 @@ section.products {
     grid-template-columns: 1fr;
     width: 100%;
     max-height: 88vh;
-    border-radius: 24px;
+    border-radius: var(--radius);
   }
 
   .product-modal-blob {
@@ -3042,7 +3050,7 @@ section.products {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-muted, #7a7065);
+  color: var(--brown-soft);
 }
 
 @media (max-width: 640px) {

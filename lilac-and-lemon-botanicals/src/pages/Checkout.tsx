@@ -188,7 +188,7 @@ export default function Checkout() {
             </div>
           </div>
 
-          <button className="checkout-btn" type="submit" disabled={status === 'sending'}>
+          <button className="checkout-button" type="submit" disabled={status === 'sending'}>
             {status === 'sending' ? 'Reserving…' : 'Reserve Order'}
           </button>
           {status === 'error' && (

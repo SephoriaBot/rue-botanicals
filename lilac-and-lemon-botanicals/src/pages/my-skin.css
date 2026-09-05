@@ -1,4 +1,3 @@
-
 /* Rue Botanicals — My Skin */
 
 .my-skin-page {
@@ -132,7 +131,7 @@
 
 .my-skin-option strong {
   display: block;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -163,7 +162,7 @@
   border-radius: 999px;
   background: var(--brown);
   color: var(--surface);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -238,7 +237,7 @@
 
 .my-skin-routine-number {
   color: var(--gold);
-  font-family: 'Fraunces', serif;
+  font-family: Georgia, serif;
   font-size: 1rem;
 }
 
@@ -329,7 +328,7 @@
   border-radius: 999px;
   background: var(--gold);
   color: var(--brown);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -354,7 +353,7 @@
 }
 
 .my-skin-saved-note.error {
-  color: #8b4d5d;
+  color: var(--error);
 }
 
 .my-skin-saved-note a {
