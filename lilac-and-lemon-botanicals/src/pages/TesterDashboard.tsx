@@ -69,7 +69,7 @@ useEffect(() => {
       setTester(data.tester ?? null);
 
       const profileRes = await fetch(
-  `/api/account/profile?userId=${encodeURIComponent(user.id)}`
+  `/api/account?userId=${encodeURIComponent(user.id)}`
 );
 
 if (profileRes.ok) {
