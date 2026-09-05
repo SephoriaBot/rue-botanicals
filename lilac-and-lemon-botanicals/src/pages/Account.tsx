@@ -82,7 +82,7 @@ export default function Account() {
         if (data.profile) {
           setForm((prev) => ({
             ...prev,
-            fullName: data.profile.fullName || user.fullName || '',
+            fullName: data.profile.fullName || '',
             email: data.profile.email || user.primaryEmailAddress?.emailAddress || '',
             address: data.profile.address || '',
             city: data.profile.city || '',
@@ -101,7 +101,7 @@ export default function Account() {
         } else {
           setForm((prev) => ({
             ...prev,
-            fullName: user.fullName || '',
+            fullName: '',
             email: user.primaryEmailAddress?.emailAddress || '',
           }));
         }

@@ -181,7 +181,7 @@ const stats = [
         </div>
         <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
         <h1>
-  Welcome{fullName ? `, ${fullName}` : user?.firstName ? `, ${user.firstName}` : ''}
+  Welcome{fullName ? `, ${fullName}` : ''}
   <br />
   to your testing journal.
 </h1>
