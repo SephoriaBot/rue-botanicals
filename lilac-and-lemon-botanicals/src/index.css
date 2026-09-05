@@ -3029,3 +3029,9 @@ section.products {
     margin-bottom: 1.25rem;
   }
 }
+
+.mascot-float {
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
