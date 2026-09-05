@@ -1444,6 +1444,12 @@ section.follow p {
   background: var(--rose);
 }
 
+.follow-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 
 /* =========================================================
    RESPONSIVE — TABLET
