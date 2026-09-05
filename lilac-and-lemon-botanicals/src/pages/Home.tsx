@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import RueMascot from '../components/RueMascot';
 
 export default function Home() {
   return (
