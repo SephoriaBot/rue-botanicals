@@ -485,6 +485,8 @@ header.hero h1 .accent {
   border-radius: 999px;
 
   color: var(--cream);
+  background: var(--brown);
+  border-color: var(--gold-soft);
 
   font-family: 'Jost', sans-serif;
   font-size: 0.68rem;
@@ -501,8 +503,7 @@ header.hero h1 .accent {
 }
 
 .hero-link:hover {
-  background: var(--brown);
-  border-color: var(--gold-soft);
+
   transform: translateY(-1px);
 }
 
@@ -1436,12 +1437,8 @@ section.follow p {
 }
 
 .follow-form button {
-  background: #FFFFFF;
-  color: var(--cream);
-}
-
-.follow-form button:hover {
   background: var(--brown);
+  color: var(--cream);
 }
 
 .follow-icon {
