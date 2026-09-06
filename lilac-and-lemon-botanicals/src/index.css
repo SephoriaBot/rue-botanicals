@@ -3304,3 +3304,246 @@ section.products {
     align-items: flex-start;
   }
 }
+
+/* =========================================================
+   ACCOUNT PAGE — TABS
+   ========================================================= */
+
+.account-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 32px;
+  padding: 5px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.account-tab {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brown-soft);
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.account-tab:hover {
+  color: var(--brown);
+}
+
+.account-tab.active {
+  background: var(--rose);
+  color: var(--on-dark);
+}
+
+@media (max-width: 640px) {
+  .account-tabs {
+    width: 100%;
+  }
+
+  .account-tab {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 0.6rem;
+  }
+}
+
+
+/* =========================================================
+   ACCOUNT PAGE — SKIN PROFILE TAB
+   ========================================================= */
+
+.account-skin-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.account-routine-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-routine-list li {
+  padding: 12px 16px;
+  background: var(--cream);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  color: var(--brown-soft);
+  line-height: 1.6;
+}
+
+.account-routine-list li strong {
+  color: var(--rose);
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+.account-notes-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  background: var(--pink-soft);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account-notes-list li {
+  font-size: 0.8rem;
+  color: var(--brown);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.account-notes-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--rose);
+  font-weight: 700;
+}
+
+.account-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 8px 0 24px;
+}
+
+.account-guide-grid h3 {
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.account-guide-grid ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.account-guide-grid li {
+  font-size: 0.82rem;
+  color: var(--brown-soft);
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+}
+
+.account-guide-grid li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+}
+
+.account-card > h3 {
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 4px 0 10px;
+}
+
+.account-card > ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.account-card > ul li {
+  font-size: 0.82rem;
+  color: var(--brown-soft);
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+}
+
+.account-card > ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+}
+
+.account-recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.account-recommend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 12px;
+  background: var(--cream);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--brown);
+  text-align: center;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.account-recommend-card:hover {
+  border-color: var(--rose);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.account-recommend-card img {
+  max-width: 80px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.account-recommend-card span {
+  font-family: Georgia, serif;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .account-guide-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .account-recommend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

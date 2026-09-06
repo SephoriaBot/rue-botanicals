@@ -54,7 +54,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
               cardExpYear: profileRow.card_exp_year ?? '',
             }
           : null,
-        skinType: skinRow ? JSON.parse(skinRow.result as string).title : null,
+        skinAssessment: skinRow
+  ? {
+      ...JSON.parse(skinRow.result as string),
+      updatedAt: skinRow.updated_at,
+    }
+  : null,
       });
     } catch (err) {
       console.error('Account fetch failed:', err);
