@@ -75,7 +75,7 @@ function formatCardNumber(digits: string): string {
 
 // ---- Skin type guide content ----
 
-const skinTypeGuides: Record
+const skinTypeGuides: Record <
   SkinAssessment['baseType'],
   {
     likes: string[];
