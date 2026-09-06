@@ -69,7 +69,7 @@ function handleSignOut() {
 >
   <div className="art-frame filled story-art">
     <img
-      src="/icons/cart.png"
+      src="/icons/cart_checkout.png"
       alt="Illustrated shopping cart"
     />
   </div>
