@@ -213,7 +213,7 @@ export default function Account() {
         <section className="account-intro">
           <img className="page-icon" src="/icons/gear.png" alt="" aria-hidden="true" />
           <span className="eyebrow">My Account</span>
-          <h1>Your account.</h1>
+          <h1>Personal Details</h1>
           <p>Manage the details Rue Botanicals uses to ship your orders and personalize your routine.</p>
         </section>
 
