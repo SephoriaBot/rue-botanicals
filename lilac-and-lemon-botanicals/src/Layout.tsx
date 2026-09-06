@@ -85,7 +85,7 @@ function handleSignOut() {
       <Outlet />
 
       <footer>
-        <div className="wrap">© 2026 Rue Botanicals · built one step at a time</div>
+        <div className="wrap">© 2026 Rue Botanicals</div>
       </footer>
     </>
   );
