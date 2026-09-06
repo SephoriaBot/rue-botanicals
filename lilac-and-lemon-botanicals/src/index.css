@@ -570,6 +570,12 @@ section.story p + p {
   color: var(--rose);
 }
 
+.story-art img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
 
 /* =========================================================
    ROUTINE
