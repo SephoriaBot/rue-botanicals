@@ -172,7 +172,7 @@ export default function TesterPhotos() {
           <img src="/icons/cameo.png" alt="" aria-hidden="true" />
         </div>
         <div className="tester-eyebrow">
-          RUE BOTANICALS · TESTER PORTAL
+          Rue Beaute · TESTER PORTAL
         </div>
 
         <h1>Your testing photos.</h1>

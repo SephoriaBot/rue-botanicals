@@ -122,10 +122,10 @@ if (!tester || tester.status !== 'active') {
   return (
     <main className="tester-page">
       <section className="tester-hero wrap">
-        <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
+        <div className="tester-eyebrow">Rue Beaute · TESTER PORTAL</div>
         <h1>You’re not currently enrolled as a tester.</h1>
         <p>
-          This area is for Rue Botanicals product testers. If you’ve been
+          This area is for Rue Beaute product testers. If you’ve been
           invited to participate in a test, your enrollment will appear here
           once it has been activated.
         </p>
@@ -179,14 +179,14 @@ const stats = [
         <div className="tester-page-icon">
           <img src="/icons/welcome-wreath.png" alt="" aria-hidden="true" />
         </div>
-        <div className="tester-eyebrow">RUE BOTANICALS · TESTER PORTAL</div>
+        <div className="tester-eyebrow">Rue Beaute · TESTER PORTAL</div>
         <h1>
   Welcome{fullName ? `, ${fullName}` : ''}
   <br />
   to your testing journal.
 </h1>
         <p>
-          Thank you for helping us test and improve Rue Botanicals.
+          Thank you for helping us test and improve Rue Beaute.
           Everything you record here helps us understand how our formulas
           perform in real routines.
         </p>

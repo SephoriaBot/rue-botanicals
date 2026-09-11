@@ -71,7 +71,7 @@ export default function Checkout() {
           </div>
             <p>
               We've saved your order — the shop hasn't launched yet, so no payment was taken.
-              We'll email you the moment Rue Botanicals is ready to ship it to you.
+              We'll email you the moment Rue Beaute is ready to ship it to you.
             </p>
           </div>
         </div>

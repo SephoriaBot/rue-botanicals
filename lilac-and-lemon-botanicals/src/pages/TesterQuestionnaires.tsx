@@ -128,7 +128,7 @@ export default function TesterQuestionnaires() {
           <img src="/icons/tester_questionnaire.png" alt="" aria-hidden="true" />
         </div>
         <div className="tester-eyebrow">
-          RUE BOTANICALS · TESTER PORTAL
+          Rue Beaute · TESTER PORTAL
         </div>
 
         <h1>Your starting questionnaire.</h1>

@@ -17,7 +17,7 @@ export default function About() {
 
           <p>I began practicing skincare professionally around 2020, and it didn't take long before formulating felt inevitable. The more I learned, the more I wanted to create products with intention—where every ingredient has a reason to be there, and nothing is included simply to fill space or justify a price.</p>
 
-          <p>Rue Botanicals was born from that idea: skincare should be thoughtful, purposeful, and uncomplicated. Ingredients should complement one another, support the skin, and earn their place in the formula.</p>
+          <p>Rue Beaute was born from that idea: skincare should be thoughtful, purposeful, and uncomplicated. Ingredients should complement one another, support the skin, and earn their place in the formula.</p>
 
           <div style={{ clear: "both" }} />
 

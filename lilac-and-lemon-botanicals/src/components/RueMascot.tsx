@@ -25,7 +25,7 @@ export default function RueMascot({
   return (
     <img
       src={rueCatImg}
-      alt="Rue, the Rue Botanicals mascot cat, illustrated with a botanical sprig"
+      alt="Rue, the Rue Beaute mascot cat, illustrated with a botanical sprig"
       width={size}
       style={{
         height: "auto",

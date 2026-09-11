@@ -374,7 +374,7 @@ export default function MySkin() {
 
           <div className="my-skin-actions">
             <button className="my-skin-button secondary" onClick={restart}>Retake assessment</button>
-            <a className="my-skin-button" href="/products">Explore Rue Botanicals</a>
+            <a className="my-skin-button" href="/products">Explore Rue Beaute</a>
           </div>
         </div>
       </main>

@@ -338,7 +338,7 @@ export default function Account() {
           <h1>{tab === 'profile' ? 'Personal Details' : 'Skin Profile'}</h1>
           <p>
             {tab === 'profile'
-              ? "Manage the details Rue Botanicals uses to ship your orders."
+              ? "Manage the details Rue Beaute uses to ship your orders."
               : "Your skin assessment, personal guide, and recommendations."}
           </p>
         </section>
@@ -431,7 +431,7 @@ export default function Account() {
             <div className="account-card">
               <h2>Payment method</h2>
               <p className="account-card-note">
-                Rue Botanicals hasn't launched checkout yet, so nothing here is charged. We only keep
+                Rue Beaute hasn't launched checkout yet, so nothing here is charged. We only keep
                 your card's brand, last 4 digits, and expiry for your reference — never the full number.
               </p>
 
