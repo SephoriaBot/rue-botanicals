@@ -2564,6 +2564,27 @@ section.products {
   padding-bottom: 8px;
 }
 
+/* Golden sunrise halo behind the bottle */
+.product-tile-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 166, 107, 0.45) 0%,
+    rgba(232, 166, 184, 0.2) 45%,
+    rgba(232, 166, 184, 0) 72%
+  );
+  filter: blur(20px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
 /* Very subtle grounding underneath each bottle */
 .product-tile-image::after {
   content: "";
@@ -2917,10 +2938,16 @@ section.products {
     height: 255px;
   }
 
+  .product-tile-image::before {
+    width: 195px;
+    height: 195px;
+  }
+
   .product-tile-image img {
     max-width: 140px;
     max-height: 230px;
   }
+
 
   .product-modal {
     width: min(620px, 100%);
@@ -2951,14 +2978,20 @@ section.products {
     row-gap: 48px;
   }
 
-  .product-tile-image {
+   .product-tile-image {
     height: 220px;
+  }
+
+  .product-tile-image::before {
+    width: 170px;
+    height: 170px;
   }
 
   .product-tile-image img {
     max-width: 120px;
     max-height: 205px;
   }
+
 
   .product-tile h3 {
     margin-top: 15px;
@@ -3012,14 +3045,20 @@ section.products {
     row-gap: 42px;
   }
 
-  .product-tile-image {
+   .product-tile-image {
     height: 195px;
+  }
+
+  .product-tile-image::before {
+    width: 145px;
+    height: 145px;
   }
 
   .product-tile-image img {
     max-width: 105px;
     max-height: 180px;
   }
+
 
   .product-tile h3 {
     font-size: 0.96rem;
